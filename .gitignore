@@ -1,0 +1,6 @@
+# Investment memos live in their own PRIVATE repo, nested at investment-memos/.
+# github.com/SadeekFarhan21/investment-memos
+# This rule keeps them (and their .git) out of this public repo entirely.
+investment-memos/
+
+__pycache__/
