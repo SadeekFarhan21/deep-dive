@@ -18,15 +18,14 @@ category: ventures
 
 Wafer builds AI agents that optimize how models run in production, searching across the model, the serving engine, low-level GPU kernels, and the underlying hardware to find the fastest and cheapest deployment for a given workload. It sells the results as hosted open-source models served through a standard API, on both NVIDIA and AMD chips. The company addresses the shortage of performance engineers and the software gap that keeps buyers dependent on a single chip vendor.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2025 (Y Combinator Summer 2025) |
+| Founding Date | May 2025 |
 | Headquarters | San Francisco, CA |
-| Founders | Emilio Andere (CEO), Steven Arellano |
+| Total Funding | \$44M |
+| Status | Private |
 | Stage | Series A |
-| Total funding | \$44M |
-| Disclosed investors | Marathon, Chemistry, Wing, AMD Ventures, Outset Capital, Fifty Years, Y Combinator |
-| Reported ARR | \$8M (unconfirmed) |
+| Employees | 10 |
 
 *ARR is from a third-party tracker, September 2026, and is not company-confirmed.*
 

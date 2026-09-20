@@ -17,17 +17,14 @@ category: ventures
 
 Infinity builds an agent, called Ignition, that writes the software layer a new AI chip needs before anyone can run a model on it. That layer is not a driver. It is thousands of hand-tuned math routines called kernels, plus the compiler that lays a model across the chip's memory, plus the profiler, debugger and SDK that make the whole thing usable by an engineer who does not work at the chip company. Producing it has historically taken specialist teams years per chip, which is the single largest reason that better silicon keeps losing to NVIDIA. Infinity's claim is that an agent can do it in days, and it prices itself on a share of the performance it unlocks rather than a license fee.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | August 2025 |
-| Headquarters | San Francisco |
-| Founder | Jeremy Nixon (CEO) |
+| Founding Date | Aug 2025 |
+| Headquarters | San Francisco, CA |
+| Total Funding | \$15M |
+| Status | Private |
 | Stage | Seed |
-| Total funding | \$15M at \$100M post-money, July 2026 |
-| Disclosed investors | Touring Capital, Principal VC, angels from chip companies, OpenAI and Anthropic, and the founder |
 | Employees | 26 |
-| Revenue | Millions recurring, company-reported |
-| Chip partners | 1 live |
 
 ## Thesis
 

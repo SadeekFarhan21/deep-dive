@@ -17,16 +17,14 @@ category: ventures
 
 Traversal builds an agent that does the work of a site-reliability engineer during a production incident, figuring out what actually broke. It maintains a live map of the customer's systems, re-indexes their telemetry so it can run thousands of targeted queries in parallel, and searches causally through that data to identify the root cause, then proposes or applies the fix. It does not collect the telemetry itself, since Datadog and its peers still do that, and it does not replace the observability stack. It sits on top of whatever the customer already runs and does the detective work a war room would otherwise do by hand.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2023 |
-| Headquarters | New York |
-| Founders | Anish Agarwal (CEO), Raaz Dwivedi, Raj Agrawal, Ahmed Lone |
+| Founding Date | 2023 |
+| Headquarters | New York, NY |
+| Total Funding | \$53M |
+| Status | Private |
 | Stage | Series A |
-| Total funding | \$53M (\$48M across seed and Series A, plus \$5M from Amex Ventures) |
-| Disclosed investors | Sequoia, Kleiner Perkins, NFDG, Hanabi, Amex Ventures; angels Nat Friedman, Mike Volpi |
-| Employees | 90+ (company, May 2026) |
-| Named customers | American Express, PepsiCo, DigitalOcean |
+| Employees | 90 |
 
 ## Thesis
 

@@ -18,15 +18,14 @@ category: ventures
 
 RadixArk builds infrastructure for running and continuously improving open AI models in production. It was founded by the creators and core maintainers of SGLang, an open-source inference engine that serves trillions of tokens per day for organizations including Google, Microsoft, NVIDIA and xAI, and it also maintains Miles, an open-source framework for reinforcement learning. On top of these projects the company sells managed infrastructure and tooling, aimed at teams that want to own and operate their AI systems instead of renting tokens through another company's API.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2025 |
-| Headquarters | Palo Alto, California |
-| Founders | Ying Sheng (CEO), Banghua Zhu |
+| Founding Date | May 2025 |
+| Headquarters | Palo Alto, CA |
+| Total Funding | \$100M |
+| Status | Private |
 | Stage | Seed |
-| Total funding | \$100M at \$400M post-money |
-| Disclosed investors | Accel (lead), Spark Capital (co-lead), NVentures, AMD, MediaTek, HOF Capital |
-| Status | Open-source adoption at scale, commercial traction undisclosed |
+| Employees | Undisclosed |
 
 ## Thesis
 

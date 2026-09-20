@@ -17,13 +17,13 @@ category: ventures
 
 Dipole Labs builds optical circuit switches for AI data centers. Data between GPU racks already travels as light, but routing it means converting the signal to electricity and back at every switching point, which costs power, generates heat, and adds latency. Dipole's switch keeps the signal in the optical domain and steers it with software-programmable mirrors, targeting sub-microsecond reconfiguration at large port counts. At that speed the network can reshape itself around a single training or inference job rather than holding a fixed topology. The company estimates this yields up to 25% more useful compute from hardware already purchased.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2026 |
-| Headquarters | Boston, with a European base in Zurich |
-| Founders | Deepankur Thureja (CEO), Gabriele Pasquale (CTO) |
-| Stage | Pre-seed (Y Combinator Summer 2026) |
-| Disclosed investors | Y Combinator, [Cisco Investments](https://runtimewire.com/article/startup-spotlight-dipole-labs-optical-switches-ai-clusters) |
+| Founding Date | 2026 |
+| Headquarters | Boston, MA |
+| Total Funding | Undisclosed |
+| Status | Private |
+| Stage | Pre-seed |
 | Employees | 2 |
 
 *Investment amounts are unpublished.*

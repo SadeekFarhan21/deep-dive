@@ -18,15 +18,14 @@ category: ventures
 
 Extropic designs thermodynamic sampling units, a new class of semiconductor that uses the natural thermal noise of standard transistors to draw samples directly from programmable probability distributions. Because sampling is the core operation of generative AI, the company aims to run probabilistic workloads at a fraction of the energy a GPU requires. It pairs the chips with an open-source software stack for writing, training, and compiling probabilistic programs, and targets generative AI, scientific simulation, and low-power reasoning under uncertainty.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2022 |
-| Headquarters | San Francisco, CA, and Waltham, MA |
-| Founders | Guillaume Verdon (CEO), Trevor McCourt (CTO), Christopher Chamberland (Principal Architect) |
+| Founding Date | August 2022 |
+| Headquarters | San Francisco, CA |
+| Total Funding | \$14.1M |
+| Status | Private |
 | Stage | Seed |
-| Total funding | \$14.1M equity; up to \$75M US government, planned |
-| Employees | 25 ([PitchBook](https://pitchbook.com/profiles/company/512728-84)) |
-| Status | Prototype silicon shipped, pre-revenue, no announced customers |
+| Employees | 25 |
 
 ## Thesis
 

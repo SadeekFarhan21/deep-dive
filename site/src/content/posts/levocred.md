@@ -17,14 +17,14 @@ category: ventures
 
 Levocred builds AI agents for the operational work inside private credit. That work is borrowing base reports, covenant monitoring, credit memos, collections reconciliation, and the loan marks a fund publishes to its own investors. The work exists because a credit facility behaves like a credit card whose limit depends on the quality of the loans pledged against it, and both the lender and the borrower have to rebuild that calculation from raw loan data every week or month. Today an analyst does it in a spreadsheet. Levocred generates it in minutes with an audit trail. About \$1 billion in receivables across roughly 30 facilities runs through the platform, and the company does not disclose revenue.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2025. The brand was live in August 2024 and a full product site by mid-2025; Y Combinator lists 2026 |
-| Headquarters | San Francisco |
-| Founders | Mohit Gupta (CEO), Saksham Gupta (CTO) |
-| Stage | Pre-seed (Y Combinator Summer 2026) |
-| Employees | 2, per Y Combinator |
-| Status | \$1B receivables monitored (revenue undisclosed) |
+| Founding Date | 2025 |
+| Headquarters | San Francisco, CA |
+| Total Funding | \$500K |
+| Status | Private |
+| Stage | Pre-seed |
+| Employees | 2 |
 
 ## Thesis
 

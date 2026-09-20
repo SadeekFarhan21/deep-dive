@@ -17,15 +17,14 @@ category: ventures
 
 Watney Robotics builds two-armed robots that replace network cables and perform server maintenance inside data centers, and operates them as a service in the customer's facility. The robots are task-specific rather than humanoid, which is the company's stated design philosophy, taking only problems where a machine has an order-of-magnitude advantage in precision, reliability or scale. Two of them have been working on cabling at Meta's Altoona, Iowa campus since June 2025. The company closed an \$80 million Series A on September 17, 2026, bringing total funding above \$100 million.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | 2023 |
-| Headquarters | San Francisco |
-| Founders | Ryan Gannon (CEO), Sean Cheong |
+| Founding Date | 2023 |
+| Headquarters | San Francisco, CA |
+| Total Funding | \$101M |
+| Status | Private |
 | Stage | Series A |
-| Total funding | \$80M, September 2026 |
-| Disclosed investors | Valor Atreides AI Fund, Hummingbird (co-leads); Conviction, Abstract, A\* (returning from seed); Grant Gordon |
-| Status | Deployed at Meta since June 2025 |
+| Employees | 11 to 50 |
 
 ## Thesis
 

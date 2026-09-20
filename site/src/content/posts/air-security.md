@@ -17,15 +17,14 @@ category: ventures
 
 AIR Security sells a control layer for the software that AI agents install in order to do their jobs. An enterprise agent is rarely useful on its own; it becomes useful when it picks up a skill, a plug-in, or an MCP server that teaches it to query a database, file a ticket, or move money. Each of those add-ons is code and instructions written by someone outside the company, installed by a system that already holds valid credentials. AIR discovers every agent running inside an organization, inspects each add-on before it is approved, re-inspects it after deployment, and traces and revokes anything that turns out to be malicious. The company left stealth on September 1, 2026 with more than 20 customers and \$50 million raised across two seed rounds.
 
-| Fact | Detail |
+| | |
 | --- | --- |
-| Founded | February 2026 |
-| Founders | Yair Saban (CEO), Niv Hoffman (CTO) |
+| Founding Date | Feb 2026 |
+| Headquarters | Undisclosed |
+| Total Funding | \$50M |
+| Status | Private |
 | Stage | Seed |
-| Total funding | \$50M across two rounds |
-| Disclosed investors | Sequoia (led \$10M), Greenoaks (led \$40M), Swish, Netz |
 | Employees | 40 |
-| Customers | 20+ |
 
 ## Thesis
 
