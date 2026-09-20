@@ -1,11 +1,9 @@
 ---
 title: "Wafer"
 pubDatetime: 2026-09-14T14:56:28.000Z
-description: "Wafer builds AI agents that tune model inference across kernels, serving engines, and hardware, then sells the result as hosted open-source inference on both NVIDIA and AMD chips."
+description: "Wafer.ai builds autonomous performance-engineering agents to optimize GPU kernels and inference stacks"
 slug: wafer
 company: "Wafer"
-stage: "Series A"
-sector: "AI infrastructure"
 tags:
   - ai-infrastructure
   - inference

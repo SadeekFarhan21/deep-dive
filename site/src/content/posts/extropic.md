@@ -1,11 +1,9 @@
 ---
 title: "Extropic"
 pubDatetime: 2026-09-11T17:42:10.000Z
-description: "Extropic builds thermodynamic sampling units, chips that use the thermal noise of transistors to sample from programmable probability distributions, targeting the energy cost of generative AI; its efficiency claims are unmeasured on shipping hardware."
+description: "Extropic is a physics-based hardware company developing thermodynamic computing chips that harness thermal noise to run probabilistic AI models with extreme energy efficiency."
 slug: extropic
 company: "Extropic"
-stage: "Seed"
-sector: "Semiconductors"
 tags:
   - semiconductors
   - ai-infrastructure

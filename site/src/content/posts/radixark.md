@@ -1,11 +1,9 @@
 ---
 title: "RadixArk"
 pubDatetime: 2026-09-09T15:27:44.000Z
-description: "RadixArk is the company formed around SGLang, one of the two open-source engines serving most open-model inference, selling managed infrastructure on software it gave away and does not own."
+description: "RadixArk builds open-source infrastructure and managed tools for scaling, training, and serving large-scale AI models."
 slug: radixark
 company: "RadixArk"
-stage: "Seed"
-sector: "AI infrastructure"
 tags:
   - ai-infrastructure
   - open-source
