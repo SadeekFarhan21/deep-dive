@@ -46,27 +46,12 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout my-1"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
       <p>
         I&rsquo;m <LinkButton
           class="font-bold underline decoration-dashed underline-offset-4"
           href="https://farhansadeek.com"
           target="_blank"
-          rel="noopener noreferrer">Farhan Sadeek</LinkButton
+          rel="noopener noreferrer">Farhan</LinkButton
         >, a computer science undergraduate at <LinkButton
           class="underline decoration-dashed underline-offset-4"
           href="https://www.cs.columbia.edu"
@@ -81,18 +66,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
           href={getRelativeLocaleUrl(locale, "ventures")}>Ventures</LinkButton
         >. Feel free to reach me through the links below.
       </p>
-      <p class="mt-2">
-        Two kinds of writing live on this site.
-        <strong>Projects</strong> are experiments I ran myself: the setup, the numbers,
-        and an explicit note on what the numbers do <em>not</em> prove.
-        <strong>Ventures</strong> are memos on the companies building the hardware,
-        inference stacks, and agent tooling underneath all of it &mdash; separating
-        the verified from the company-reported.
-      </p>
-      <p class="mt-2">
-        Nothing here is a press release. Every run is reproducible from the
-        scripts, and every claim I can&rsquo;t back up is labelled as such.
-      </p>
+
       {
         socials.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">
