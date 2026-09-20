@@ -1,7 +1,6 @@
 ---
 title: "RadixArk"
-pubDatetime: 2026-09-20T06:34:47.000Z
-modDatetime: 2026-09-20T06:39:33.000Z
+pubDatetime: 2026-09-09T15:27:44.000Z
 description: "RadixArk is the company formed around SGLang, one of the two open-source engines serving most open-model inference, selling managed infrastructure on software it gave away and does not own."
 slug: radixark
 company: "RadixArk"
@@ -57,7 +56,7 @@ RadixArk's offering has three parts: two open-source projects it maintains and g
 
 **SGLang.** A model generates text one token at a time and must account for all preceding text at each step. To avoid recomputing that work, the engine stores intermediate results in a structure called the KV cache, which is large, resides in scarce GPU memory, and grows with every token. Much of inference performance comes down to how well this cache is managed.
 
-SGLang's signature technique is RadixAttention. When many requests begin with the same text — a system prompt, a set of tool descriptions, the earlier turns of a conversation — the shared portion only needs to be computed once. SGLang indexes every prefix it has processed in a radix tree and maps each to memory that already holds its results, so a new request with a matching prefix skips directly to the new portion. Prefix sharing is common in nearly all production workloads and is especially pronounced in agentic applications, where each step resends the history of previous steps.
+SGLang's signature technique is RadixAttention. When many requests begin with the same text, such as a system prompt, a set of tool descriptions, or the earlier turns of a conversation, the shared portion only needs to be computed once. SGLang indexes every prefix it has processed in a radix tree and maps each to memory that already holds its results, so a new request with a matching prefix skips directly to the new portion. Prefix sharing is common in nearly all production workloads and is especially pronounced in agentic applications, where each step resends the history of previous steps.
 
 | Technique | What it does | Why it matters now |
 | --- | --- | --- |
@@ -99,9 +98,9 @@ RadixArk competes at two levels. At the engine level its rival is vLLM and the c
 
 | Company | Total funding | Latest disclosed valuation |
 | --- | --- | --- |
-| Baseten | \$2.1B | — |
+| Baseten | \$2.1B | Not disclosed |
 | Fireworks AI | \$1.8B | \$17.5B (July 2026) |
-| Together AI | \$1.3B | — |
+| Together AI | \$1.3B | Not disclosed |
 | Inferact (vLLM) | \$150M | \$800M |
 | RadixArk (SGLang) | \$100M | \$400M |
 | Wafer | \$44M | Above \$200M (reported) |
@@ -140,7 +139,7 @@ The revenue mix will determine how the business is valued. Managed hosting invol
 | Databricks | Apache Spark, from the same professor | Became one of the most valuable private software companies; the managed platform grew far larger than the engine |
 | Confluent | Apache Kafka | A public company of substantial size, but cloud providers offered the open project themselves and took a large share |
 | MongoDB and Elastic | Their own database and search engine | Large public companies; both changed their licenses to stop clouds from reselling their work |
-| HashiCorp | Terraform and related tools | Also changed its license. Acquired by IBM for roughly \$6.4 billion — a good result, not a spectacular one |
+| HashiCorp | Terraform and related tools | Also changed its license. Acquired by IBM for roughly \$6.4 billion, a good result rather than a spectacular one |
 | Anyscale | Ray, from the same lab | Reached roughly a \$1 billion valuation and has grown slowly |
 | Docker | Docker | Ubiquity without a product; the original company failed to monetize and was restructured |
 
@@ -176,11 +175,11 @@ For comparison, Inferact was valued at \$800 million at its seed round in the sa
 
 **A neutral runtime across hardware.** Enterprises increasingly want to avoid dependence on one cloud or one accelerator, because prices change and supply is uneven. An engine that performs well across NVIDIA, AMD, Intel and Google hardware lets customers move workloads as conditions change, and an investor base spanning competing chip makers supports that position. Contrary Research has observed that investment by both NVIDIA and AMD may support positioning as a neutral runtime while noting it does not prove demand will develop in that direction. The opportunity depends on delivering comparable performance and reliability across hardware types, which is an engineering burden that grows with every new chip.
 
-**Agentic workloads favor prefix reuse.** Agents and multi-turn applications resend large amounts of shared context with every call. RadixAttention was designed for this pattern before agents became a commercial category. As agentic usage grows as a share of inference — and agents require five to 30 times more compute per task than chatbots — the performance gap between an engine that reuses prefixes well and one that does not becomes more valuable. It is the rare case of a core design decision becoming more correct with time.
+**Agentic workloads favor prefix reuse.** Agents and multi-turn applications resend large amounts of shared context with every call. RadixAttention was designed for this pattern before agents became a commercial category. As agentic usage grows as a share of inference, the performance gap between an engine that reuses prefixes well and one that does not becomes more valuable. It is the rare case of a core design decision becoming more correct with time.
 
 ## Key Risks
 
-**Monetizing software it does not own.** RadixArk's most widely cited users pay nothing for SGLang, and the company has given up the tools other open-source companies used to compel payment. There is no proprietary version that is faster than the open one, and because the project belongs to the LMSYS community the license cannot be changed. HOF Capital describes the intended path as open-sourcing the core engine and then productizing the operational complexity of running it at production scale. That pattern produced Databricks, and it also produced widely used projects with modest businesses attached, of which Anyscale — commercializing Ray from the same Berkeley lab, at roughly a \$1 billion valuation — is the uncomfortably close comparison. Which outcome applies here cannot be determined from public information.
+**Monetizing software it does not own.** RadixArk's most widely cited users pay nothing for SGLang, and the company has given up the tools other open-source companies used to compel payment. There is no proprietary version that is faster than the open one, and because the project belongs to the LMSYS community the license cannot be changed. HOF Capital describes the intended path as open-sourcing the core engine and then productizing the operational complexity of running it at production scale. That pattern produced Databricks, and it also produced widely used projects with modest businesses attached, of which Anyscale, which commercializes Ray from the same Berkeley lab at roughly a \$1 billion valuation, is the uncomfortably close comparison. Which outcome applies here cannot be determined from public information.
 
 **Competition for the default engine.** Open infrastructure markets have historically settled on a default and an alternative, with most of the value accruing to the default. Inferact has 50% more capital, a larger reported installed base, and investors with extensive enterprise networks. Sheng has argued that inference is an incremental market in which all participants grow together, and the market's growth rate supports that in the near term. Over a longer period enterprise buyers standardize, and the engine with the broader ecosystem of integrations, documentation and trained engineers usually wins.
 
@@ -192,6 +191,6 @@ For comparison, Inferact was valued at \$800 million at its seed round in the sa
 
 RadixArk is the company formed around SGLang, one of the two open-source inference engines that serve most open-model workloads. The technical position is strong and the timing is right: inference spending passed training spending in 2026, agentic workloads are the fastest-growing segment of it, and RadixAttention is the design that benefits most from exactly that shift. The cap table is a signal in its own right, since NVIDIA, AMD, MediaTek and the chief executives of Intel and Broadcom rarely agree on anything except that no single one of them should control the layer above the chip.
 
-The difficulty is that none of this is the business. Google, Microsoft, NVIDIA and xAI run SGLang for free, the license cannot be changed to stop them, and the company cannot ship a faster private version without abandoning the openness that made the project the default. The paying customer is someone else entirely — an enterprise that wants to own its models without owning a kernel team — and reaching that buyer requires an enterprise sales motion that Fireworks, Together and Baseten have already built at several times the capital.
+The difficulty is that none of this is the business. Google, Microsoft, NVIDIA and xAI run SGLang for free, the license cannot be changed to stop them, and the company cannot ship a faster private version without abandoning the openness that made the project the default. The paying customer is someone else entirely, an enterprise that wants to own its models without owning a kernel team, and reaching that buyer requires an enterprise sales motion that Fireworks, Together and Baseten have already built at several times the capital.
 
 The most interesting position the company holds is Miles. Reinforcement learning is an inference workload wearing different clothes, it is sold as a platform rather than as tokens, and it is the one market where vLLM's installed base confers no advantage. Whether RadixArk becomes Databricks or Anyscale probably turns on that product rather than on the engine everyone already uses.

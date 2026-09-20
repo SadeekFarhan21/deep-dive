@@ -1,6 +1,5 @@
 ---
 title: "Traversal"
-pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Traversal builds an AI site-reliability engineer that finds the root cause of production incidents by running causal searches over a customer's telemetry. American Express is both a customer and an investor; a rival with three times the capital raised at $1B."
 slug: traversal
 company: "Traversal"
@@ -16,7 +15,7 @@ category: ventures
 
 ## Overview
 
-Traversal builds an agent that does the work of a site-reliability engineer during a production incident: figuring out what actually broke. It maintains a live map of the customer's systems, re-indexes their telemetry so it can run thousands of targeted queries in parallel, and searches causally through that data to identify the root cause, then proposes or applies the fix. It does not collect the telemetry itself — Datadog and its peers still do that — and it does not replace the observability stack. It sits on top of whatever the customer already runs and does the detective work a war room would otherwise do by hand.
+Traversal builds an agent that does the work of a site-reliability engineer during a production incident: figuring out what actually broke. It maintains a live map of the customer's systems, re-indexes their telemetry so it can run thousands of targeted queries in parallel, and searches causally through that data to identify the root cause, then proposes or applies the fix. It does not collect the telemetry itself, since Datadog and its peers still do that, and it does not replace the observability stack. It sits on top of whatever the customer already runs and does the detective work a war room would otherwise do by hand.
 
 | | |
 | --- | --- |
@@ -30,7 +29,7 @@ Traversal builds an agent that does the work of a site-reliability engineer duri
 
 ## Thesis
 
-Two things are true about production incidents at large companies, and the gap between them is the business. Enterprises already spend heavily on collecting operational data — observability is a mature, well-funded category — and they spend far more on the engineers who interpret it. At a Fortune 100 company, 50 to 100 engineers may join a war room for a single incident. The data is not the constraint. The reasoning over it is.
+Two things are true about production incidents at large companies, and the gap between them is the business. Enterprises already spend heavily on collecting operational data, since observability is a mature, well-funded category, and they spend far more on the engineers who interpret it. At a Fortune 100 company, 50 to 100 engineers may join a war room for a single incident. The data is not the constraint. The reasoning over it is.
 
 That gap is widening for a specific reason: AI writes a growing share of production code, so more changes reach production, written by systems with no memory of why the last outage happened, failing in ways that are unfamiliar to the people on call. The volume of incidents is rising while the number of engineers who deeply understand any given system is falling.
 
@@ -42,13 +41,13 @@ The counter-argument is equally structural. The observability vendors own the bu
 
 Traversal was founded in New York in 2023 by three researchers in causal machine learning and a former quantitative trader.
 
-Anish Agarwal, the CEO, holds a PhD from MIT and is on the faculty at Columbia, with research in causal machine learning and reinforcement learning. Raaz Dwivedi is faculty at Cornell Tech. Raj Agrawal is the third of the PhDs Sequoia describes in its [partnership note](https://sequoiacap.com/article/partnering-with-traversal-because-every-engineer-remembers-their-first-time-troubleshooting). Ahmed Lone holds a Columbia master's and was a quantitative trader at Citadel Securities, where he lived the problem from the receiving end — trading infrastructure is an environment where nobody tolerates a slow answer about what broke.
+Anish Agarwal, the CEO, holds a PhD from MIT and is on the faculty at Columbia, with research in causal machine learning and reinforcement learning. Raaz Dwivedi is faculty at Cornell Tech. Raj Agrawal is the third of the PhDs Sequoia describes in its [partnership note](https://sequoiacap.com/article/partnering-with-traversal-because-every-engineer-remembers-their-first-time-troubleshooting). Ahmed Lone holds a Columbia master's and was a quantitative trader at Citadel Securities, where he lived the problem from the receiving end. Trading infrastructure is an environment where nobody tolerates a slow answer about what broke.
 
 The composition is unusual and matters for the product. Causal inference is a specific academic discipline concerned with distinguishing what caused an outcome from what merely correlated with it, which is precisely the question during an incident and precisely what a language model with tool access is weakest at. The standard concern about research-heavy founding teams is enterprise sales, and the counter-evidence here is strong: American Express became a named customer and then, in March 2026, an investor through Amex Ventures, inside the company's first years.
 
 ## Product
 
-**Production World Model.** A live, continuously updated map of the customer's systems — services, dependencies, deployments, and how they actually relate in production rather than in the architecture diagram.
+**Production World Model.** A live, continuously updated map of the customer's systems: services, dependencies, deployments, and how they actually relate in production rather than in the architecture diagram.
 
 **Causal Search Engine.** Telemetry re-indexed so the agent can run thousands of targeted queries in parallel. Sequoia describes the method as swarms of parallel investigations using proprietary statistical tools. This is the technical core and the basis of the accuracy claim.
 
@@ -69,7 +68,7 @@ Pre-deploy review is the most interesting of these. It moves the product from re
 
 ## Customer
 
-The target is the large, regulated enterprise — specifically global financial institutions, which the company names as its focus. The qualifying characteristics are a large engineering organization, multiple monitoring platforms in simultaneous use, a low tolerance for downtime, and a requirement to self-host.
+The target is the large, regulated enterprise, specifically the global financial institutions the company names as its focus. The qualifying characteristics are a large engineering organization, multiple monitoring platforms in simultaneous use, a low tolerance for downtime, and a requirement to self-host.
 
 Named customers span more than finance: American Express, PepsiCo, DigitalOcean, Eventbrite, and Cloudways, plus an unnamed top global crypto exchange. American Express is the anchor, and the fact that it invested as well as bought is the strongest available signal about how the product performs in the environment that matters most to the company's strategy.
 
@@ -77,7 +76,7 @@ Revenue and total customer count are not disclosed.
 
 ## Market Size
 
-My estimate: 2,000 large enterprises at \$500,000 a year is a \$1 billion market. That is a sizing from the buyer side and not a published figure.
+Two thousand large enterprises at \$500,000 a year is a \$1 billion market. That is a sizing from the buyer side and not a published figure.
 
 The better evidence is what a direct comparable cleared. Resolve AI [raised \$125 million at a \$1 billion valuation](https://resolve.ai/news/resolveai-raises-125-million-series-a) on roughly \$4 million of revenue, [per TechCrunch](https://techcrunch.com/2025/12/19/ex-splunk-execs-startup-resolve-ai-hits-1-billion-valuation-with-series-a). That tells you two things: investors are underwriting this category on the size of the engineering-labor budget it displaces rather than on current revenue, and any entry price here will be set by that comparable rather than by fundamentals.
 
@@ -115,7 +114,7 @@ Pricing is undisclosed. The crypto exchange figure gives a way to reason about i
 | 50 | \$500,000 | \$25M |
 | 100 | \$750,000 | \$75M |
 
-These are my assumptions. The middle row is roughly what a valuation near the rival's would need to grow into within two years.
+These are assumptions rather than disclosed figures. The middle row is roughly what a valuation near the rival's would need to grow into within two years.
 
 ## Traction
 
@@ -139,11 +138,11 @@ The reference point is Resolve AI at \$1 billion in February 2026 on roughly \$4
 
 **Owning regulated finance.** Banks require self-hosting, demand accuracy, buy slowly, and then stay. A company with American Express as customer and investor has the best possible opening credential for the rest of that segment, and it is a segment the San Francisco-based rival is not organized around.
 
-**Autonomous fixes.** The product today mostly advises. Moving to applying fixes in production, at even one customer, changes what the company is worth — it is the difference between a tool that helps engineers and a system that replaces on-call work.
+**Autonomous fixes.** The product today mostly advises. Moving to applying fixes in production, at even one customer, changes what the company is worth. It is the difference between a tool that helps engineers and a system that replaces on-call work.
 
 **Pre-deploy review.** Preventing incidents uses the same world model as diagnosing them, sells to the same buyer, and expands the contract without new infrastructure.
 
-**Neutrality as a durable position.** If large enterprises continue running several monitoring platforms simultaneously — and there is no sign of consolidation there — the vendor-neutral reasoning layer is a position no single observability vendor can occupy.
+**Neutrality as a durable position.** If large enterprises continue running several monitoring platforms simultaneously, and there is no sign of consolidation there, the vendor-neutral reasoning layer is a position no single observability vendor can occupy.
 
 ## Key Risks
 
@@ -161,8 +160,8 @@ The reference point is Resolve AI at \$1 billion in February 2026 on roughly \$4
 
 ## Summary
 
-Traversal is a well-positioned company in a category whose central question is not about the product. The team is unusually well matched to the technical problem — causal inference is exactly the discipline that separates what caused an incident from what merely coincided with it, and it is the thing general models with tool access are worst at. The customer evidence is strong for a company this young, and American Express investing as well as buying is the kind of signal that is hard to manufacture.
+Traversal is a well-positioned company in a category whose central question is not about the product. The team is unusually well matched to the technical problem. Causal inference is exactly the discipline that separates what caused an incident from what merely coincided with it, and it is the thing general models with tool access are worst at. The customer evidence is strong for a company this young, and American Express investing as well as buying is the kind of signal that is hard to manufacture.
 
 The question is whether a reasoning layer that does not own the underlying data can stay independent. The observability vendors hold the buyer relationship, the telemetry, and the renewal conversation, and the history of enterprise infrastructure is mostly a history of such layers being absorbed. Traversal's answer is that large enterprises run several monitoring platforms at once, so only a neutral agent sees the whole picture. That is a genuinely good answer, and it depends on a market structure the incumbents would like to change.
 
-Meanwhile a rival with three times the capital raised at \$1 billion on roughly \$4 million of revenue, which tells you what the entry price looks like and how little of it is supported by what either company currently earns.
+Meanwhile a rival with three times the capital has raised at \$1 billion on roughly \$4 million of revenue, which tells you what the entry price looks like and how little of it is supported by what either company currently earns.

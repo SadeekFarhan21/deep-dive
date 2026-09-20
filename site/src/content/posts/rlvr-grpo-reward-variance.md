@@ -1,7 +1,7 @@
 ---
-title: "GRPO on a 0.5B model, and the diagnostic that makes its failures visible"
-pubDatetime: 2026-09-20T06:34:47.000Z
-description: "We build an RLVR pipeline on Qwen2.5-0.5B-Instruct and report no training results, because the 300-step run has not been launched. What the pipeline did produce is a diagnosis: the learning signal in GRPO is the within-group spread of rewards, not their level, so 'my dataset is too easy' and 'my dataset is too hard' are the same observation from outside. Four engineering failures, none of which raised an exception, and a hardware measurement in which a rented L4 ran about 5% faster than a laptop."
+title: "GRPO on a 500M model: reward variance, not reward level"
+pubDatetime: 2026-09-18T20:15:07.000Z
+description: "An RLVR pipeline on Qwen2.5-0.5B-Instruct, published before the training run: why GRPO learns from the spread of rewards rather than their level, four bugs that never raised an exception, and a rented L4 that beat a laptop by 5%."
 slug: rlvr-grpo-reward-variance
 tags:
   - reinforcement-learning
@@ -13,13 +13,13 @@ category: projects
 
 **We have no before/after RL numbers.** The pipeline runs end to end, the 300-step training run has not been launched, and we are publishing before it deliberately: nothing below is contingent on what the final `pass@1` turns out to be.
 
-What the pipeline did produce is a diagnosis and four post-mortems. The diagnosis is that the learning signal in GRPO is the within-group *spread* of rewards rather than their level, which makes "my dataset is too easy" and "my dataset is too hard" indistinguishable from outside the reward function. The post-mortems cover four engineering failures — a token-id collision, non-terminating rollouts, generation running in train mode, and a silently frozen adapter — none of which raised an exception, and all of which produced a training run that looked healthy.
+What the pipeline did produce is a diagnosis and four post-mortems. The diagnosis is that the learning signal in GRPO is the within-group *spread* of rewards rather than their level, which makes "my dataset is too easy" and "my dataset is too hard" indistinguishable from outside the reward function. The post-mortems cover four engineering failures: a token-id collision, non-terminating rollouts, generation running in train mode, and a silently frozen adapter, none of which raised an exception, and all of which produced a training run that looked healthy.
 
 We also measured hardware instead of assuming it. For this workload a rented Modal L4 ran about 5% faster per step than an M4 Pro laptop, because per-step time is dominated by serial decode overhead rather than arithmetic. That is one paired observation, not a benchmark.
 
 Code is in `projects/math-rlvr`. Setup: GRPO via TRL 0.16 on **Qwen2.5-0.5B-Instruct**, LoRA (r=32, α=64, dropout 0.05, all projection modules) over a frozen base, `math_verify` as the reward, 8 generations per prompt, learning rate 1e-6, β 0.04, temperature 0.9, completions capped at 640 tokens.
 
-*Reading note:* the argument is the variance diagnostic and why the four bugs share a shape. Hyperparameters, the verifier comparison, and each post-mortem are collapsed — expand only what you need.
+*Reading note:* the argument is the variance diagnostic and why the four bugs share a shape. Hyperparameters, the verifier comparison, and each post-mortem are collapsed. Expand only what you need.
 
 ## table of contents
 
@@ -124,7 +124,7 @@ The other half of RLVR is deciding whether a completion's answer matches the gol
 | `0.5` | `1/2` | ❌ | ✅ |
 | `\frac{1}{2}` | `1/2` | ❌ | ✅ |
 | `40` | `72` | ❌ | ❌ |
-| *(no `\boxed{}`)* | `72` | — | ❌ |
+| *(no `\boxed{}`)* | `72` | none | ❌ |
 
 </details>
 
@@ -134,12 +134,12 @@ Stated generally: the verifier is not an approximation of the objective, it *is*
 
 ## four silent failures
 
-None of these raised an exception. All four produced a training run that appeared to work. They share one shape — two components with defensible independent defaults that must agree, and don't — which is the most common category of bug we hit in this project.
+None of these raised an exception. All four produced a training run that appeared to work. They share one shape: two components with defensible independent defaults that must agree, and don't. That is the most common category of bug we hit in this project.
 
 <details class="collapsible-section">
 <summary><strong>1. The EOS/pad collision</strong></summary>
 
-Instruct models set `eos_token` to `<|im_end|>`. HuggingFace pads stopped rollouts with `pad_token`. TRL masks each completion at the first `eos`. If those two tokens disagree, the completion mask is wrong — and nothing tells you, because a wrong mask is still a valid mask.
+Instruct models set `eos_token` to `<|im_end|>`. HuggingFace pads stopped rollouts with `pad_token`. TRL masks each completion at the first `eos`. If those two tokens disagree, the completion mask is wrong, and nothing tells you, because a wrong mask is still a valid mask.
 
 ```python
 tokenizer = AutoTokenizer.from_pretrained(MODEL, padding_side="left")
@@ -167,7 +167,7 @@ class _StopAfterBoxed(StoppingCriteria):
                             device=input_ids.device)
 ```
 
-The prompt itself mentions `\boxed{}`, so the criterion has to skip the prompt prefix — the kind of detail that turns a clean idea into a debugging session.
+The prompt itself mentions `\boxed{}`, so the criterion has to skip the prompt prefix, the kind of detail that turns a clean idea into a debugging session.
 
 </details>
 
@@ -214,9 +214,9 @@ A fifth issue is unresolved rather than fixed: TRL 0.16's vLLM integration is se
 
 The rented datacenter GPU was roughly 5% faster than the laptop. At 300 steps that is about 6 to 6.5 hours either way.
 
-This is a single paired observation — one configuration, one run on each device, no repetitions — so it carries no interval and should not be read as a benchmark. What it does support is a directional claim with a mechanism behind it: per-step time is dominated by generation overhead in HuggingFace `generate`, not by matrix multiplication. Sampling 8 completions of up to 640 tokens is a long serial sequence of small, latency-bound decode steps, and a wider GPU does not shorten a serial loop.
+This is a single paired observation (one configuration, one run on each device, no repetitions), so it carries no interval and should not be read as a benchmark. What it does support is a directional claim with a mechanism behind it: per-step time is dominated by generation overhead in HuggingFace `generate`, not by matrix multiplication. Sampling 8 completions of up to 640 tokens is a long serial sequence of small, latency-bound decode steps, and a wider GPU does not shorten a serial loop.
 
-The consequences follow from the mechanism rather than from the 5%: larger GPUs cost proportionally more per hour for roughly the same wall-clock, and a T4 is a false economy because it lacks bf16 and loses more time than it saves in price. The real fix is not more silicon but batched inference — vLLM, continuous batching, paged attention — which is blocked on the TRL version above.
+The consequences follow from the mechanism rather than from the 5%: larger GPUs cost proportionally more per hour for roughly the same wall-clock, and a T4 is a false economy because it lacks bf16 and loses more time than it saves in price. The real fix is not more silicon but batched inference through vLLM, continuous batching and paged attention, which is blocked on the TRL version above.
 
 ## what exists
 

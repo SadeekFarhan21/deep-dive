@@ -1,7 +1,6 @@
 ---
 title: "Wafer"
-pubDatetime: 2026-09-20T06:34:47.000Z
-modDatetime: 2026-09-20T06:41:11.000Z
+pubDatetime: 2026-09-14T14:56:28.000Z
 description: "Wafer builds AI agents that optimize how models run in production, searching across the model, the serving engine, GPU kernels, and the hardware itself, then sells the result as hosted open-source inference on both NVIDIA and AMD chips."
 slug: wafer
 company: "Wafer"
@@ -27,6 +26,7 @@ Wafer builds AI agents that optimize how models run in production, searching acr
 | Stage | Series A. About \$44M raised in total |
 | Disclosed investors | Marathon, Chemistry, Wing, AMD Ventures, Outset Capital, Fifty Years, Y Combinator |
 | Employees | 1 to 10 (Crunchbase) |
+| Reported ARR | About \$8M as of September 2026, per a third-party tracker. Not company-confirmed |
 | Status | Private. Serving inference in production |
 
 ## Thesis
@@ -83,8 +83,8 @@ Wafer sells into the inference market, which Gartner projected in August 2026 wo
 
 | Cloud AI infrastructure spending | 2025 | 2026 | 2027 |
 | --- | --- | --- | --- |
-| Inference | — | \$23.3B | ~\$39B |
-| Training and other | — | \$19.0B | ~\$27.1B |
+| Inference | Not split out | \$23.3B | ~\$39B |
+| Training and other | Not split out | \$19.0B | ~\$27.1B |
 | Total AI-optimized IaaS | \$21.5B | \$42.3B | \$66.1B |
 
 *Source: Gartner, August 2026. The 2027 split applies Gartner's 59% inference share.*
@@ -99,9 +99,9 @@ Wafer competes with managed inference platforms for customers, with the companie
 
 | Company | Total funding | Latest disclosed valuation |
 | --- | --- | --- |
-| Baseten | \$2.1B | — |
+| Baseten | \$2.1B | Not disclosed |
 | Fireworks AI | \$1.8B | \$17.5B (July 2026) |
-| Together AI | \$1.3B | — |
+| Together AI | \$1.3B | Not disclosed |
 | Inferact (vLLM) | \$150M | \$800M |
 | RadixArk (SGLang) | \$100M | \$400M |
 | Wafer | \$44M | Above \$200M (reported) |
@@ -118,7 +118,7 @@ Wafer competes with managed inference platforms for customers, with the companie
 
 **Infinity**, founded in 2025, builds an AI agent that writes the inference software stack for new AI chips, including kernels, compilers, and debuggers. It raised \$15 million in seed funding at a \$100 million valuation in July 2026. Its technology is closely related to Wafer's, but its customers are chip makers instead of inference buyers.
 
-**Modular** builds a hardware-agnostic AI software stack intended to reduce dependence on CUDA. It was valued at approximately \$1.6 billion in 2025, a figure that should be verified.
+**Modular** builds a hardware-agnostic AI software stack intended to reduce dependence on CUDA. Its last reported valuation was approximately \$1.6 billion, in 2025.
 
 **AMD** maintains its own software stack and publishes its own benchmarks comparing the MI355X with NVIDIA's B200. It is an investor in Wafer through AMD Ventures. Its interest is in its hardware performing well for every customer, which would favor Wafer's techniques becoming widely available.
 
@@ -128,7 +128,7 @@ Wafer competes with managed inference platforms for customers, with the companie
 
 ## Business Model
 
-Wafer charges for inference on a usage basis. The company has not disclosed pricing details, revenue, or gross margin as of September 2026.
+Wafer charges for inference on a usage basis. As of September 2026 the company has disclosed neither pricing details nor gross margin, and the only revenue figure in circulation is the roughly \$8 million of ARR reported by a third-party tracker rather than by Wafer.
 
 The economics rest on a cost advantage with two components. The first is hardware: AMD accelerators are priced below NVIDIA's. The second is tuning, which allows the cheaper hardware to approach the performance of the more expensive hardware. In July 2026, Wafer [reported](https://x.com/wafer_ai/status/2073155792182907085) that AMD's MI355X achieved about 80% of the throughput of NVIDIA's B200 at less than half the cost on the GLM-5.2 model, which implies a cost per token roughly 38% lower.
 
@@ -157,11 +157,13 @@ These figures come from [Wafer's blog](https://www.wafer.ai/blog) and are self-r
 
 Named partners include DigitalOcean, with which Wafer published joint work on AMD GPUs, Parasail, with which it released optimized weights for NVIDIA's Blackwell generation, and TrueFoundry, whose gateway integrates Wafer's inference service. AMD is an investor through AMD Ventures.
 
-Wafer raised its Series A five months after its seed round, at ten times the size. The founders told The Information that the company had received multiple acquisition offers from larger inference and cloud providers. A Y Combinator job posting from before the Series A described a team of four. Revenue and customer counts have not been disclosed.
+Wafer raised its Series A five months after its seed round, at ten times the size. The founders told The Information that the company had received multiple acquisition offers from larger inference and cloud providers. A Y Combinator job posting from before the Series A described a team of four.
+
+Wafer itself has published no revenue figure, but the ARR tracker arr.club [reported](https://www.arr.club/wafer/wafer-arr-hit-8m-after-four-months-launching-the-cloud) on September 2, 2026 that the company reached about \$8 million in annual recurring revenue within four months of launching its cloud, which places the launch around May 2026 and implies roughly \$2 million of ARR added per month. The figure should be read for what it is. Trackers of this kind compile numbers that are self-reported or estimated rather than audited, arr.club lists Wafer's growth rate as undetermined, and usage-based inference revenue annualized from four months of a rising ramp is the most flattering way to state it. Customer counts, concentration, and retention remain undisclosed, and for a product sold through an interchangeable API those are the numbers that determine whether \$8 million is a business or a moment.
 
 ## Valuation
 
-In September 2026, Wafer announced a \$40 million Series A co-led by Marathon and Chemistry, with participation from Wing, AMD Ventures, and Outset Capital and from existing investors Fifty Years and Y Combinator. The Information [reported](https://www.benzinga.com/trading-ideas/movers/26/09/61555064/nvidia-wafer-ai) a valuation above \$200 million, which the company has not confirmed. Angel investors in the round included Jeff Dean, who left Google in August 2026 to co-found a new company, along with Guillermo Rauch of Vercel, Matthew Prince of Cloudflare, Scott Stephenson of Deepgram, Andy Fang of DoorDash, Akshay Kothari of Notion, and Kyle Vogt of The Bot Company.
+In September 2026, Wafer announced a \$40 million Series A co-led by Marathon and Chemistry, with participation from Wing, AMD Ventures, and Outset Capital and from existing investors Fifty Years and Y Combinator. The Information [reported](https://www.benzinga.com/trading-ideas/movers/26/09/61555064/nvidia-wafer-ai) a valuation above \$200 million, which the company has not confirmed. Against the roughly \$8 million of ARR reported for the same month, that is a multiple of about 25 times, which is ordinary for inference infrastructure growing at this rate and demanding for a business whose customers can leave through a configuration change. Angel investors in the round included Jeff Dean, who left Google in August 2026 to co-found a new company, along with Guillermo Rauch of Vercel, Matthew Prince of Cloudflare, Scott Stephenson of Deepgram, Andy Fang of DoorDash, Akshay Kothari of Notion, and Kyle Vogt of The Bot Company.
 
 The Series A came five months after a [\$4 million seed round](https://app.dealroom.co/news/feed/wafer-raises-4m-to-build-ai-that-optimises-ai-infrastructure) in April 2026, which was led by Fifty Years with participation from Liquid2 and Y Combinator and angel investments from Jeff Dean and OpenAI co-founder Wojciech Zaremba.
 
@@ -169,13 +171,13 @@ One widely syndicated notice of the Series A describes Wafer as a maker of infer
 
 ## Key Opportunities
 
-**Demand for a second hardware supplier.** Enterprises and cloud providers want alternatives to a single accelerator vendor because of pricing, supply constraints, and regional availability. If Wafer can deliver comparable performance and reliability on AMD and other accelerators, it could become the means by which buyers adopt a second supplier without building the required engineering capability themselves. AMD's investment suggests the chip maker sees value in that role. NVIDIA held roughly 80% of data-center AI accelerators as of mid-2026, and Deloitte estimated the market for inference-optimized chips at more than \$50 billion in 2026; each point of share that moves to alternative accelerators requires software of the kind Wafer produces.
+**Demand for a second hardware supplier.** Enterprises and cloud providers want alternatives to a single accelerator vendor because of pricing, supply constraints, and regional availability. If Wafer can deliver comparable performance and reliability on AMD and other accelerators, it could become the means by which buyers adopt a second supplier without building the required engineering capability themselves. AMD's investment suggests the chip maker sees value in that role. Every point of accelerator share that moves away from NVIDIA requires software of the kind Wafer produces.
 
 **Continuous optimization as a product.** Compilers were once regarded as a convenience supplied by hardware makers and became a durable layer of computing, because the problem of translating intent into efficient execution changes whenever hardware or software changes. Inference optimization has a similar character: it must be redone whenever a model, a chip, or a traffic pattern changes. A system that performs this work continuously, and accumulates data on what works for which hardware under which conditions, could become a standing part of the inference stack instead of a one-time service. If customers come to expect their deployments to improve without intervention, the system that does this best would be difficult to displace.
 
 **Licensing to infrastructure providers.** Wafer's work with DigitalOcean and Parasail points to a business in which its system optimizes other providers' infrastructure. Selling the optimizer to clouds, chip makers, and large enterprises that run their own hardware would carry software-like margins, reduce exposure to direct price competition in hosted inference, and place the company inside customers' environments, which raises switching costs. There is precedent for strategic value at this layer: in August 2026, Stripe reportedly agreed to acquire OpenRouter for \$7.5 billion, and AMD acquired the inference chip startup Taalas in the same month.
 
-**Distribution through routing layers.** Inference routing platforms rank providers on price, latency, and throughput and can shift traffic automatically. OpenRouter alone processed more than 100 trillion tokens per month as of August 2026. In such marketplaces, a measurable cost and speed advantage translates into demand with little sales effort, which favors a small company with strong benchmarks.
+**Distribution through routing layers.** Inference routing platforms rank providers on price, latency, and throughput and can shift traffic automatically. In such marketplaces, a measurable cost and speed advantage translates into demand with little sales effort, which favors a small company with strong benchmarks.
 
 ## Key Risks
 
@@ -197,4 +199,4 @@ As of September 2026, Wafer had raised approximately \$44 million, including a \
 
 The question is whether that software stays proprietary. Every optimization the agents find is code, and code spreads, into vLLM and SGLang and into AMD's own stack. Wafer's bet is that a system which keeps finding new improvements for each specific workload outruns the diffusion of any individual one. If it does, continuous optimization becomes a layer of the inference stack. If it does not, Wafer is reselling AMD's discount alongside everyone else, against competitors with forty times the capital.
 
-The company has published no revenue, no customer count, and no independently reproduced benchmark.
+The company has published no revenue of its own, no customer count, and no independently reproduced benchmark; the \$8 million ARR figure attached to it comes from a third-party tracker.

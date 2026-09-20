@@ -1,6 +1,5 @@
 ---
 title: "Dipole Labs"
-pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Dipole Labs builds optical circuit switches that keep data as light between GPU racks, targeting sub-microsecond reconfiguration so an AI cluster's network can reshape itself around each workload."
 slug: dipole-labs
 company: "Dipole Labs"
@@ -32,7 +31,7 @@ Dipole Labs builds optical circuit switches for AI data centers. Data between GP
 
 The economics of AI infrastructure have shifted from acquiring compute to using the compute already installed. Hyperscaler capital spending reached roughly \$443 billion in 2025 and is guided to between \$660 billion and \$690 billion in 2026, but the GPUs bought with that money spend a substantial share of their time waiting. Y Combinator's Jared Friedman, writing about the company, [put the idle figure at about half](https://x.com/snowmaker/article/2088040385474122139). The bottleneck is increasingly the network between accelerators rather than the accelerators themselves, because the collective communication steps in distributed training force thousands of GPUs to synchronize before any of them can proceed.
 
-Optical circuit switching is the response the largest operator has already validated. Google has run optical circuit switches in production since 2022, reporting five times the speed and capacity of the electrical fabric they replaced, alongside a 30% reduction in capital cost and a 41% reduction in power. What was once a Google-only technique has become a merchant market. Cignal AI sizes it above \$3 billion, and in March 2026 Nvidia invested \$2 billion each into Coherent, Lumentum, and Marvell, then joined a \$125 million round in the switch startup iPronics in September.
+Optical circuit switching is the response the largest operator has already validated. Google has run optical circuit switches in production since 2022, reporting five times the speed and capacity of the electrical fabric they replaced, alongside a 30% reduction in capital cost and a 41% reduction in power. What was once a Google-only technique has become a merchant market. Cignal AI sizes it above \$3 billion, and in March 2026 NVIDIA invested \$2 billion each into Coherent, Lumentum, and Marvell, then joined a \$125 million round in the switch startup iPronics in September.
 
 Dipole's specific bet is about speed rather than optics generally. The optical switches shipping today move physical mirrors, which takes milliseconds. That is fast enough to set a topology between jobs and far too slow to change one inside a job. Dipole claims its mirrors are software-programmable with no moving parts, reconfiguring [over 1,000 times faster](https://dipolelabs.com/) than deployed alternatives. If that holds, the fabric can follow traffic between individual communication steps, which is a different product rather than a cheaper version of an existing one.
 
@@ -72,7 +71,7 @@ The near-term customer is a different industry entirely. Neutral-atom quantum co
 
 Cignal AI sizes the optical switching market above \$3 billion. The revenue is already visible in public company results: Lumentum and Coherent are guiding to between \$100 million and \$400 million from switching within a few quarters, and Lumentum has disclosed a single \$1 billion switching order from one customer. That last figure matters more than the market total for a company at Dipole's stage, because it establishes that one hyperscaler design win can carry a supplier on its own.
 
-The demand driver is the gap between what data centers cost and how well they are used. When capital spending at the five largest buyers approaches \$690 billion a year, a 25% improvement in useful compute is worth more than most software categories. It is also why the incumbents are moving: Nvidia's \$6 billion of investment across three optics suppliers in a single month of 2026, and its participation in iPronics in September, are the clearest signal that the company closest to the bottleneck considers optical switching strategic.
+The demand driver is the gap between what data centers cost and how well they are used. When capital spending at the five largest buyers approaches \$690 billion a year, a 25% improvement in useful compute is worth more than most software categories. It is also why the incumbents are moving: NVIDIA's \$6 billion of investment across three optics suppliers in a single month of 2026, and its participation in iPronics in September, are the clearest signal that the company closest to the bottleneck considers optical switching strategic.
 
 ## Competition
 
@@ -80,7 +79,7 @@ The category has attracted well-capitalized entrants, and Dipole is the smallest
 
 **nEye** is the closest comparable and the furthest ahead. It is building an optical circuit switch on a silicon photonics chip, moving toward a semiconductor foundry model, and raised an \$80 million Series C in April 2026 for [\$152 million in total](https://www.sdxcentral.com/news/neyeai-secures-80m-series-c-to-enhance-optical-circuit-switching-for-ai-infrastructure/) from Sutter Hill, CapitalG, and M12. That is more than twenty-five times the capital Dipole is likely to have raised, with Google's and Microsoft's venture arms on the cap table.
 
-**iPronics** raised \$125 million in September 2026 in a round Nvidia joined, giving it both capital and a relationship with the company that defines rack architecture.
+**iPronics** raised \$125 million in September 2026 in a round NVIDIA joined, giving it both capital and a relationship with the company that defines rack architecture.
 
 **Salience Labs** competes on transparency as much as technology. Its published 32-port specification sets a disclosure standard that Dipole has not yet met, and a buyer comparing the two today has numbers from one and targets from the other.
 
@@ -90,7 +89,7 @@ The category has attracted well-capitalized entrants, and Dipole is the smallest
 
 **Google and Meta** design in-house, which removes the two largest potential buyers from the addressable market for any merchant vendor, at least for their own fleets.
 
-Standardization cuts both ways. The Open Compute Project launched an optical circuit switching subproject in July 2025 with Google, Microsoft, Nvidia, and several photonic vendors participating. Common interfaces lower the cost for a buyer to adopt a new switch, which helps a startup get in the door. They also make vendors substitutable once several of them meet the same control and reliability requirements, which erodes pricing power later.
+Standardization cuts both ways. The Open Compute Project launched an optical circuit switching subproject in July 2025 with Google, Microsoft, NVIDIA, and several photonic vendors participating. Common interfaces lower the cost for a buyer to adopt a new switch, which helps a startup get in the door. They also make vendors substitutable once several of them meet the same control and reliability requirements, which erodes pricing power later.
 
 ## Business Model
 
@@ -128,9 +127,9 @@ For reference on where the category prices: nEye has raised \$152 million in tot
 
 **The disclosure gap is widening.** Competitors publish specifications; Dipole publishes targets. As the category matures and the Open Compute Project standardizes interfaces, buyers will compare measured numbers. A company that cannot publish port count, loss, and power at some point stops being considered.
 
-**Capital asymmetry.** nEye has more than twenty-five times the funding, with Google's and Microsoft's investment arms behind it; iPronics has Nvidia. Photonic tape-outs and packaging consume tens of millions before revenue, and a well-funded competitor reaching adequate performance first would likely end the race regardless of who had the better physics.
+**Capital asymmetry.** nEye has more than twenty-five times the funding, with Google's and Microsoft's investment arms behind it; iPronics has NVIDIA. Photonic tape-outs and packaging consume tens of millions before revenue, and a well-funded competitor reaching adequate performance first would likely end the race regardless of who had the better physics.
 
-**The gain depends on software Dipole does not control.** A fabric that can reconfigure inside a job only helps if schedulers and collective communication libraries cooperate with it. Those libraries are controlled by Nvidia and the frameworks, and if they never adapt to a fast fabric, the 25% figure stays theoretical.
+**The gain depends on software Dipole does not control.** A fabric that can reconfigure inside a job only helps if schedulers and collective communication libraries cooperate with it. Those libraries are controlled by NVIDIA and the frameworks, and if they never adapt to a fast fabric, the 25% figure stays theoretical.
 
 **Buyer concentration.** A handful of operators constitute the market, and two of the largest design in-house. Design partnerships with a few hyperscalers can absorb years of engineering adaptation without producing a repeatable product.
 
@@ -138,7 +137,7 @@ For reference on where the category prices: nEye has raised \$152 million in tot
 
 ## Summary
 
-Dipole Labs is a bet that a physics result becomes a manufacturable product before better-funded competitors reach the same performance. The market signal is unambiguous: Google has validated optical circuit switching in production for four years, Nvidia committed \$6 billion across three optics suppliers in a single month, and the constraint on AI capacity has moved from acquiring GPUs to using them. The question is not whether fast optical switching matters.
+Dipole Labs is a bet that a physics result becomes a manufacturable product before better-funded competitors reach the same performance. The market signal is unambiguous: Google has validated optical circuit switching in production for four years, NVIDIA committed \$6 billion across three optics suppliers in a single month, and the constraint on AI capacity has moved from acquiring GPUs to using them. The question is not whether fast optical switching matters.
 
 The question is whether two physicists with no product, no foundry, no published specification, and no data center customer can get there ahead of nEye and iPronics. The most interesting detail in the company's position is the quantum beachhead, a second market that needs the identical component, tolerates far lower reliability, and pays while the real product matures. If those shipments happen, the operating data they generate is worth more than the revenue.
 

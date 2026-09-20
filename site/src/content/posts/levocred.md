@@ -1,6 +1,5 @@
 ---
 title: "Levocred"
-pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Levocred puts AI agents inside credit funds and lenders to do the borrowing base reports, covenant checks and loan marks that analysts rebuild by hand. About $1B in receivables runs through it, and no disclosed revenue."
 slug: levocred
 company: "Levocred"
@@ -29,7 +28,7 @@ Levocred builds AI agents for the operational work inside private credit: borrow
 
 ## Thesis
 
-Private credit has grown roughly tenfold since 2009 and the operations underneath it have not moved. The data for a single facility lives across five or six systems plus spreadsheets. The people assembling it are expensive analysts copying numbers between those systems. The fastest-growing corner of the asset class is asset-based finance, which is the segment with the most loan-level data and therefore the most manual work — this is [Fitch's read](https://www.hellenicshippingnews.com/?p=1117665) and it is the segment Levocred serves.
+Private credit has grown roughly tenfold since 2009 and the operations underneath it have not moved. The data for a single facility lives across five or six systems plus spreadsheets. The people assembling it are expensive analysts copying numbers between those systems. The fastest-growing corner of the asset class is asset-based finance, which is the segment with the most loan-level data and therefore the most manual work. That is [Fitch's read](https://www.hellenicshippingnews.com/?p=1117665), and it is the segment Levocred serves.
 
 Two things make the work unusually attractive to automate. It is high-stakes, because a mistake delays funding and a missed covenant can put a facility into default, which means buyers have a real reason to pay rather than tolerate. And it is high-frequency, because the reports rebuild every period forever, which means the software sits in the operating rhythm of the firm rather than at the edge of it.
 
@@ -69,13 +68,13 @@ The audit trail is the part that matters more than the speed. Software that prod
 
 Two buyers sit on opposite sides of the same facility, and Levocred sells to both. The fintech lender pledges loans and prepares the borrowing base report; the credit fund advances cash against them and monitors the covenants. Both rebuild the same calculation from the same underlying data, which is what makes a shared system of record plausible rather than merely convenient.
 
-Today those buyers are small funds and lenders — the segment that moves fast, has no internal engineering team, and feels the analyst cost most acutely. Levocred names Pier Asset Management as a customer. One fund has gone further and named Levocred as data agent and system of record in its loan purchase agreements, which is a stronger commitment than a subscription and the single most interesting fact in the company's traction.
+Today those buyers are small funds and lenders: the segment that moves fast, has no internal engineering team, and feels the analyst cost most acutely. Levocred names Pier Asset Management as a customer. One fund has gone further and named Levocred as data agent and system of record in its loan purchase agreements, which is a stronger commitment than a subscription and the single most interesting fact in the company's traction.
 
 Banks and large funds are where the market size lives. There is no named bank customer, and nothing in the company's history suggests that sale is close.
 
 ## Market Size
 
-My estimate: 2 to 5 basis points a year on \$2 trillion of monitored capital is \$400 million to \$1 billion of annual revenue. That is a sizing exercise, not a sourced figure, and it depends entirely on a pricing model the company has not disclosed.
+Two to five basis points a year on \$2 trillion of monitored capital is \$400 million to \$1 billion of annual revenue. That is a sizing exercise, not a sourced figure, and it depends entirely on a pricing model the company has not disclosed.
 
 The supporting context is in [Chambers' 2026 private credit guide](https://practiceguides.chambers.com/practice-guides/private-credit-2026) and [BlackRock's primer](https://www.blackrock.com/gls-download/literature/market-commentary/private-credit-primer-january-2026.pdf): an asset class that has grown tenfold in fifteen years, whose fastest-growing segment is the data-heavy one, running on tooling that predates all of that growth.
 
@@ -88,11 +87,11 @@ The supporting context is in [Chambers' 2026 private credit guide](https://pract
 | In-house builds | Large funds' own engineering | Where Levocred's founders came from |
 | Spreadsheets | The real incumbent | Analysts trust them and auditors accept them |
 
-The last row is not a joke. The competitor that wins most deals in this category is the existing process, defended by the fact that it is understood, auditable, and already approved. Levocred's edge against the general tools is depth — a borrowing base report has to be correct to the dollar, and a tool built to summarize documents is not built to that standard. Its edge against Setpoint and Cascade is less clear from public information, and is the thing a buyer would actually test.
+The last row is not a joke. The competitor that wins most deals in this category is the existing process, defended by the fact that it is understood, auditable, and already approved. Levocred's edge against the general tools is depth. A borrowing base report has to be correct to the dollar, and a tool built to summarize documents is not built to that standard. Its edge against Setpoint and Cascade is less clear from public information, and is the thing a buyer would actually test.
 
 ## Business Model
 
-Pricing is undisclosed. The table assumes 3 basis points a year on capital monitored, which is my estimate, and exists mainly to show why platform volume should not be read as revenue.
+Pricing is undisclosed. The table assumes 3 basis points a year on capital monitored, which is an assumption rather than a disclosed rate, and exists mainly to show why platform volume should not be read as revenue.
 
 | Capital monitored | Implied annual revenue at 3 basis points |
 | --- | --- |
@@ -151,7 +150,7 @@ No priced round has been disclosed. Levocred participated in Y Combinator's Summ
 
 ## Summary
 
-Levocred is the rare pre-seed company whose product is already load-bearing for its customers. About \$1 billion in receivables across 30 facilities, four asset classes running through one engine, and one fund that has written the company into its loan purchase agreements as data agent and system of record — that last fact is worth more than the volume figure, because it is a commitment a fund cannot casually reverse.
+Levocred is the rare pre-seed company whose product is already load-bearing for its customers. About \$1 billion in receivables across 30 facilities, four asset classes running through one engine, and one fund that has written the company into its loan purchase agreements as data agent and system of record. That last fact is worth more than the volume figure, because it is a commitment a fund cannot casually reverse.
 
 Against that, the company is two people, and it has disclosed no revenue, no pricing, and no customer count. Usage is not the same as a business, and private credit is full of small funds that will happily adopt a free-feeling tool and balk at a six-figure contract. The founders have done this job, which is the best possible preparation for building the product and no preparation at all for selling it to a bank.
 

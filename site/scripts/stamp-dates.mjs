@@ -6,6 +6,8 @@
  *   pubDatetime  <- the file's creation time (birthtime)
  *   modDatetime  <- its last modification time (omitted when unchanged)
  *
+ * Posts with no pubDatetime are skipped: drafts stay undated until they ship.
+ *
  * Run locally: the values are written into the frontmatter on disk, so what
  * ships is the committed text, not whatever timestamps the build machine's
  * checkout happens to have.
@@ -42,6 +44,10 @@ for (const file of walk(POSTS)) {
   const src = readFileSync(file, "utf8");
   const fm = src.match(/^---\n([\s\S]*?)\n---/);
   if (!fm) continue;
+
+  // An undated post is an unpublished one: it gets a date when it ships,
+  // not from whenever its file happened to be created.
+  if (!/^pubDatetime:/m.test(fm[1])) continue;
 
   const st = statSync(file);
   const pub = st.birthtime;

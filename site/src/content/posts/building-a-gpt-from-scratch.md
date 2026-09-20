@@ -1,7 +1,7 @@
 ---
-title: "Writing a transformer by hand, and the constants that turn out to be load-bearing"
-pubDatetime: 2026-09-20T06:34:47.000Z
-description: "A 5.26M-parameter decoder-only GPT written from scratch in PyTorch — no nn.Transformer, no fused attention, no HuggingFace model code — trained on TinyStories to a final cross-entropy of 2.14 on a laptop. The loss is a receipt that the pipeline is wired correctly, not a result: the run consumed 10.2M tokens of a 632M-token corpus, so the model is undertrained by construction. Notes on the two constants that silently decide whether the model trains, and the two silent bugs that cost the most time."
+title: "Writing a 5.26M-parameter transformer by hand"
+pubDatetime: 2026-09-18T15:04:52.000Z
+description: "A decoder-only GPT built from scratch in PyTorch — no nn.Transformer, no fused attention, no HuggingFace — trained on TinyStories to a cross-entropy of 2.14 on a laptop. The loss is a receipt that the pipeline works, not a result: two load-bearing constants and two silent bugs."
 slug: building-a-gpt-from-scratch
 tags:
   - transformers
@@ -10,9 +10,9 @@ draft: false
 category: projects
 ---
 
-We trained a decoder-only GPT written from scratch — no `nn.Transformer`, no `F.scaled_dot_product_attention`, no HuggingFace model code — to a final cross-entropy of **2.14** on TinyStories, in 20,000 steps on a single Apple Silicon laptop. The shipped checkpoint is **5,263,848 parameters**: 6 pre-LN blocks, 8 heads, a 256-dimensional residual stream, a 64-token context, and a 1,000-token byte-level BPE vocabulary trained on the corpus itself.
+We trained a decoder-only GPT written from scratch, with no `nn.Transformer`, no `F.scaled_dot_product_attention` and no HuggingFace model code, to a final cross-entropy of **2.14** on TinyStories, in 20,000 steps on a single Apple Silicon laptop. The shipped checkpoint is **5,263,848 parameters**: 6 pre-LN blocks, 8 heads, a 256-dimensional residual stream, a 64-token context, and a 1,000-token byte-level BPE vocabulary trained on the corpus itself.
 
-The loss is not a result. It is a receipt: evidence that every stage of the pipeline — tokenizer, cache, loader, model, loss, sampler — is wired correctly end to end, which was the entire goal. It is worth being precise about how weak a claim that is. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
+The loss is not a result. It is a receipt: evidence that every stage of the pipeline, from tokenizer and cache through loader, model, loss and sampler, is wired correctly end to end, which was the entire goal. It is worth being precise about how weak a claim that is. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
 
 What the project did produce is a clear view of which lines are load-bearing. Two constants decide silently whether the model trains at all, and two bugs cost more time than the model code did.
 
@@ -75,7 +75,7 @@ scores = scores.masked_fill(self.mask[:T, :T] == 0, float("-inf"))
 return F.softmax(scores, dim=-1) @ values
 ```
 
-Four operations. A token's query is a question, every other token's key is an advertisement, the dot product scores the match, and the value is what actually gets moved. The causal mask is not a deep architectural property — it is `torch.tril(torch.ones(block_size, block_size))` registered as a buffer and a `masked_fill`.
+Four operations. A token's query is a question, every other token's key is an advertisement, the dot product scores the match, and the value is what actually gets moved. The causal mask is not a deep architectural property. It is `torch.tril(torch.ones(block_size, block_size))` registered as a buffer and a `masked_fill`.
 
 ## the scale factor is not a detail
 
@@ -89,9 +89,9 @@ $$
 
 and the logits entering the softmax have standard deviation $\sqrt{d}$. Dividing by $\sqrt{d}$ restores unit variance and keeps the softmax in a regime where it is not saturated.
 
-Without the scale, logits grow with head size, the softmax collapses toward one-hot, and the gradient through it vanishes — $\partial \text{softmax}$ is proportional to $p_i(\delta_{ij} - p_j)$, which goes to zero as any $p_i \to 1$. The model still trains, the loss barely moves, and nothing in the code looks wrong. That combination is what makes it dangerous: the failure has no error message and no obviously guilty line.
+Without the scale, logits grow with head size, the softmax collapses toward one-hot, and the gradient through it vanishes: $\partial \text{softmax}$ is proportional to $p_i(\delta_{ij} - p_j)$, which goes to zero as any $p_i \to 1$. The model still trains, the loss barely moves, and nothing in the code looks wrong. That combination is what makes it dangerous: the failure has no error message and no obviously guilty line.
 
-At $d = 32$ the factor is $1/\sqrt{32} \approx 0.177$, so the unscaled logits would be roughly 5.7× larger — enough to saturate, not enough to look absurd if printed.
+At $d = 32$ the factor is $1/\sqrt{32} \approx 0.177$, so the unscaled logits would be roughly 5.7× larger, enough to saturate and not enough to look absurd if printed.
 
 ## multi-head, implemented the slow way on purpose
 
@@ -100,7 +100,7 @@ self.heads = nn.ModuleList([SelfAttention(...) for _ in range(num_heads)])
 return self.proj(torch.cat([head(x) for head in self.heads], dim=-1))
 ```
 
-Production implementations fold all heads into one batched matmul. This one keeps them as independent modules and concatenates. That is measurably slower, and we kept it: heads genuinely are independent subspaces, and writing them as separate objects makes that structural fact impossible to forget. Fusing is an optimization, not a concept, and the independence is exactly the property that later interpretability work depends on — the [induction-circuit project](/posts/reverse-engineering-gpt-2s-induction-circuit) scores heads individually, which only means something because they *are* individual.
+Production implementations fold all heads into one batched matmul. This one keeps them as independent modules and concatenates. That is measurably slower, and we kept it: heads genuinely are independent subspaces, and writing them as separate objects makes that structural fact impossible to forget. Fusing is an optimization, not a concept, and the independence is exactly the property that later interpretability work depends on. The [induction-circuit project](/posts/reverse-engineering-gpt-2s-induction-circuit) scores heads individually, which only means something because they *are* individual.
 
 At 3.8M–5.3M parameters on a laptop the trade is free. At any serious scale it is not, and the right move is to fuse and keep a slow reference implementation for testing against.
 
@@ -113,13 +113,13 @@ x = x + self.feed_forward(self.layer_norm2(x))
 
 Two `x + ...` lines, and they are the reason depth works at all. Each block *proposes an edit* to a running representation rather than replacing it. Normalization goes before the sublayer (pre-LN), so the residual path from input to output is unnormalized and gradients reach layer 0 intact.
 
-Once the residual stream reads as a shared bus that every layer writes to and reads from, the later literature — logit lens, activation patching, circuits — stops being exotic and starts being the obvious next question. That framing is what sent this project toward induction heads next.
+Once the residual stream reads as a shared bus that every layer writes to and reads from, the later literature of logit lens, activation patching and circuits stops being exotic and starts being the obvious next question. That framing is what sent this project toward induction heads next.
 
 ## the tokenizer and the data pipeline
 
 The least interesting part took the most iterations.
 
-Byte-level BPE with a ByteLevel pre-tokenizer and decoder means **no unknown tokens are possible** — every byte sequence encodes. That sounds like a footnote and is what makes the model robust to whatever the corpus contains. The vocabulary is trained on the corpus itself rather than borrowed, which at 1,000 merges over children's stories gives a tokenizer specialized to exactly this distribution.
+Byte-level BPE with a ByteLevel pre-tokenizer and decoder means **no unknown tokens are possible**: every byte sequence encodes. That sounds like a footnote and is what makes the model robust to whatever the corpus contains. The vocabulary is trained on the corpus itself rather than borrowed, which at 1,000 merges over children's stories gives a tokenizer specialized to exactly this distribution.
 
 <details class="collapsible-section">
 <summary><strong>Streaming tokenization and cache invalidation</strong></summary>
@@ -135,7 +135,7 @@ cache_is_stale = not token_cache.exists() or token_cache.stat().st_mtime_ns < ma
 
 `uint16` because a 1,000-token vocabulary fits in 16 bits, which halves the cache versus `int32`. The resulting cache is 1.26 GB, or roughly 632M tokens.
 
-The staleness check exists because the tokenizer was retrained once, and an hour of training then ran against tokens from the *previous* vocabulary — a corruption that produces no error, just a model learning a scrambled language.
+The staleness check exists because the tokenizer was retrained once, and an hour of training then ran against tokens from the *previous* vocabulary, a corruption that produces no error, just a model learning a scrambled language.
 
 </details>
 

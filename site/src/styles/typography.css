@@ -62,11 +62,17 @@
     table {
       th,
       td {
-        @apply border-border border p-2;
+        @apply border-border-strong border p-2;
       }
 
       th {
         @apply py-1.5;
+      }
+
+      /* Label/value fact tables have no headings, and Markdown still emits an
+         empty header row for them. Drop the blank band it leaves behind. */
+      thead tr:not(:has(th:not(:empty))) {
+        @apply hidden;
       }
 
       th[align="center"],

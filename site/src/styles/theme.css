@@ -7,6 +7,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --font-app: var(--font-google-sans-code);
 }
 
@@ -20,4 +21,6 @@
   --muted: #e6e6e6;
   --muted-foreground: #6b7280;
   --border: #ece9e9;
+  /* Table rules need more weight than hairline dividers do. */
+  --border-strong: #c9c5c5;
 }

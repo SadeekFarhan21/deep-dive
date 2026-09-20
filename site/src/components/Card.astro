@@ -1,12 +1,13 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { PublishedPost } from "@/utils/postFilter";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
 import Datetime from "./Datetime.astro";
 
+// Cards only ever render listed posts, which always carry a publication date.
 type Props = {
   variant?: "h2" | "h3";
-} & CollectionEntry<"posts">;
+} & PublishedPost;
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 

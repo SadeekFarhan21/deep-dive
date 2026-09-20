@@ -4,3 +4,5 @@
 investment-memos/
 
 __pycache__/
+.vercel
+.env*

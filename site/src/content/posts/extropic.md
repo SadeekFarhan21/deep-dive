@@ -1,7 +1,6 @@
 ---
 title: "Extropic"
-pubDatetime: 2026-09-20T06:34:47.000Z
-modDatetime: 2026-09-20T06:39:33.000Z
+pubDatetime: 2026-09-11T17:42:10.000Z
 description: "Extropic builds thermodynamic sampling units, chips that use the thermal noise of ordinary transistors to draw samples from programmable probability distributions, targeting the energy cost of generative AI rather than its arithmetic."
 slug: extropic
 company: "Extropic"
@@ -151,7 +150,7 @@ The output relative to that funding is unusual. Conventional AI chip startups ra
 
 ## Key Opportunities
 
-**Energy as the binding constraint.** If power availability continues to limit AI deployment, technologies that deliver more computation per watt become strategically valuable regardless of raw performance. This distinguishes the present from earlier eras in which alternative architectures failed, when transistor scaling rather than energy was the scarce resource. Even a small share of \$660 billion to \$690 billion in annual hyperscaler spending redirected toward more efficient computation would be a large market for a company of this size.
+**Energy as the binding constraint.** If power availability continues to limit AI deployment, technologies that deliver more computation per watt become strategically valuable regardless of raw performance. This distinguishes the present from earlier eras in which alternative architectures failed, when transistor scaling rather than energy was the scarce resource. Even a small share of annual hyperscaler spending redirected toward more efficient computation would be a large market for a company of this size.
 
 **Government as first customer.** New semiconductor categories have historically relied on public funding and procurement in their early years, including the first integrated circuits. Extropic's use of mature nodes that can be manufactured domestically aligns with US industrial policy, and the planned CHIPS funding would finance the transition from single chips to rack-scale systems without dilutive capital at a stage when commercial evidence is limited. Defense applications involving low-power reasoning under uncertainty could provide early revenue.
 

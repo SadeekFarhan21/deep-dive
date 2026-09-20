@@ -1,6 +1,5 @@
 ---
 title: "AIR Security"
-pubDatetime: 2026-09-20T06:40:06.000Z
 description: "AIR Security vets the skills, plug-ins and MCP servers that enterprise AI agents install, a supply chain its own research found carries 6.7 million installs of add-ons that pull instructions from untrusted sources."
 slug: air-security
 company: "AIR Security"
@@ -39,11 +38,11 @@ The thesis that has to hold beyond the wedge is that a neutral third party gets 
 
 ## Founding Story
 
-Yair Saban and Niv Hoffman both came out of Unit 8200, Israel's signals intelligence corps, from the offensive side. That background is the most relevant credential available for this particular problem, because supply chain compromise — get your code into something the target already trusts, and let the target run it with its own privileges — is the technique offensive teams practice rather than the one defensive vendors are organized around. The founders were, in effect, selling a product against the attack they knew best.
+Yair Saban and Niv Hoffman both came out of Unit 8200, Israel's signals intelligence corps, from the offensive side. That background is the most relevant credential available for this particular problem, because supply chain compromise, getting your code into something the target already trusts and letting the target run it with its own privileges, is the technique offensive teams practice rather than the one defensive vendors are organized around. The founders were, in effect, selling a product against the attack they knew best.
 
 They founded the company in February 2026 and raised twice in quick succession: \$10 million led by Sequoia, then \$40 million led by Greenoaks weeks later, with Swish and Netz participating. The second round arriving that fast, at that size, before any public launch, is a signal about competitive pressure in the category more than about the company's progress.
 
-They added Ryan Knisley as chief strategy officer. He was previously chief information security officer at Disney and at Costco, and his function is legible: two offensive security founders can build the product but cannot, on their own, sit across from a bank's security committee as a peer. The angel list points the same direction — Wiz co-founder Yinon Costica, Clay co-founder Varun Anand, former US cyber official Anne Neuberger, and Cognition's Zach Frankel.
+They added Ryan Knisley as chief strategy officer. He was previously chief information security officer at Disney and at Costco, and his function is legible: two offensive security founders can build the product but cannot, on their own, sit across from a bank's security committee as a peer. The angel list points the same direction: Wiz co-founder Yinon Costica, Clay co-founder Varun Anand, former US cyber official Anne Neuberger, and Cognition's Zach Frankel.
 
 ## Product
 
@@ -94,13 +93,13 @@ The category has organized itself into layers faster than most, and AIR sits in 
 | Certification and insurance | Proof an agent is safe to deploy | AIUC |
 | Endpoint | Employee devices in the AI era | Glow |
 
-That map is the opportunity and the risk in one picture. AIR owns its layer, and the layer above it is occupied by companies with more capital and a broader surface area. **Onyx Security** has raised \$153 million for a control plane that monitors each step of an agent's reasoning, and is integrated with Anthropic; add-on vetting is a feature it could ship rather than a company it would have to buy. **Noma**, **Zenity**, and **Geordie** — which won the 2026 RSA Innovation Sandbox — are adjacent. **AIUC** certifies agents and is complementary.
+That map is the opportunity and the risk in one picture. AIR owns its layer, and the layer above it is occupied by companies with more capital and a broader surface area. **Onyx Security** has raised \$153 million for a control plane that monitors each step of an agent's reasoning, and is integrated with Anthropic; add-on vetting is a feature it could ship rather than a company it would have to buy. **Noma**, **Zenity**, and **Geordie**, which won the 2026 RSA Innovation Sandbox, are adjacent. **AIUC** certifies agents and is complementary.
 
 The largest threat is not a startup. If Anthropic, OpenAI, or Microsoft sign and verify add-ons at the platform level, the way mobile app stores eventually did, the independent vetting layer becomes a compliance checkbox rather than a control. There is no public evidence either way about whether that is on their roadmaps, which is itself the answer to how confidently anyone can hold this position today.
 
 ## Business Model
 
-Pricing and revenue are undisclosed. The table below assumes \$100,000 to \$400,000 per enterprise customer per year, which is my estimate for a security control sold to this buyer, and is not a figure the company has published.
+Pricing and revenue are undisclosed. The table below assumes \$100,000 to \$400,000 per enterprise customer per year, which is a working assumption for a security control sold to this buyer and not a figure the company has published.
 
 | Customers | Implied recurring revenue | Multiple of revenue at a \$600M valuation |
 | --- | --- | --- |
@@ -152,6 +151,6 @@ The \$50 million seed was raised across two rounds, and neither valuation is pub
 
 AIR Security is a well-executed answer to a problem that is real, growing, and currently unowned. The research is credible, the founders' background matches the threat, the early customer mix is the right one, and the layer they have chosen is genuinely unoccupied by a leader.
 
-The difficulty is structural rather than operational. The history of software supply chains is that the platform eventually absorbs verification — code signing, app review, and package attestation all ended up with the platform rather than with a third party — and the platforms in question here are three of the best-capitalized companies in the world. AIR's path to durability runs through becoming the registry enterprises standardize on before that happens, or through a partnership that turns the platform into a channel.
+The difficulty is structural rather than operational. The history of software supply chains is that the platform eventually absorbs verification: code signing, app review, and package attestation all ended up with the platform rather than with a third party. The platforms in question here are three of the best-capitalized companies in the world. AIR's path to durability runs through becoming the registry enterprises standardize on before that happens, or through a partnership that turns the platform into a channel.
 
-Everything else — the customer count, the research, the round sizes — is evidence that the category is real. None of it yet settles who ends up owning it.
+The customer count, the research and the round sizes are all evidence that the category is real. None of it yet settles who ends up owning it.

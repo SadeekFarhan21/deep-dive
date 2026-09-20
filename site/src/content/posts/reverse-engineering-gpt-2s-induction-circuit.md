@@ -1,7 +1,7 @@
 ---
-title: "Locating GPT-2's induction heads, and what locating does not prove"
-pubDatetime: 2026-09-20T06:34:47.000Z
-description: "We score all 144 attention heads in GPT-2 small on the induction diagonal and recover the five canonical induction heads: L5H5 (0.905), L6H9 (0.896), L5H1 (0.886), L7H10 (0.886), L7H2 (0.806). The sixth head scores 0.517. The measurement is one cached forward pass on a laptop and it is the weakest evidence in the six-experiment plan it opens: an induction score is a correlation between an attention pattern and a behavior, and none of the causal experiments have been run."
+title: "GPT-2's induction heads: located, not yet proven"
+pubDatetime: 2026-09-18T18:33:41.000Z
+description: "All 144 attention heads of GPT-2 small (124M) scored on the induction diagonal, recovering the five canonical heads — L5H5, L6H9, L5H1, L7H10, L7H2 — in one cached forward pass on a laptop. An induction score is a correlation, not a cause: none of the causal experiments have been run yet."
 slug: reverse-engineering-gpt-2s-induction-circuit
 tags:
   - interpretability
@@ -19,7 +19,7 @@ This is experiment 01 of six, and it is the weakest kind of evidence in the plan
 
 Code, figures, and result tables are in `projects/tiny-circuits`. Every figure and table is produced by a numbered script and regenerates with one command.
 
-*Reading note:* the argument is the gap and what it does not license. The configuration details, the TransformerLens processing notes, and the experiment plan are self-contained — skip to [conclusions](#conclusions) if you only want the claim and its limits.
+*Reading note:* the argument is the gap and what it does not license. The configuration details, the TransformerLens processing notes, and the experiment plan are self-contained. Skip to [conclusions](#conclusions) if you only want the claim and its limits.
 
 ## table of contents
 
@@ -36,7 +36,7 @@ Code, figures, and result tables are in `projects/tiny-circuits`. Every figure a
 
 ## the behavior
 
-Show a language model `... A B ... A` and it predicts `B`. It has not seen that pair in training; it learned the rule — look back for where this token last occurred, and emit whatever followed it. The standard argument is that this is the substrate of in-context learning generally, which is why the circuit that implements it is the usual first target.
+Show a language model `... A B ... A` and it predicts `B`. It has not seen that pair in training; it learned the rule: look back for where this token last occurred, and emit whatever followed it. The standard argument is that this is the substrate of in-context learning generally, which is why the circuit that implements it is the usual first target.
 
 The claimed implementation is two heads composed across layers:
 
@@ -52,7 +52,7 @@ An attention head factors into two circuits that can be analyzed separately, and
 
 The **QK circuit** decides *where* to attend. It is the bilinear form $W_Q W_K^{\top}$ acting on pairs of residual-stream vectors: given a query position and a key position, it produces the pre-softmax score. Everything about attention *placement* is in this matrix.
 
-The **OV circuit** decides *what gets moved* once a position is attended to. It is $W_O W_V$, and composed with the embedding and unembedding it becomes $W_U W_{OV} W_E$ — a map from "the token at the attended position" to "the change in output logits." A head that copies is one whose OV circuit is approximately diagonal in token space: attending to token $t$ raises the logit of $t$.
+The **OV circuit** decides *what gets moved* once a position is attended to. It is $W_O W_V$, and composed with the embedding and unembedding it becomes $W_U W_{OV} W_E$, a map from "the token at the attended position" to "the change in output logits." A head that copies is one whose OV circuit is approximately diagonal in token space: attending to token $t$ raises the logit of $t$.
 
 The split matters for this project because an induction score only measures the QK side. It says the head looks in the right place. It says nothing about whether the OV side moves anything useful, which is why experiment 05 examines $W_U W_{OV} W_E$ directly from the weights.
 
@@ -71,7 +71,7 @@ tokens = torch.cat([bos, rand, rand], dim=1)
 
 `[BOS][50 random tokens][the same 50 tokens]`. There is no grammar, no semantics, and no n-gram statistics worth exploiting. The only structure available is that the second half repeats the first, so a head scoring highly here cannot be scoring highly for a reason we failed to think of.
 
-This is the load-bearing design decision in the experiment, and it is worth being explicit about what it buys and what it costs. It buys a clean reading: the score means one thing. It costs external validity — every conclusion below is about behavior on inputs GPT-2 never saw in training, and a head specialized for this diagonal on random tokens is not yet shown to do anything on English.
+This is the load-bearing design decision in the experiment, and it is worth being explicit about what it buys and what it costs. It buys a clean reading: the score means one thing. It costs external validity: every conclusion below is about behavior on inputs GPT-2 never saw in training, and a head specialized for this diagonal on random tokens is not yet shown to do anything on English.
 
 ## the induction score
 
