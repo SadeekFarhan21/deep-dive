@@ -49,17 +49,17 @@ export default {
 
     projectsTitle: "Projects",
     projectsDesc:
-      "Models I trained, circuits I probed, pipelines I broke and fixed \u2014 written up with the setup, the measurements, and the claims they do not support.",
+      "Problems that I found interesting, and the solutions I built",
 
     venturesTitle: "Ventures",
     venturesDesc:
-      "Deep dives on companies building AI hardware, infrastructure, and tooling: what they actually do, what is verified, and what is still a company-reported number.",
+      "Companies that I believe in, and the problems they are solving",
 
     archivesTitle: "Archives",
-    archivesDesc: "Everything published, grouped by year and month.",
+    archivesDesc: "Everything published, grouped by year and month",
 
     searchTitle: "Search",
-    searchDesc: "Search across every project write-up and venture memo.",
+    searchDesc: "Search across every project write-up and venture memo",
   },
   a11y: {
     skipToContent: "Skip to content",
