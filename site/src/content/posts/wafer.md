@@ -1,7 +1,7 @@
 ---
 title: "Wafer"
 pubDatetime: 2026-09-14T14:56:28.000Z
-description: "Wafer.ai builds autonomous performance-engineering agents to optimize GPU kernels and inference stacks"
+description: "Wafer builds autonomous performance-engineering agents to optimize GPU kernels and inference stacks"
 slug: wafer
 company: "Wafer"
 tags:
