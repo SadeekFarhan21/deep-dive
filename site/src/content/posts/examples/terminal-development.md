@@ -1,7 +1,8 @@
 ---
 title: How Do I Develop My Terminal Portfolio Website with React
 author: Sat Naing
-pubDatetime: 2022-06-09T03:42:51Z
+pubDatetime: 2026-09-11T05:11:34.000Z
+modDatetime: 2026-09-11T05:14:22.000Z
 slug: how-do-i-develop-my-terminal-portfolio-website-with-react
 featured: false
 draft: true

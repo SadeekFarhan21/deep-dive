@@ -1,6 +1,6 @@
 ---
 title: "GRPO on a 0.5B model, and the diagnostic that makes its failures visible"
-pubDatetime: 2026-09-20T11:00:00.000Z
+pubDatetime: 2026-09-20T06:34:47.000Z
 description: "We build an RLVR pipeline on Qwen2.5-0.5B-Instruct and report no training results, because the 300-step run has not been launched. What the pipeline did produce is a diagnosis: the learning signal in GRPO is the within-group spread of rewards, not their level, so 'my dataset is too easy' and 'my dataset is too hard' are the same observation from outside. Four engineering failures, none of which raised an exception, and a hardware measurement in which a rented L4 ran about 5% faster than a laptop."
 slug: rlvr-grpo-reward-variance
 tags:

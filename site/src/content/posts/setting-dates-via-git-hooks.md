@@ -1,7 +1,6 @@
 ---
 author: Simon Smale
-pubDatetime: 2024-01-03T20:40:08Z
-modDatetime: 2024-01-08T18:59:05Z
+pubDatetime: 2026-09-20T06:34:47.000Z
 title: How to use Git Hooks to set Created and Modified Dates
 featured: false
 draft: true

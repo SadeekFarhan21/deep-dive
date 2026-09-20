@@ -1,6 +1,6 @@
 ---
 title: "Watney Robotics"
-pubDatetime: 2026-09-19T14:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Watney's dual-arm robots have been swapping network cables inside a Meta data center since June 2025. They are slower than technicians and still supervised, and the entire economics of the company turn on how many of them one operator can run."
 slug: watney-robotics
 company: "Watney Robotics"

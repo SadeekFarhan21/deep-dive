@@ -1,6 +1,6 @@
 ---
 title: "Dipole Labs"
-pubDatetime: 2026-09-19T12:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Dipole Labs builds optical circuit switches that keep data as light between GPU racks, targeting sub-microsecond reconfiguration so an AI cluster's network can reshape itself around each workload."
 slug: dipole-labs
 company: "Dipole Labs"

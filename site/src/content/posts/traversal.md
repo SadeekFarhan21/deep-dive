@@ -1,6 +1,6 @@
 ---
 title: "Traversal"
-pubDatetime: 2026-09-19T13:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Traversal builds an AI site-reliability engineer that finds the root cause of production incidents by running causal searches over a customer's telemetry. American Express is both a customer and an investor; a rival with three times the capital raised at $1B."
 slug: traversal
 company: "Traversal"

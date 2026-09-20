@@ -1,6 +1,6 @@
 ---
 title: "Locating GPT-2's induction heads, and what locating does not prove"
-pubDatetime: 2026-09-20T10:00:00.000Z
+pubDatetime: 2026-09-20T06:34:47.000Z
 description: "We score all 144 attention heads in GPT-2 small on the induction diagonal and recover the five canonical induction heads: L5H5 (0.905), L6H9 (0.896), L5H1 (0.886), L7H10 (0.886), L7H2 (0.806). The sixth head scores 0.517. The measurement is one cached forward pass on a laptop and it is the weakest evidence in the six-experiment plan it opens: an induction score is a correlation between an attention pattern and a behavior, and none of the causal experiments have been run."
 slug: reverse-engineering-gpt-2s-induction-circuit
 tags:

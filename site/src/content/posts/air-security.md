@@ -1,6 +1,6 @@
 ---
 title: "AIR Security"
-pubDatetime: 2026-09-19T09:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "AIR Security vets the skills, plug-ins and MCP servers that enterprise AI agents install, a supply chain its own research found carries 6.7 million installs of add-ons that pull instructions from untrusted sources."
 slug: air-security
 company: "AIR Security"

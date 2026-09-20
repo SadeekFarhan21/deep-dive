@@ -1,6 +1,6 @@
 ---
 title: "Levocred"
-pubDatetime: 2026-09-19T11:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Levocred puts AI agents inside credit funds and lenders to do the borrowing base reports, covenant checks and loan marks that analysts rebuild by hand. About $1B in receivables runs through it, and no disclosed revenue."
 slug: levocred
 company: "Levocred"

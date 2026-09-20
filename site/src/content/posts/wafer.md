@@ -1,6 +1,7 @@
 ---
 title: "Wafer"
-pubDatetime: 2026-09-20T06:00:00.000Z
+pubDatetime: 2026-09-20T06:34:47.000Z
+modDatetime: 2026-09-20T06:41:11.000Z
 description: "Wafer builds AI agents that optimize how models run in production, searching across the model, the serving engine, GPU kernels, and the hardware itself, then sells the result as hosted open-source inference on both NVIDIA and AMD chips."
 slug: wafer
 company: "Wafer"

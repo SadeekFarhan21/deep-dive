@@ -1,6 +1,6 @@
 ---
 title: "Infinity"
-pubDatetime: 2026-09-19T10:00:00.000Z
+pubDatetime: 2026-09-20T06:40:06.000Z
 description: "Infinity's agent writes the kernels, compilers and debuggers a new AI chip needs to run models, attacking the software barrier that has protected Nvidia for two decades. One live partner, company-reported numbers, and a pricing model nobody has tested."
 slug: infinity
 company: "Infinity"

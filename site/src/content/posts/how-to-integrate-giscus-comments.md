@@ -1,7 +1,6 @@
 ---
 author: FjellOverflow
-pubDatetime: 2024-07-25T11:11:53Z
-modDatetime: 2025-03-12T12:28:53Z
+pubDatetime: 2026-09-20T06:34:47.000Z
 title: How to integrate Giscus comments into AstroPaper
 slug: how-to-integrate-giscus-comments
 featured: false

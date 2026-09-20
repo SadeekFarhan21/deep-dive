@@ -1,6 +1,7 @@
 ---
 title: "Extropic"
-pubDatetime: 2026-09-20T05:00:00.000Z
+pubDatetime: 2026-09-20T06:34:47.000Z
+modDatetime: 2026-09-20T06:39:33.000Z
 description: "Extropic builds thermodynamic sampling units, chips that use the thermal noise of ordinary transistors to draw samples from programmable probability distributions, targeting the energy cost of generative AI rather than its arithmetic."
 slug: extropic
 company: "Extropic"

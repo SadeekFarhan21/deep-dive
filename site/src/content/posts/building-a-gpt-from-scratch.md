@@ -1,6 +1,6 @@
 ---
 title: "Writing a transformer by hand, and the constants that turn out to be load-bearing"
-pubDatetime: 2026-09-20T09:00:00.000Z
+pubDatetime: 2026-09-20T06:34:47.000Z
 description: "A 5.26M-parameter decoder-only GPT written from scratch in PyTorch — no nn.Transformer, no fused attention, no HuggingFace model code — trained on TinyStories to a final cross-entropy of 2.14 on a laptop. The loss is a receipt that the pipeline is wired correctly, not a result: the run consumed 10.2M tokens of a 632M-token corpus, so the model is undertrained by construction. Notes on the two constants that silently decide whether the model trains, and the two silent bugs that cost the most time."
 slug: building-a-gpt-from-scratch
 tags:
