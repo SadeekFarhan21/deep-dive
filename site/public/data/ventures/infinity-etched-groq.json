@@ -1,0 +1,45 @@
+{
+  "type": "series",
+  "format": "money",
+  "unit": "reported valuation at each round",
+  "title": "A challenger's valuation can halve in a year",
+  "subtitle": "Five real points, joined by straight lines. Nothing between them is data.",
+  "entities": [
+    {
+      "name": "Etched",
+      "points": [
+        {
+          "date": "2026-01",
+          "value": 5000000000.0
+        },
+        {
+          "date": "2026-07",
+          "value": 10300000000.0,
+          "note": "$300M Series C"
+        },
+        {
+          "date": "2026-08",
+          "value": 21000000000.0,
+          "note": "$700M Series D led by Jane Street"
+        }
+      ]
+    },
+    {
+      "name": "Groq",
+      "points": [
+        {
+          "date": "2025-09",
+          "value": 6900000000.0,
+          "note": "peak valuation"
+        },
+        {
+          "date": "2026-08",
+          "value": 3500000000.0,
+          "note": "$350M round after NVIDIA hired its founder and key staff in June 2026"
+        }
+      ]
+    }
+  ],
+  "caption": "Infinity's revenue is a share of what its partners earn. Etched quadrupled in seven months; Groq lost 49% in eleven, after NVIDIA removed a challenger without buying it. This is the memo's 'derivative demand' risk with dates on it.",
+  "source": "TechCrunch, August 17 and 18, 2026; GlobeNewswire, August 18, 2026; Bloomberg, August 17, 2026."
+}

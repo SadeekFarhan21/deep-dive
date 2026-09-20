@@ -1,0 +1,33 @@
+{
+  "type": "columns",
+  "mode": "grouped",
+  "format": "money",
+  "unit": "seed rounds, 2026",
+  "title": "RadixArk raised a third less and sold a third more",
+  "categories": [
+    "RadixArk (SGLang), May 2026",
+    "Inferact (vLLM), Jan 2026"
+  ],
+  "series": [
+    {
+      "name": "Raised",
+      "values": [
+        100000000.0,
+        150000000.0
+      ]
+    },
+    {
+      "name": "Post-money valuation",
+      "values": [
+        400000000.0,
+        800000000.0
+      ]
+    }
+  ],
+  "annotations": [
+    "25% of the company",
+    "18.75% of the company"
+  ],
+  "caption": "The memo says Inferact has 50% more capital. Shown together with the valuations, a sharper fact appears. Inferact's round was priced more richly on both axes. That is the capital-gap risk expressed as dilution rather than dollars.",
+  "source": "RadixArk announcement, May 5, 2026 (Businesswire). Inferact announcement, January 22, 2026 (TechCrunch)."
+}

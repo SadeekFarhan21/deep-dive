@@ -1,0 +1,42 @@
+{
+  "type": "columns",
+  "mode": "grouped",
+  "format": "money",
+  "unit": "AI-optimized IaaS spending, Gartner",
+  "title": "Inference passes training in 2026 and keeps pulling away",
+  "subtitle": "Gartner published the 2026 split. The 2027 split applies Gartner's 59% inference share to its $66.1B total, so it is derived.",
+  "categories": [
+    "2026",
+    "2027"
+  ],
+  "series": [
+    {
+      "name": "Inference",
+      "values": [
+        23300000000.0,
+        39000000000.0
+      ],
+      "estimate": [
+        false,
+        true
+      ]
+    },
+    {
+      "name": "Training and other",
+      "values": [
+        19000000000.0,
+        27100000000.0
+      ],
+      "estimate": [
+        false,
+        true
+      ]
+    }
+  ],
+  "annotations": [
+    "55% inference",
+    "59% inference"
+  ],
+  "caption": "Inference grows about 67% year over year in this forecast against 43% for training. Gartner gives no inference share for 2025, so that year is left out rather than invented.",
+  "source": "Gartner press release, August 10, 2026. Forecast figures."
+}

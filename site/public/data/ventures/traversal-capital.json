@@ -1,0 +1,33 @@
+{
+  "type": "bars",
+  "format": "money",
+  "unit": "total disclosed funding",
+  "title": "Four funded players, and Traversal is a third of the leader",
+  "rows": [
+    {
+      "label": "Resolve AI",
+      "value": 150000000.0,
+      "note": "$125M Series A, Feb 2026 · $1B",
+      "detail": "TechCrunch reported the effective valuation was lower because of a multi-tranche structure; the company calls the round non-blended. The $1B is contested: TechCrunch reported a lower effective valuation from a multi-tranche structure; the company calls the round non-blended."
+    },
+    {
+      "label": "incident.io",
+      "value": 96000000.0,
+      "note": "$62M Series B, Apr 2025"
+    },
+    {
+      "label": "Traversal",
+      "value": 53000000.0,
+      "note": "Seed and A Jun 2025 + Amex Mar 2026",
+      "emphasis": true,
+      "detail": "$48M across seed and Series A, plus a $5M strategic investment from Amex Ventures."
+    },
+    {
+      "label": "Cleric",
+      "value": 9800000.0,
+      "note": "$5.5M seed, Dec 2025"
+    }
+  ],
+  "caption": "The memo's table had Traversal at '$48M plus an undisclosed Amex round'. The round was disclosed, at $5 million, in the memo's own cited source. Resolve AI's ~$4M revenue is left off this chart. It is an anonymously sourced December 2025 figure, not contemporaneous with the valuation.",
+  "source": "Goodwin and Built In NYC, June 2025; SiliconANGLE, March 4, 2026; resolve.ai, February 4, 2026; incident.io, April 2025; VVUS, December 2025."
+}

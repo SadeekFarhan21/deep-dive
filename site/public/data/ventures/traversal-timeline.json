@@ -1,0 +1,55 @@
+{
+  "type": "timeline",
+  "start": "2025-06",
+  "end": "2026-12",
+  "title": "The bundling clock started in December 2025",
+  "subtitle": "Filled markers shipped. Hollow markers are announced availability targets that had not been confirmed as of September 20, 2026.",
+  "lanes": [
+    {
+      "name": "Incumbents",
+      "events": [
+        {
+          "date": "2025-12",
+          "label": "Datadog Bits AI SRE GA",
+          "shipped": true,
+          "detail": "Tested against more than 2,000 customer environments."
+        },
+        {
+          "date": "2026-06",
+          "label": "PagerDuty SRE Agent, early access",
+          "shipped": false,
+          "detail": "Announced March 12, 2026 for Q2 2026."
+        },
+        {
+          "date": "2026-12",
+          "label": "PagerDuty autonomous responder",
+          "shipped": false,
+          "detail": "Announced for H2 2026."
+        }
+      ]
+    },
+    {
+      "name": "Startups",
+      "events": [
+        {
+          "date": "2025-06",
+          "label": "Traversal launches, $48M",
+          "shipped": true
+        },
+        {
+          "date": "2026-02",
+          "label": "Resolve AI $125M at $1B",
+          "shipped": true
+        },
+        {
+          "date": "2026-03",
+          "label": "Traversal + Amex",
+          "shipped": true,
+          "detail": "Commercial deployment and a $5M strategic investment."
+        }
+      ]
+    }
+  ],
+  "caption": "Datadog's bundled SRE agent reached general availability three months before Traversal's American Express announcement. A timeline shows timing only; nothing here compares product quality.",
+  "source": "Datadog press release, December 2, 2025; PagerDuty newsroom, March 12, 2026; company announcements."
+}

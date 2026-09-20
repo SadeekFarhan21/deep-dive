@@ -1,0 +1,52 @@
+{
+  "type": "bars",
+  "format": "money",
+  "scale": "log",
+  "unit": "total capital raised",
+  "title": "The real peer is Inferact; the real problem is the platforms",
+  "subtitle": "Engine companies at seed, platform companies at Series C to F. They are not in the same race yet, but they will meet at the same customer.",
+  "rows": [
+    {
+      "label": "Baseten",
+      "value": 2100000000.0,
+      "note": "Series F, Jun 2026 · $13B",
+      "detail": "Total raised. Valuation $13B disclosed at the Series F.",
+      "emphasis": false
+    },
+    {
+      "label": "Fireworks AI",
+      "value": 1800000000.0,
+      "note": "Series D, Jul 2026 · $17.5B",
+      "detail": "Total raised. More than $1B annualized revenue.",
+      "emphasis": false
+    },
+    {
+      "label": "Together AI",
+      "value": 1300000000.0,
+      "note": "Series C, Jul 2026 · $8.3B",
+      "detail": "Total raised. Valuation $8.3B disclosed at the Series C.",
+      "emphasis": false
+    },
+    {
+      "label": "Inferact (vLLM)",
+      "value": 150000000.0,
+      "note": "Seed, Jan 2026 · $800M",
+      "emphasis": false
+    },
+    {
+      "label": "RadixArk (SGLang)",
+      "value": 100000000.0,
+      "note": "Seed, May 2026 · $400M",
+      "emphasis": true
+    },
+    {
+      "label": "Wafer",
+      "value": 44000000.0,
+      "note": "Series A, Sep 2026 · $200M+",
+      "emphasis": false,
+      "detail": "Valuation reported by The Information, not company-confirmed."
+    }
+  ],
+  "caption": "Against disclosed valuations the spread is RadixArk $400M, Inferact $800M, Together $8.3B, Baseten $13B, Fireworks $17.5B. Both engine companies raised seed rounds in 2026, four months apart.",
+  "source": "Company announcements and Contrary Research, totals as of September 2026. Wafer's valuation per The Information."
+}

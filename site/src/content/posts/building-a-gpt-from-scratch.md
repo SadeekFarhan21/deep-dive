@@ -10,15 +10,15 @@ draft: false
 category: projects
 ---
 
-We trained a decoder-only GPT written from scratch, with no `nn.Transformer`, no `F.scaled_dot_product_attention` and no HuggingFace model code, to a final cross-entropy of **2.14** on TinyStories, in 20,000 steps on a single Apple Silicon laptop. The shipped checkpoint is **5,263,848 parameters**: 6 pre-LN blocks, 8 heads, a 256-dimensional residual stream, a 64-token context, and a 1,000-token byte-level BPE vocabulary trained on the corpus itself.
+We trained a decoder-only GPT written from scratch, with no `nn.Transformer`, no `F.scaled_dot_product_attention` and no HuggingFace model code, to a final cross-entropy of **2.14** on TinyStories, in 20,000 steps on a single Apple Silicon laptop. The shipped checkpoint is **5,263,848 parameters**, configured as 6 pre-LN blocks, 8 heads, a 256-dimensional residual stream, a 64-token context, and a 1,000-token byte-level BPE vocabulary trained on the corpus itself.
 
-The loss is not a result. It is a receipt: evidence that every stage of the pipeline, from tokenizer and cache through loader, model, loss and sampler, is wired correctly end to end, which was the entire goal. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
+The loss is not a result. It is a receipt, evidence that every stage of the pipeline, from tokenizer and cache through loader, model, loss and sampler, is wired correctly end to end, which was the entire goal. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
 
 What the project did produce is a clear view of which lines are load-bearing. Two constants decide silently whether the model trains at all, and two bugs cost more time than the model code did.
 
-Code is in `projects/gpt-from-scratch`: tokenizer, streaming data pipeline, model, training loop, sampler, chat REPL, and a Modal script for the GPU runs.
+Code is in `projects/gpt-from-scratch`, which holds the tokenizer, streaming data pipeline, model, training loop, sampler, chat REPL, and a Modal script for the GPU runs.
 
-*Reading note:* the argument is that the naive implementation makes the mechanism visible, and that the expensive failures were all silent. Architecture tables, the cache-invalidation logic, and the Modal harness are collapsed.
+*Reading note.* The argument is that the naive implementation makes the mechanism visible, and that the expensive failures were all silent. Architecture tables, the cache-invalidation logic, and the Modal harness are collapsed.
 
 ## table of contents
 
@@ -37,9 +37,11 @@ Code is in `projects/gpt-from-scratch`: tokenizer, streaming data pipeline, mode
 
 ## why write it out at all
 
-Reading the transformer paper and reading a reference implementation both leave the same gap: you can follow every line and still not know which lines are *load-bearing*. Typing it out closes that gap by force. Every constant omitted and every shape gotten wrong produces either a crash or, worse, a model that trains to nothing while looking fine.
+Reading the transformer paper and reading a reference implementation both leave the same gap. You can follow every line and still not know which lines are *load-bearing*. Typing it out closes that gap by force. Every constant omitted and every shape gotten wrong produces either a crash or, worse, a model that trains to nothing while looking fine.
 
 ## the model
+
+<figure data-figure="gpt-parameters"></figure>
 
 <details class="collapsible-section">
 <summary><strong>Full architecture, as configured in the shipped checkpoint</strong></summary>
@@ -63,7 +65,7 @@ The parameter count breaks down as 272,384 in the embeddings (256,000 token + 16
 
 ## attention is three linear maps and a mask
 
-The single-head forward pass in full:
+The single-head forward pass in full.
 
 ```python
 keys, queries, values = self.key(x), self.query(x), self.value(x)
@@ -87,7 +89,7 @@ $$
 
 and the logits entering the softmax have standard deviation $\sqrt{d}$. Dividing by $\sqrt{d}$ restores unit variance and keeps the softmax in a regime where it is not saturated.
 
-Without the scale, logits grow with head size, the softmax collapses toward one-hot, and the gradient through it vanishes: $\partial \text{softmax}$ is proportional to $p_i(\delta_{ij} - p_j)$, which goes to zero as any $p_i \to 1$. The model still trains, the loss barely moves, and nothing in the code looks wrong. That combination is what makes it dangerous: the failure has no error message and no obviously guilty line.
+Without the scale, logits grow with head size, the softmax collapses toward one-hot, and the gradient through it vanishes, because $\partial \text{softmax}$ is proportional to $p_i(\delta_{ij} - p_j)$, which goes to zero as any $p_i \to 1$. The model still trains, the loss barely moves, and nothing in the code looks wrong. That combination is what makes it dangerous. The failure has no error message and no obviously guilty line.
 
 At $d = 32$ the factor is $1/\sqrt{32} \approx 0.177$, so the unscaled logits would be roughly 5.7× larger, enough to saturate and not enough to look absurd if printed.
 
@@ -98,7 +100,7 @@ self.heads = nn.ModuleList([SelfAttention(...) for _ in range(num_heads)])
 return self.proj(torch.cat([head(x) for head in self.heads], dim=-1))
 ```
 
-Production implementations fold all heads into one batched matmul. This one keeps them as independent modules and concatenates. That is measurably slower, and we kept it: heads genuinely are independent subspaces, and writing them as separate objects makes that structural fact impossible to forget. Fusing is an optimization, not a concept, and the independence is exactly the property that later interpretability work depends on. The [induction-circuit project](/posts/reverse-engineering-gpt-2s-induction-circuit) scores heads individually, which only means something because they *are* individual.
+Production implementations fold all heads into one batched matmul. This one keeps them as independent modules and concatenates. That is measurably slower, and we kept it. Heads genuinely are independent subspaces, and writing them as separate objects makes that structural fact impossible to forget. Fusing is an optimization, not a concept, and the independence is exactly the property that later interpretability work depends on. The [induction-circuit project](/posts/reverse-engineering-gpt-2s-induction-circuit) scores heads individually, which only means something because they *are* individual.
 
 At 3.8M–5.3M parameters on a laptop the trade is free. At any serious scale it is not, and the right move is to fuse and keep a slow reference implementation for testing against.
 
@@ -117,12 +119,12 @@ Once the residual stream reads as a shared bus that every layer writes to and re
 
 The least interesting part took the most iterations.
 
-Byte-level BPE with a ByteLevel pre-tokenizer and decoder means **no unknown tokens are possible**: every byte sequence encodes. That sounds like a footnote and is what makes the model robust to whatever the corpus contains. The vocabulary is trained on the corpus itself rather than borrowed, which at 1,000 merges over children's stories gives a tokenizer specialized to exactly this distribution.
+Byte-level BPE with a ByteLevel pre-tokenizer and decoder means **no unknown tokens are possible**, since every byte sequence encodes. That sounds like a footnote and is what makes the model robust to whatever the corpus contains. The vocabulary is trained on the corpus itself rather than borrowed, which at 1,000 merges over children's stories gives a tokenizer specialized to exactly this distribution.
 
 <details class="collapsible-section">
 <summary><strong>Streaming tokenization and cache invalidation</strong></summary>
 
-The corpus is 1.9 GB of text and stopped fitting comfortably in memory. Tokenization became a streaming pass that writes a `uint16` token cache to disk, invalidated by comparing modification times against both the source text and the tokenizer:
+The corpus is 1.9 GB of text and stopped fitting comfortably in memory. Tokenization became a streaming pass that writes a `uint16` token cache to disk, invalidated by comparing modification times against both the source text and the tokenizer.
 
 ```python
 cache_is_stale = not token_cache.exists() or token_cache.stat().st_mtime_ns < max(
@@ -143,7 +145,7 @@ AdamW at its default weight decay of 0.01, learning rate 3e-4, batch size 8, con
 
 No learning-rate schedule, no warmup, no gradient clipping. At this scale none were necessary, and leaving them out kept the loop readable. At larger scale each is the next thing to add.
 
-The number worth stating plainly is the token budget:
+The number worth stating plainly is the token budget.
 
 $$
 20{,}000 \text{ steps} \times 8 \text{ sequences} \times 64 \text{ tokens} = 10.24\text{M tokens},
@@ -153,7 +155,7 @@ against a cache of roughly 632M. The run therefore saw about **1.6%** of the cor
 
 ## sampling
 
-Greedy decoding on a model this size produces loops almost immediately. Temperature and top-$k$ were about thirty lines and changed the output more than any architectural change we made:
+Greedy decoding on a model this size produces loops almost immediately. Temperature and top-$k$ were about thirty lines and changed the output more than any architectural change we made.
 
 ```python
 logits = logits[:, -1, :] / temperature
@@ -163,18 +165,18 @@ if top_k is not None:
 next_token = torch.multinomial(F.softmax(logits, dim=-1), num_samples=1)
 ```
 
-The thing worth internalizing: the model is a distribution, not a speaker. Every "the model said X" is really "this decoding strategy, at this temperature, said X." Two of the qualitative judgments we made early about model quality turned out to be judgments about decoding.
+The thing worth internalizing is that the model is a distribution, not a speaker. Every "the model said X" is really "this decoding strategy, at this temperature, said X." Two of the qualitative judgments we made early about model quality turned out to be judgments about decoding.
 
 ## scaling to a GPU, and what it bought
 
-Once the laptop run worked, training moved to a Modal L4 with a larger configuration: 8 layers, 320-dimensional residual, 128-token context, mixed precision, and an auto batch-size search that doubles the batch until CUDA runs out of memory.
+Once the laptop run worked, training moved to a Modal L4 with a larger configuration of 8 layers, 320-dimensional residual, 128-token context, mixed precision, and an auto batch-size search that doubles the batch until CUDA runs out of memory.
 
 The observation worth recording is how little of that work was model code. The same `train.py` runs on all three devices behind a `--device auto` flag. What the GPU run required was infrastructure.
 
 <details class="collapsible-section">
 <summary><strong>The supervising loop</strong></summary>
 
-A persistent volume so a preempted container does not lose the checkpoint, a `--resume` path pointed at the same file as `--output`, and a loop that commits the volume every 60 seconds:
+A persistent volume so a preempted container does not lose the checkpoint, a `--resume` path pointed at the same file as `--output`, and a loop that commits the volume every 60 seconds.
 
 ```python
 while True:
@@ -198,7 +200,7 @@ Six hours of GPU time is worth nothing if the container dies at hour five with t
 | Stale token cache | Model trains, output is gibberish, loss looks plausible | Tokenizer retrained without invalidating the cached token file |
 | Dataset target alignment | Off-by-one, loss plateaus higher than expected | Dataset pre-shifts targets; the loss shifts them again |
 
-Both are silent. Neither raises. Both are the same category: a pipeline that is internally consistent and describing the wrong thing. That category is, we now believe, the dominant failure mode in small-scale ML work, and it is why the receipt matters more than the number on it.
+Both are silent. Neither raises. Both are the same category, a pipeline that is internally consistent and describing the wrong thing. That category is, we now believe, the dominant failure mode in small-scale ML work, and it is why the receipt matters more than the number on it.
 
 ## conclusions
 

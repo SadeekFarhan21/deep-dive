@@ -1,0 +1,35 @@
+{
+  "type": "bars",
+  "format": "multiple",
+  "scale": "log",
+  "unit": "assumed improvement, compounding",
+  "title": "How the conventional stack could improve 45x without new chips",
+  "subtitle": "The author's illustrative assumptions, not sourced figures. Steps one and two overlap. A new GPU generation's per-watt gain already includes its low-precision hardware.",
+  "rows": [
+    {
+      "label": "Today",
+      "value": 1,
+      "estimate": true
+    },
+    {
+      "label": "× 3 GPU generations",
+      "value": 3,
+      "estimate": true,
+      "note": "about 2.7x across Hopper to Rubin on dense FP8 per watt"
+    },
+    {
+      "label": "× 7.5 low precision",
+      "value": 22.5,
+      "estimate": true,
+      "note": "the least defended step"
+    },
+    {
+      "label": "× 2 serving software",
+      "value": 45,
+      "estimate": true,
+      "note": "batching, caching, speculative decoding"
+    }
+  ],
+  "caption": "A single 45x hides three assumptions. Laid out as steps, the reader can audit each one and disagree with the 7.5x specifically. No Extropic figure is drawn on this axis. The simulated 140x is measured against a different baseline, workload and date.",
+  "source": "Memo's construction. Generational per-watt gains per SemiAnalysis; the other two factors are unsourced assumptions."
+}

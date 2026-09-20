@@ -1,0 +1,39 @@
+{
+  "type": "bars",
+  "format": "money",
+  "unit": "disclosed funding",
+  "title": "Two chips and a software stack on $14.1M",
+  "subtitle": "Not apples to apples. Extropic's bar is all disclosed equity since 2023; the others are single 2026 rounds. The memo's own reading is either undisclosed financing or exceptional capital efficiency.",
+  "rows": [
+    {
+      "label": "SambaNova",
+      "value": 1000000000.0,
+      "note": "Series F first close, Jul 2026",
+      "detail": "Valued at $11B post-money."
+    },
+    {
+      "label": "Etched",
+      "value": 700000000.0,
+      "note": "Aug 2026 · valued $21B"
+    },
+    {
+      "label": "MatX",
+      "value": 500000000.0,
+      "note": "Series B, Feb 2026"
+    },
+    {
+      "label": "Euclyd",
+      "value": 231000000.0,
+      "note": "Series A, Sep 2026",
+      "detail": "Company states over €200 million; $231M is a press conversion."
+    },
+    {
+      "label": "Extropic",
+      "value": 14100000.0,
+      "note": "Seed, Dec 2023",
+      "emphasis": true
+    }
+  ],
+  "caption": "A linear axis is deliberate. The point is that Extropic's bar is a sliver. Conventional AI chip startups raised rounds of $230M to $1B each in 2026, and Extropic has produced X0, Z1 and three open-source projects on a 2023 seed.",
+  "source": "Converge Digest AI inference semiconductor tracker (Aug 2026); TechCrunch; company announcements. Extropic seed per PRNewswire, December 2023."
+}

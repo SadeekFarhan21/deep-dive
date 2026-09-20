@@ -1,0 +1,42 @@
+{
+  "type": "bars",
+  "format": "percent",
+  "unit": "growth in job postings, late 2022 to early 2026",
+  "title": "Demand for the people who keep data centers running",
+  "subtitle": "Job-posting growth, not headcount or wages. The low bars are the baseline that makes the high ones credible.",
+  "rows": [
+    {
+      "label": "Robotics technicians",
+      "value": 107,
+      "emphasis": true
+    },
+    {
+      "label": "HVAC engineers",
+      "value": 67,
+      "emphasis": true
+    },
+    {
+      "label": "Industrial automation technicians",
+      "value": 51,
+      "emphasis": true
+    },
+    {
+      "label": "Construction roles",
+      "value": 30
+    },
+    {
+      "label": "All skilled trades",
+      "value": 27
+    },
+    {
+      "label": "Welders",
+      "value": 25
+    },
+    {
+      "label": "Electricians",
+      "value": 18
+    }
+  ],
+  "caption": "The memo's original phrasing put the 51% floor on HVAC engineers; Randstad's release puts it on industrial automation technicians, with HVAC at 67%. Posting growth measures demand and can rise from expansion, churn or re-posting, so it is a signal rather than a shortage count.",
+  "source": "Randstad press release, March 18, 2026, from more than 50 million job postings since late 2022."
+}

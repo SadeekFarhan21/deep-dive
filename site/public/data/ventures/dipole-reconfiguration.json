@@ -1,0 +1,47 @@
+{
+  "type": "dots",
+  "format": "time",
+  "scale": "log",
+  "domain": [
+    1e-07,
+    0.1
+  ],
+  "unit": "reconfiguration time",
+  "classLabels": {
+    "measured": "Published specification of a shipping or deployed switch",
+    "claimed": "Target, not yet demonstrated"
+  },
+  "title": "1,000x faster than MEMS; about 300x faster than the nearest merchant rival",
+  "subtitle": "Dipole is a different class of mark on purpose. A hollow circle is a target; a filled one is a published specification.",
+  "rows": [
+    {
+      "label": "Polatis 7000n",
+      "sublabel": "MEMS, shipping",
+      "value": 0.05,
+      "class": "measured"
+    },
+    {
+      "label": "Commercial OCS, typical",
+      "sublabel": "per Google's Apollo paper",
+      "value": 0.015,
+      "class": "measured",
+      "detail": "Google states commercial OCS switching times are typically 10 to 20 ms."
+    },
+    {
+      "label": "Salience OC-32M",
+      "sublabel": "silicon photonics, announced",
+      "value": 0.0003,
+      "class": "measured",
+      "detail": "Under 300 µs, vendor specification."
+    },
+    {
+      "label": "Dipole Labs",
+      "sublabel": "target",
+      "value": 1e-06,
+      "class": "claimed",
+      "detail": "Sub-microsecond, per the YC company page. No bench result published."
+    }
+  ],
+  "caption": "Against the mechanical switches that dominate deployments, a sub-microsecond target is a jump of four to five orders of magnitude. Against Salience, which already ships below 300 µs, the gap is closer to 300x. The memo's competition section now says so.",
+  "source": "Polatis datasheet; Google, Mission Apollo, August 2022; Salience Labs product launch, March 10, 2026; Y Combinator company page."
+}

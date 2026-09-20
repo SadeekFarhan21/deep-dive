@@ -1,0 +1,77 @@
+{
+  "type": "bars",
+  "format": "money",
+  "unit": "round size",
+  "title": "About $1.1B raised against a category earning under $100M",
+  "subtitle": "Twelve disclosed rounds in roughly nine months. The revenue line is a vendor-cited estimate whose original source could not be located, so it is drawn as a dashed band rather than a hard value.",
+  "reference": {
+    "value": 100000000.0,
+    "label": "category revenue",
+    "band": true
+  },
+  "rows": [
+    {
+      "label": "Glow",
+      "value": 180000000.0,
+      "note": "stealth exit, Jul 2026 · $1.2B"
+    },
+    {
+      "label": "7AI",
+      "value": 130000000.0,
+      "note": "Series A, Dec 2025 · $700M"
+    },
+    {
+      "label": "Zenity",
+      "value": 125000000.0,
+      "note": "Series C, Aug 2026"
+    },
+    {
+      "label": "Oasis Security",
+      "value": 120000000.0,
+      "note": "Series B, Mar 2026"
+    },
+    {
+      "label": "XBOW",
+      "value": 120000000.0,
+      "note": "Series C, Mar 2026"
+    },
+    {
+      "label": "Onyx Security",
+      "value": 113000000.0,
+      "note": "Series B, Jul 2026 · ~$640M"
+    },
+    {
+      "label": "Noma Security",
+      "value": 100000000.0,
+      "note": "Series B, 2025"
+    },
+    {
+      "label": "Surf AI",
+      "value": 57000000.0,
+      "note": "launch, Mar 2026"
+    },
+    {
+      "label": "AIR Security",
+      "value": 50000000.0,
+      "note": "two seed rounds, Sep 2026",
+      "emphasis": true
+    },
+    {
+      "label": "RunSybil",
+      "value": 40000000.0,
+      "note": "Mar 2026"
+    },
+    {
+      "label": "Qevlar AI",
+      "value": 30000000.0,
+      "note": "Series A, Mar 2026"
+    },
+    {
+      "label": "Eclypsium",
+      "value": 25000000.0,
+      "note": "strategic, Mar 2026"
+    }
+  ],
+  "caption": "The capital base exceeds the revenue base by roughly ten times, and AIR's $50 million is mid-pack rather than exceptional. AIR's own projection that the category passes $1 billion by the end of 2027 is deliberately not on this axis.",
+  "source": "TechCrunch (Glow, Zenity, AIR); Calcalist (7AI); Software Strategies, March 28, 2026; Businesswire and SecurityWeek (Onyx)."
+}

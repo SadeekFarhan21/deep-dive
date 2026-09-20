@@ -13,8 +13,10 @@
       @apply text-foreground mb-3;
     }
 
+    /* Memo subsections: a quiet label above its paragraph, a step below the
+       section rules and clearly not body text. */
     h3 {
-      @apply italic;
+      @apply mt-8 mb-2 text-base leading-snug font-semibold tracking-tight;
     }
 
     p,
@@ -166,5 +168,68 @@
     .highlighted-word {
       @apply border-border rounded-sm border px-0.5 py-px;
     }
+  }
+}
+
+/* Figures rendered by src/scripts/figures.ts */
+@layer components {
+  .fig {
+    @apply border-border my-8 rounded-lg border p-4;
+  }
+  .fig svg {
+    @apply block h-auto w-full;
+  }
+  .fig figcaption {
+    @apply text-muted-foreground mt-3 text-sm leading-relaxed;
+  }
+  .fig .fig-axis {
+    fill: var(--muted-foreground);
+    font-size: 10px;
+  }
+  .fig .fig-label {
+    fill: var(--foreground);
+    font-size: 11px;
+  }
+  .fig .fig-controls {
+    @apply mb-3 flex items-center gap-3 text-sm;
+  }
+  .fig .fig-controls input[type="range"] {
+    @apply accent-accent max-w-64 flex-1;
+  }
+  .fig-tip {
+    @apply border-border bg-background text-foreground pointer-events-none absolute z-50 rounded-md border px-2.5 py-1.5 text-xs leading-snug opacity-0 shadow-sm transition-opacity;
+  }
+  .fig-tip-muted {
+    @apply text-muted-foreground;
+  }
+
+  /* Venture-memo figures (src/scripts/venture-figures.ts): a titled card with
+     the chart, a legend, the caption and a provenance line. */
+  .fig-head {
+    @apply mb-3;
+  }
+  .fig-title {
+    @apply text-foreground text-sm leading-snug font-semibold;
+  }
+  .fig-subtitle {
+    @apply text-muted-foreground mt-0.5 text-xs leading-snug;
+  }
+  .fig-legend {
+    @apply text-muted-foreground mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs;
+  }
+  .fig-legend-item {
+    @apply inline-flex items-center gap-1.5;
+  }
+  .fig-swatch {
+    @apply inline-block size-2.5 rounded-xs border border-transparent;
+  }
+  .fig-source {
+    @apply text-muted-foreground mt-1.5 mb-0 text-xs leading-relaxed;
+  }
+  .fig-source::before {
+    content: "Source: ";
+  }
+  .fig .fig-value {
+    @apply text-muted-foreground tabular-nums;
   }
 }

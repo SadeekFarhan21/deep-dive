@@ -1,0 +1,34 @@
+{
+  "type": "columns",
+  "mode": "stacked",
+  "format": "money",
+  "unit": "per million output tokens",
+  "title": "Cheaper to the customer and higher margin at the same time",
+  "subtitle": "Per million output tokens. Illustrative. Prices and the NVIDIA cost are assumptions; only the 62.5% cost ratio comes from Wafer's own self-reported benchmark.",
+  "categories": [
+    "Typical provider on NVIDIA B200",
+    "Wafer on AMD MI355X"
+  ],
+  "series": [
+    {
+      "name": "Cost",
+      "values": [
+        1.2,
+        0.75
+      ]
+    },
+    {
+      "name": "Gross margin",
+      "values": [
+        0.8,
+        0.85
+      ]
+    }
+  ],
+  "annotations": [
+    "$2.00 · 40% margin",
+    "$1.60 · 53% margin"
+  ],
+  "caption": "The shorter bar is the cheaper price; the larger top segment is the better margin. A 20% discount with a higher gross margin is the entire investment case in one picture, and every input except the cost ratio is assumed. Fireworks AI's gross margin was about 50% as of July 2025.",
+  "source": "Memo's illustrative model. Cost ratio from Wafer's July 2026 GLM-5.2 benchmark: about 80% of B200 throughput at under half the cost."
+}

@@ -1,0 +1,28 @@
+{
+  "type": "bars",
+  "format": "money",
+  "scale": "log",
+  "unit": "disclosed capital raised",
+  "title": "Better-funded rivals, 150x for Setpoint and unknown for Cascade",
+  "rows": [
+    {
+      "label": "Setpoint",
+      "value": 76000000.0,
+      "note": "total · Series B, Aug 2024"
+    },
+    {
+      "label": "Levocred",
+      "value": 500000.0,
+      "note": "YC standard deal, Summer 2026",
+      "emphasis": true
+    },
+    {
+      "label": "Cascade Debt",
+      "value": null,
+      "note": "not disclosed",
+      "detail": "Public aggregators conflate several unrelated companies named Cascade."
+    }
+  ],
+  "caption": "Cascade Debt's row is empty on purpose. A bar at zero would say 'raised nothing'; the truth is 'not disclosed', and the public aggregators that show a number for it are mixing it up with other companies.",
+  "source": "Setpoint Series B release, August 13, 2024; ycombinator.com/deal, accessed September 20, 2026."
+}

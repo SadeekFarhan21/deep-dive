@@ -1,0 +1,52 @@
+{
+ "source": "checkpoints/gpt-tinystories.pt",
+ "config": {
+  "vocab_size": 1000,
+  "block_size": 64,
+  "n_embed": 256,
+  "num_heads": 8,
+  "n_layers": 6
+ },
+ "final_loss": 2.1422,
+ "steps": 20000,
+ "batch_size": 8,
+ "total_params": 5263848,
+ "groups": [
+  {
+   "label": "Token embedding",
+   "params": 256000,
+   "share": 4.86,
+   "vocab_bound": true
+  },
+  {
+   "label": "Position embedding",
+   "params": 16384,
+   "share": 0.31,
+   "vocab_bound": false
+  },
+  {
+   "label": "Attention",
+   "params": 1574400,
+   "share": 29.91,
+   "vocab_bound": false
+  },
+  {
+   "label": "MLP",
+   "params": 3153408,
+   "share": 59.91,
+   "vocab_bound": false
+  },
+  {
+   "label": "LayerNorm",
+   "params": 6656,
+   "share": 0.13,
+   "vocab_bound": false
+  },
+  {
+   "label": "Output head",
+   "params": 257000,
+   "share": 4.88,
+   "vocab_bound": true
+  }
+ ]
+}

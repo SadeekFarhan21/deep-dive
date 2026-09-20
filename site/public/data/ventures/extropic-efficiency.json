@@ -1,0 +1,37 @@
+{
+  "type": "series",
+  "format": "multiple",
+  "xFormat": "percent",
+  "yScale": "log",
+  "xLabel": "assumed GPU utilization",
+  "unit": "claimed energy advantage, log scale",
+  "title": "The 140x is a choice of baseline, not a measurement",
+  "subtitle": "Extropic's own three figures for Z1T language models, simulated on projected Z1 energy. Assume the GPU sits nearly idle and the advantage is 139x; assume it is busy and it is 14x.",
+  "entities": [
+    {
+      "name": "Z1T vs H100, per Extropic",
+      "points": [
+        {
+          "x": 10,
+          "value": 139,
+          "note": "The headline figure."
+        },
+        {
+          "x": 50,
+          "value": 28
+        },
+        {
+          "x": 100,
+          "value": 14,
+          "note": "A busy GPU. Against a stack that improves 20x to 45x on its own, this is the number that matters."
+        }
+      ]
+    }
+  ],
+  "guide": {
+    "k": 1390,
+    "label": "advantage × utilization ≈ 14"
+  },
+  "caption": "The three published points sit on one curve. The claimed advantage is roughly 14 divided by the fraction of the time the GPU is assumed to be working. The headline number is what you get by comparing against a GPU that is idle nine-tenths of the time.",
+  "source": "Extropic, Z1T release, September 2026. Company projections from simulation; no physical Z1 has run these models."
+}

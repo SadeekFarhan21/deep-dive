@@ -1,0 +1,52 @@
+{
+  "type": "bars",
+  "format": "money",
+  "scale": "log",
+  "unit": "total capital raised",
+  "title": "Wafer has raised a fiftieth of what the platforms have",
+  "subtitle": "Two clusters. Seed-stage engine companies, and platform companies several rounds ahead. The log axis keeps both gaps visible.",
+  "rows": [
+    {
+      "label": "Baseten",
+      "value": 2100000000.0,
+      "note": "Series F, Jun 2026 · $13B",
+      "detail": "Total raised. Valuation $13B disclosed at the Series F.",
+      "emphasis": false
+    },
+    {
+      "label": "Fireworks AI",
+      "value": 1800000000.0,
+      "note": "Series D, Jul 2026 · $17.5B",
+      "detail": "Total raised. More than $1B annualized revenue.",
+      "emphasis": false
+    },
+    {
+      "label": "Together AI",
+      "value": 1300000000.0,
+      "note": "Series C, Jul 2026 · $8.3B",
+      "detail": "Total raised. Valuation $8.3B disclosed at the Series C.",
+      "emphasis": false
+    },
+    {
+      "label": "Inferact (vLLM)",
+      "value": 150000000.0,
+      "note": "Seed, Jan 2026 · $800M",
+      "emphasis": false
+    },
+    {
+      "label": "RadixArk (SGLang)",
+      "value": 100000000.0,
+      "note": "Seed, May 2026 · $400M",
+      "emphasis": false
+    },
+    {
+      "label": "Wafer",
+      "value": 44000000.0,
+      "note": "Series A, Sep 2026 · $200M+",
+      "emphasis": true,
+      "detail": "Valuation reported by The Information, not company-confirmed."
+    }
+  ],
+  "caption": "On a linear axis Wafer, RadixArk and Inferact would collapse into three slivers. The log scale preserves the fact that Wafer is a little over twice below the engine companies and more than forty times below the platforms.",
+  "source": "Company announcements and Contrary Research, totals as of September 2026. Wafer's valuation per The Information, not company-confirmed."
+}

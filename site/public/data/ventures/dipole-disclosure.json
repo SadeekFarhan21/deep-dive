@@ -1,0 +1,55 @@
+{
+  "type": "matrix",
+  "title": "Three competitors publish four numbers; Dipole publishes none",
+  "columns": [
+    "Ports",
+    "Insertion loss",
+    "Reconfiguration",
+    "Power"
+  ],
+  "rows": [
+    {
+      "label": "Polatis 7000n (MEMS)",
+      "cells": [
+        "384×384",
+        "1.5 dB typ, 2.7 max",
+        "50 ms",
+        "100 W per switch"
+      ],
+      "note": "Shipping. Vendor datasheet, 2018–2020."
+    },
+    {
+      "label": "Google Apollo",
+      "cells": [
+        "136×136",
+        "under 2 dB",
+        "millisecond scale",
+        "108 W per system"
+      ],
+      "note": "Deployed at scale for over a decade. Google paper, August 2022."
+    },
+    {
+      "label": "Salience OC-32M",
+      "cells": [
+        "32",
+        "under 2 dB",
+        "under 300 µs",
+        "under 1 W per port"
+      ],
+      "note": "Announced available March 2026. Vendor specification, not independently measured."
+    },
+    {
+      "label": "Dipole Labs",
+      "cells": [
+        null,
+        null,
+        "under 1 µs (target)",
+        null
+      ],
+      "emphasis": true,
+      "note": "YC company page and RuntimeWire profile, September 19, 2026: no port count, bandwidth, insertion loss, switching mechanism, power draw or measured cluster results published."
+    }
+  ],
+  "caption": "This is the memo's closing sentence as a picture. The empty cells are the subject; do not read the one filled Dipole cell as a specification, since it is a target the company has not demonstrated.",
+  "source": "Polatis datasheet; Google, Mission Apollo (arXiv 2208.10041); Salience Labs product page; RuntimeWire, September 19, 2026."
+}

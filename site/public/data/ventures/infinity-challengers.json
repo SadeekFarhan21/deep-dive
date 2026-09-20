@@ -1,0 +1,89 @@
+{
+  "type": "bars",
+  "format": "money",
+  "unit": "disclosed funding; 'total' rows are cumulative, others are one round",
+  "title": "Infinity's market is about twenty funded chip programs",
+  "subtitle": "The supply side of the memo's market sizing, made visible. Rows marked 'total' are cumulative; the rest are single rounds.",
+  "rows": [
+    {
+      "label": "SambaNova",
+      "value": 1000000000.0,
+      "note": "Series F first close, Jul 2026",
+      "detail": "Valued at $11B."
+    },
+    {
+      "label": "Groq",
+      "value": 1000000000.0,
+      "note": "2026"
+    },
+    {
+      "label": "Rebellions",
+      "value": 850000000.0,
+      "note": "total · pre-IPO, Mar 2026"
+    },
+    {
+      "label": "Etched",
+      "value": 700000000.0,
+      "note": "Aug 2026 · valued $21B"
+    },
+    {
+      "label": "Tenstorrent",
+      "value": 693000000.0,
+      "note": "total · Series D, 2024"
+    },
+    {
+      "label": "MatX",
+      "value": 500000000.0,
+      "note": "Series B, Feb 2026"
+    },
+    {
+      "label": "Axelera AI",
+      "value": 450000000.0,
+      "note": "equity, grants and debt, Feb 2026"
+    },
+    {
+      "label": "d-Matrix",
+      "value": 450000000.0,
+      "note": "total · Series C, Nov 2025 · $2B",
+      "detail": "Infinity's one live chip partner."
+    },
+    {
+      "label": "SiMa.ai",
+      "value": 355000000.0,
+      "note": "total"
+    },
+    {
+      "label": "Hailo",
+      "value": 340000000.0,
+      "note": "total"
+    },
+    {
+      "label": "FuriosaAI",
+      "value": 246000000.0,
+      "note": "total"
+    },
+    {
+      "label": "Positron",
+      "value": 230000000.0,
+      "note": "Series B, Feb 2026 · $1B+"
+    },
+    {
+      "label": "Fractile",
+      "value": 220000000.0,
+      "note": "May 2026"
+    },
+    {
+      "label": "Taalas",
+      "value": 219000000.0,
+      "note": "before AMD agreed to buy it, Aug 2026"
+    },
+    {
+      "label": "Infinity",
+      "value": 15000000.0,
+      "note": "Seed, Jul 2026 · $100M",
+      "emphasis": true
+    }
+  ],
+  "caption": "Every bar above Infinity is a potential customer, and one of them, d-Matrix, is the only live one. The memo's $100M to $400M market estimate is twenty programs spending $5M to $20M a year each; this is what those programs have raised.",
+  "source": "Converge Digest, AI Inference Semiconductor Startups Tracker, August 24, 2026. d-Matrix per PRNewswire, Nov 2025; Etched per TechCrunch, Aug 2026."
+}

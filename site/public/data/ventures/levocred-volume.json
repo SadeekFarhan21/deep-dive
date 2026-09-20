@@ -1,0 +1,30 @@
+{
+  "type": "bars",
+  "format": "money",
+  "unit": "platform volume, not revenue; none of the three discloses revenue",
+  "title": "The lead traction number is a fiftieth of the incumbent's",
+  "subtitle": "Not like-for-like. Setpoint counts assets financed through its technology, Cascade counts balances monitored, Levocred counts receivables on the platform. Each bar carries its source's wording.",
+  "rows": [
+    {
+      "label": "Setpoint",
+      "value": 50000000000.0,
+      "note": "financed assets powered, annual flow",
+      "detail": "Setpoint: 'over $50 billion in financed assets are powered by Setpoint's technology'."
+    },
+    {
+      "label": "Cascade Debt",
+      "value": 25000000000.0,
+      "note": "total receivable balances monitored",
+      "detail": "Cascade Debt: '$25 billion+ total receivable balances monitored'."
+    },
+    {
+      "label": "Levocred",
+      "value": 1000000000.0,
+      "note": "receivables on the platform",
+      "emphasis": true,
+      "detail": "Levocred: '$1Bn+ runs through Levocred'."
+    }
+  ],
+  "caption": "Volume is not a market-share chart and it is not revenue. It shows the scale of the installed bases the memo's Key Risks section says rivals can ship AI features into.",
+  "source": "setpoint.io, cascadedebt.com and levocred.com, all accessed September 20, 2026; the rivals' pages are undated."
+}

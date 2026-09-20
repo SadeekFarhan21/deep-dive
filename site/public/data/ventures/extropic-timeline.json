@@ -1,0 +1,74 @@
+{
+  "type": "timeline",
+  "start": "2023-10",
+  "end": "2027-06",
+  "title": "The software shipped a year before the chip",
+  "subtitle": "Filled markers are things that exist. The hollow ones are the chip in customers' hands and the government money, neither of which has happened.",
+  "lanes": [
+    {
+      "name": "Hardware",
+      "events": [
+        {
+          "date": "2025-10",
+          "label": "X0 silicon, XTR-0 dev kit",
+          "shipped": true,
+          "detail": "Dozens of XTR-0 systems shipped to early users, per the company."
+        },
+        {
+          "date": "2026-08",
+          "label": "Z1 announced",
+          "shipped": true,
+          "detail": "269,568 pbits, under 1 W, under 12 mm on a side."
+        },
+        {
+          "date": "2027-03",
+          "label": "Z1 early access",
+          "shipped": false,
+          "detail": "Planned for 2027, in two form factors."
+        }
+      ]
+    },
+    {
+      "name": "Software",
+      "events": [
+        {
+          "date": "2025-10",
+          "label": "THRML",
+          "shipped": true,
+          "detail": "Open-source simulation library."
+        },
+        {
+          "date": "2026-08",
+          "label": "Torx, Thermalizers",
+          "shipped": true,
+          "detail": "Training framework and compiler."
+        },
+        {
+          "date": "2026-09",
+          "label": "Z1T models",
+          "shipped": true,
+          "detail": "Open weights; cannot yet run on physical hardware."
+        }
+      ]
+    },
+    {
+      "name": "Money",
+      "events": [
+        {
+          "date": "2023-12",
+          "label": "$14.1M seed",
+          "shipped": true,
+          "detail": "Led by Kindred Ventures. The only disclosed equity."
+        },
+        {
+          "date": "2026-07",
+          "label": "Up to $75M, Commerce LOI",
+          "shipped": false,
+          "detail": "A non-binding letter of intent, subject to definitive agreements."
+        }
+      ]
+    }
+  ],
+  "caption": "Two chips, three open-source projects and a model family on one 2023 seed, and every piece of software has shipped before the hardware it targets is available. The two hollow markers are the whole of the next twelve months.",
+  "source": "Extropic announcements; PRNewswire, December 2023; NIST, July 29, 2026."
+}

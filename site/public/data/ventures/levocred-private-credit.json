@@ -1,0 +1,94 @@
+{
+  "type": "columns",
+  "mode": "stacked",
+  "format": "money",
+  "unit": "US private credit assets under management",
+  "showValues": false,
+  "title": "US private credit quintupled since 2009, and a fifth of it is undeployed",
+  "subtitle": "Stacked so the dry-powder wedge is visible. That is the component that turns a fivefold rise into the tenfold figure some guides quote.",
+  "categories": [
+    "'09",
+    "'10",
+    "'11",
+    "'12",
+    "'13",
+    "'14",
+    "'15",
+    "'16",
+    "'17",
+    "'18",
+    "'19",
+    "'20",
+    "'21",
+    "'22",
+    "'23",
+    "'24 Q2"
+  ],
+  "series": [
+    {
+      "name": "Business development companies",
+      "values": [
+        24500000000.0,
+        26200000000.0,
+        32400000000.0,
+        45200000000.0,
+        61900000000.0,
+        79700000000.0,
+        83300000000.0,
+        83500000000.0,
+        92000000000.0,
+        100800000000.0,
+        123100000000.0,
+        134300000000.00002,
+        207700000000.0,
+        273399999999.99997,
+        318800000000.0,
+        374900000000.0
+      ]
+    },
+    {
+      "name": "Private debt funds, invested",
+      "values": [
+        174500000000.0,
+        200900000000.0,
+        193600000000.0,
+        197200000000.0,
+        188900000000.0,
+        200600000000.0,
+        202500000000.0,
+        224700000000.0,
+        248100000000.0,
+        287900000000.0,
+        337100000000.0,
+        412300000000.0,
+        559200000000.0,
+        634900000000.0,
+        742300000000.0,
+        753100000000.0
+      ]
+    },
+    {
+      "name": "Private debt funds, dry powder",
+      "values": [
+        64500000000.0,
+        73000000000.0,
+        74600000000.0,
+        77700000000.0,
+        102600000000.0,
+        96200000000.0,
+        113000000000.0,
+        149200000000.0,
+        178100000000.0,
+        205300000000.0,
+        214900000000.0,
+        270899999999.99997,
+        272399999999.99997,
+        262600000000.00003,
+        279800000000.0,
+        277900000000.0
+      ]
+    }
+  ],
+  "caption": "From $264 billion in 2009 to $1.41 trillion by mid-2024. Dry powder is committed but undeployed capital, which sits in no facility yet, a nuance that bears on how much of the asset class is Levocred's to monitor today.",
+  "source": "Federal Reserve FEDS Notes, May 23, 2025, from Preqin and BDC Collateral via LSEG. 2024 is as of Q2. Totals are sums of the published components."
+}

@@ -1,0 +1,49 @@
+{
+  "type": "timeline",
+  "start": "2026-01",
+  "end": "2026-10",
+  "title": "The platforms moved before AIR launched",
+  "subtitle": "The memo's largest stated risk was that platform verification could not be diligenced. Two of three platforms had shipped it by May.",
+  "lanes": [
+    {
+      "name": "Platforms",
+      "events": [
+        {
+          "date": "2026-04",
+          "label": "Anthropic: ongoing directory review",
+          "shipped": true,
+          "detail": "Software Directory Policy updated April 15, 2026: initial and ongoing reviews, and developers must verify ownership of external resources their software retrieves."
+        },
+        {
+          "date": "2026-05",
+          "label": "Microsoft Agent 365 GA",
+          "shipped": true,
+          "detail": "$15 per user per month on top of an E5-class licence; converging into a unified agent registry with publisher provenance."
+        }
+      ]
+    },
+    {
+      "name": "AIR Security",
+      "events": [
+        {
+          "date": "2026-02",
+          "label": "Founded",
+          "shipped": true
+        },
+        {
+          "date": "2026-06",
+          "label": "'Circus of Skills' report",
+          "shipped": true,
+          "detail": "17,822 of 142,836 skills flagged; 6.7 million installs."
+        },
+        {
+          "date": "2026-09",
+          "label": "Public launch, $50M",
+          "shipped": true
+        }
+      ]
+    }
+  ],
+  "caption": "Platform review covers a platform's own directory, not the add-on an enterprise installs from anywhere else, and neither platform has shipped cryptographic signing. That gap is the whole of AIR's position, and it is narrower than the memo first described.",
+  "source": "support.claude.com, Anthropic Software Directory Policy; Microsoft Learn, Agent Registry convergence; TechCrunch, September 1, 2026."
+}

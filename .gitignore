@@ -6,3 +6,5 @@ investment-memos/
 __pycache__/
 .vercel
 .env*
+
+.playwright-mcp/

@@ -1,0 +1,66 @@
+{
+  "type": "dots",
+  "format": "percent",
+  "domain": [
+    0,
+    100
+  ],
+  "unit": "claimed MTTR improvement",
+  "classLabels": {
+    "measured": "Independently measured",
+    "claimed": "Company-reported"
+  },
+  "title": "Seven recovery-time figures, and one claim with two values",
+  "subtitle": "Every point is vendor marketing. The bracket joins the wire release and the company blog post for the same March 4, 2026 announcement.",
+  "rows": [
+    {
+      "label": "Fortune 100 financial firm",
+      "sublabel": "potential MTTR, one customer",
+      "value": 32,
+      "class": "claimed",
+      "detail": "Company case study; a third-party directory names the customer as American Express."
+    },
+    {
+      "label": "DigitalOcean",
+      "sublabel": "one customer",
+      "value": 38,
+      "class": "claimed"
+    },
+    {
+      "label": "Amex announcement, wire copy",
+      "sublabel": "average across enterprise clients",
+      "value": 40,
+      "class": "claimed",
+      "pair": "amex",
+      "detail": "Businesswire and Yahoo Finance copy, March 4, 2026."
+    },
+    {
+      "label": "Amex announcement, own blog",
+      "sublabel": "average across enterprise clients",
+      "value": 85,
+      "class": "claimed",
+      "pair": "amex",
+      "detail": "traversal.com/blog, same announcement, same sentence."
+    },
+    {
+      "label": "Crypto exchange",
+      "sublabel": "projected, evaluated incidents",
+      "value": 40,
+      "class": "claimed"
+    },
+    {
+      "label": "Cloudways",
+      "sublabel": "one customer",
+      "value": 70,
+      "class": "claimed"
+    },
+    {
+      "label": "2026 state-of-the-field post",
+      "sublabel": "MTTR and MTTD",
+      "value": 85,
+      "class": "claimed"
+    }
+  ],
+  "caption": "Do not average these. They measure different things at different customers, and two of them are the same claim. The 40% and 85% pair is a diligence question that can be put to the company verbatim.",
+  "source": "traversal.com customer stories, homepage and blog; Businesswire, March 4, 2026. Compiled September 2026."
+}

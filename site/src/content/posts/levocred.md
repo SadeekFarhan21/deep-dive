@@ -15,29 +15,29 @@ category: ventures
 
 ## Overview
 
-Levocred builds AI agents for the operational work inside private credit: borrowing base reports, covenant monitoring, credit memos, collections reconciliation, and the loan marks a fund publishes to its own investors. The work exists because a credit facility behaves like a credit card whose limit depends on the quality of the loans pledged against it, and both the lender and the borrower have to rebuild that calculation from raw loan data every week or month. Today an analyst does it in a spreadsheet. Levocred generates it in minutes with an audit trail. About \$1 billion in receivables across roughly 30 facilities runs through the platform, and the company does not disclose revenue.
+Levocred builds AI agents for the operational work inside private credit. That work is borrowing base reports, covenant monitoring, credit memos, collections reconciliation, and the loan marks a fund publishes to its own investors. The work exists because a credit facility behaves like a credit card whose limit depends on the quality of the loans pledged against it, and both the lender and the borrower have to rebuild that calculation from raw loan data every week or month. Today an analyst does it in a spreadsheet. Levocred generates it in minutes with an audit trail. About \$1 billion in receivables across roughly 30 facilities runs through the platform, and the company does not disclose revenue.
 
 | Fact | Detail |
 | --- | --- |
-| Founded | 2026 per YC, 2025 per earlier profile |
+| Founded | 2025. The brand was live in August 2024 and a full product site by mid-2025; Y Combinator lists 2026 |
 | Headquarters | San Francisco |
 | Founders | Mohit Gupta (CEO), Saksham Gupta (CTO) |
 | Stage | Pre-seed (Y Combinator Summer 2026) |
-| Employees | 2 |
+| Employees | 2, per Y Combinator |
 | Status | \$1B receivables monitored (revenue undisclosed) |
 
 ## Thesis
 
-Private credit has grown roughly tenfold since 2009 and the operations underneath it have not moved. The data for a single facility lives across five or six systems plus spreadsheets. The people assembling it are expensive analysts copying numbers between those systems. The fastest-growing corner of the asset class is asset-based finance, which is the segment with the most loan-level data and therefore the most manual work. That is [Fitch's read](https://www.hellenicshippingnews.com/?p=1117665), and it is the segment Levocred serves.
+Private credit in the United States has grown roughly five times since 2009 by the Federal Reserve's count, to about \$1.4 trillion, and around \$2 trillion globally, and the operations underneath it have not moved. The data for a single facility lives across five or six systems plus spreadsheets. The people assembling it are expensive analysts copying numbers between those systems. Asset-based finance, the corner of the asset class [Fitch expects to keep gaining ground](https://www.hellenicshippingnews.com/?p=1117665), is the segment with the most loan-level data and therefore the most manual work, and it is the segment Levocred serves.
 
 Two things make the work unusually attractive to automate. It is high-stakes, because a mistake delays funding and a missed covenant can put a facility into default, which means buyers have a real reason to pay rather than tolerate. And it is high-frequency, because the reports rebuild every period forever, which means the software sits in the operating rhythm of the firm rather than at the edge of it.
 
-The company's larger claim is about sequence. Levocred now describes itself as the Bloomberg of loans, arguing that \$22 trillion of US loans never trade because nobody can price them efficiently and defensibly, and that fixing pricing from inside lenders is the route to eventually hosting the trading. Bonds developed in that order. Whether loans follow is unknowable now, but the first stage stands on its own, and the later stages are optionality rather than the basis for underwriting.
+The company's larger claim is about sequence. Levocred now describes itself as the Bloomberg of loans, arguing that \$22 trillion of US credit never trades because nobody can price it efficiently and defensibly (the figure is Barclays' sizing of the whole US credit market, public bond markets included, so the untraded share is smaller), and that fixing pricing from inside lenders is the route to eventually hosting the trading. Bonds developed in that order. Whether loans follow is unknowable now, but the first stage stands on its own, and the later stages are optionality rather than the basis for underwriting.
 
 | Stage | Product | How it earns | Evidence |
 | --- | --- | --- | --- |
 | 1. Workflow | Agents for draws, covenants, memos and reporting | Software fees | Live, \$1B receivables |
-| 2. Pricing | Marks and valuations for a lender's book | Software and data fees | One fund: a week to two hours |
+| 2. Pricing | Marks and valuations for a lender's book | Software and data fees | One fund, a week to two hours |
 | 3. Trading | A venue where priced loans can change hands | Transaction fees | Vision only |
 
 ## Founding Story
@@ -48,7 +48,7 @@ Mohit was the first employee at a credit fund that grew from \$10 million to \$1
 
 Saksham was a founding engineer at a credit fund, where he built the trading and data infrastructure as it scaled from \$150 million to over \$1 billion. He studied electrical engineering at IIT Kanpur.
 
-Y Combinator's launch post says their code ran billions in lending. The relevant gap is equally clear: neither has sold software to a bank. The buyers they can reach today are funds like the ones they worked at, and the buyers that would make this a large company purchase on a different clock, through procurement processes neither founder has run. That is the first hire, not a founder-level flaw.
+Y Combinator's launch post says their code ran billions in lending. The relevant gap is equally clear. Neither has sold software to a bank. The buyers they can reach today are funds like the ones they worked at, and the buyers that would make this a large company purchase on a different clock, through procurement processes neither founder has run. That is the first hire, not a founder-level flaw.
 
 ## Product
 
@@ -68,7 +68,7 @@ The audit trail is the part that matters more than the speed. Software that prod
 
 Two buyers sit on opposite sides of the same facility, and Levocred sells to both. The fintech lender pledges loans and prepares the borrowing base report; the credit fund advances cash against them and monitors the covenants. Both rebuild the same calculation from the same underlying data, which is what makes a shared system of record plausible rather than merely convenient.
 
-Today those buyers are small funds and lenders: the segment that moves fast, has no internal engineering team, and feels the analyst cost most acutely. Levocred names Pier Asset Management as a customer. One fund has gone further and named Levocred as data agent and system of record in its loan purchase agreements, which is a stronger commitment than a subscription and the single most interesting fact in the company's traction.
+Today those buyers are small funds and lenders, the segment that moves fast, has no internal engineering team, and feels the analyst cost most acutely. Levocred names Pier Asset Management as a customer. One fund has gone further and named Levocred as data agent and system of record in its loan purchase agreements, which is a stronger commitment than a subscription and the single most interesting fact in the company's traction.
 
 Banks and large funds are where the market size lives. There is no named bank customer, and nothing in the company's history suggests that sale is close.
 
@@ -76,7 +76,9 @@ Banks and large funds are where the market size lives. There is no named bank cu
 
 Two to five basis points a year on \$2 trillion of monitored capital is \$400 million to \$1 billion of annual revenue. That is a sizing exercise, not a sourced figure, and it depends entirely on a pricing model the company has not disclosed.
 
-The supporting context is in [Chambers' 2026 private credit guide](https://practiceguides.chambers.com/practice-guides/private-credit-2026) and [BlackRock's primer](https://www.blackrock.com/gls-download/literature/market-commentary/private-credit-primer-january-2026.pdf): an asset class that has grown tenfold in fifteen years, whose fastest-growing segment is the data-heavy one, running on tooling that predates all of that growth.
+The supporting context is in [Chambers' 2026 private credit guide](https://practiceguides.chambers.com/practice-guides/private-credit-2026) and [BlackRock's primer](https://www.blackrock.com/gls-download/literature/market-commentary/private-credit-primer-january-2026.pdf). Both describe an asset class that has grown several times over in fifteen years, whose data-heavy segment is expanding, running on tooling that predates all of that growth.
+
+<figure data-figure="venture:levocred-private-credit"></figure>
 
 ## Competition
 
@@ -88,6 +90,8 @@ The supporting context is in [Chambers' 2026 private credit guide](https://pract
 | Spreadsheets | The real incumbent | Analysts trust them and auditors accept them |
 
 The last row is not a joke. The competitor that wins most deals in this category is the existing process, defended by the fact that it is understood, auditable, and already approved. Levocred's edge against the general tools is depth. A borrowing base report has to be correct to the dollar, and a tool built to summarize documents is not built to that standard. Its edge against Setpoint and Cascade is less clear from public information, and is the thing a buyer would actually test.
+
+<figure data-figure="venture:levocred-capital"></figure>
 
 ## Business Model
 
@@ -106,8 +110,7 @@ One detail suggests genuine willingness to pay. Drawing on a credit line takes h
 
 | Metric | Figure |
 | --- | --- |
-| Capital monitored, late July 2026 | \$500M across 10 facilities |
-| Capital monitored, later profile | \$1B across 30 facilities |
+| Capital monitored | \$1B per the company and Y Combinator (30 facilities in one directory profile only) |
 | Time to mark a book, one fund | A week to two hours |
 | Contractual role at that fund | Named data agent and system of record |
 | Time to prepare a draw | A day to minutes |
@@ -116,7 +119,9 @@ One detail suggests genuine willingness to pay. Drawing on a credit line takes h
 
 *Figures are company-reported. Pricing and customer count are not disclosed.*
 
-Usage roughly doubled in weeks, and four asset classes running through one engine is early evidence that the product generalizes without per-client rule-writing. As [one newsletter covering the batch](https://enterpriseaiweeklybyvp.substack.com/p/what-ycombinators-september-2026) put it, receivables are not revenue. That is the first thing anyone should establish.
+A \$500 million figure that circulated in July came from an auto-generated directory page marked as backfilled, and the dated record runs \$1 billion in June, \$500 million in July and \$1 billion in September, so there is no growth series here, only a level. Four asset classes running through one engine is early evidence that the product generalizes without per-client rule-writing.
+
+<figure data-figure="venture:levocred-volume"></figure> As [one newsletter covering the batch](https://enterpriseaiweeklybyvp.substack.com/p/what-ycombinators-september-2026) put it, receivables are not revenue. That is the first thing anyone should establish.
 
 ## Valuation
 
@@ -124,29 +129,51 @@ No priced round has been disclosed. Levocred participated in Y Combinator's Summ
 
 ## Key Opportunities
 
-**Converting usage into contracts.** About \$1 billion in receivables across 30 facilities is a live deployment footprint that most pre-seed companies never reach. The gap between that and disclosed revenue is the company's single largest near-term value creation step, and it requires selling rather than building.
+### Converting usage into contracts
 
-**System of record status.** One fund already names Levocred in its loan purchase agreements. That is contractual entrenchment rather than a subscription, it is extremely hard for a competitor to displace, and it is a repeatable motion if the company recognizes what it has.
+About \$1 billion in receivables across 30 facilities is a live deployment footprint that most pre-seed companies never reach. The gap between that and disclosed revenue is the company's single largest near-term value creation step, and it requires selling rather than building.
 
-**The pricing product.** Marking a book in two hours instead of a week is a distinct product with a distinct buyer inside the same account, and it is the bridge to stage two of the company's thesis. Three funds live on pricing would make the Bloomberg-of-loans framing an argument rather than an aspiration.
+### System of record status
 
-**Moving up-market.** The current customers validate the workflow. A single bank or large fund in production would multiply the addressable contract size and answer the main question about the founders' commercial range.
+One fund already names Levocred in its loan purchase agreements. That is contractual entrenchment rather than a subscription, it is extremely hard for a competitor to displace, and it is a repeatable motion if the company recognizes what it has.
+
+### The pricing product
+
+Marking a book in two hours instead of a week is a distinct product with a distinct buyer inside the same account, and it is the bridge to stage two of the company's thesis. Three funds live on pricing would make the Bloomberg-of-loans framing an argument rather than an aspiration.
+
+### Moving up-market
+
+The current customers validate the workflow. A single bank or large fund in production would multiply the addressable contract size and answer the main question about the founders' commercial range.
 
 ## Key Risks
 
-**Revenue is entirely unproven.** Platform volume is public and revenue is not, and small funds have limited budgets. The whole investment case turns on an answer the company has not given.
+### Revenue is entirely unproven
 
-**Two people supporting 30 live facilities.** That is fragile operationally and leaves no capacity to sell. The first engineering and sales hires are the point of the round.
+Platform volume is public and revenue is not, and small funds have limited budgets. The whole investment case turns on an answer the company has not given.
 
-**Accuracy is existential, not a quality metric.** One wrong compliance certificate delivered to a lender would travel through a small industry faster than any sales effort could repair.
+### Two people supporting 30 live facilities
 
-**Better-funded rivals sell to the same buyers.** Setpoint and Cascade Debt have installed bases into which they can ship the same AI features.
+That is fragile operationally and leaves no capacity to sell. The first engineering and sales hires are the point of the round.
 
-**Intellectual property origin.** Both founders built tooling inside credit funds before starting this company. Claims from a former employer over that work would be difficult to unwind.
+### Accuracy is existential, not a quality metric
 
-**Sales cycle mismatch.** The customers who can pay meaningfully buy slowly; the customers buying now cannot pay much.
+One wrong compliance certificate delivered to a lender would travel through a small industry faster than any sales effort could repair.
 
-**Credit cycle.** Stress would cut software budgets, though it would also raise demand for exactly this monitoring. The direction is genuinely ambiguous.
+### Better-funded rivals sell to the same buyers
+
+Setpoint, with \$76 million raised and a product that already calculates borrowing bases, and Cascade Debt, whose funding is undisclosed, have installed bases into which they can ship the same AI features.
+
+### Intellectual property origin
+
+Both founders built tooling inside credit funds before starting this company. Claims from a former employer over that work would be difficult to unwind.
+
+### Sales cycle mismatch
+
+The customers who can pay meaningfully buy slowly; the customers buying now cannot pay much.
+
+### Credit cycle
+
+Stress would cut software budgets, though it would also raise demand for exactly this monitoring. The direction is genuinely ambiguous.
 
 ## Summary
 

@@ -1,0 +1,33 @@
+{
+  "type": "curve",
+  "title": "The number nobody outside the company knows",
+  "subtitle": "Contribution per robot-year against robots per operator. A model, not data. Price per robot-year is the memo's own $150K estimate; drag the slider to change field-service cost. The dark line is break-even.",
+  "price": 150000,
+  "scenarios": [
+    {
+      "name": "Lean operator",
+      "operatorCost": 120000
+    },
+    {
+      "name": "Typical operator",
+      "operatorCost": 180000
+    },
+    {
+      "name": "Costly operator",
+      "operatorCost": 240000
+    }
+  ],
+  "service": {
+    "label": "Field service per robot-year",
+    "min": 0,
+    "max": 80000,
+    "default": 30000,
+    "step": 5000
+  },
+  "ratio": {
+    "min": 1,
+    "max": 12
+  },
+  "caption": "Contribution per robot-year is price, less the operator's fully loaded cost divided by how many robots that operator runs, less field service. The sign flips between roughly one and four robots per operator depending on the assumptions; at ten it is an industrial business under every scenario. Where Watney sits on this axis is not public, so no marker is drawn.",
+  "source": "Memo's model. Operator cost scenarios are assumptions bracketing a skilled technician's fully loaded cost; Randstad reports HVAC advertised wages up 10% to 15% over four years."
+}

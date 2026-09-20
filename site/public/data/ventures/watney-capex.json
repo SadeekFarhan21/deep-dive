@@ -1,0 +1,39 @@
+{
+  "type": "columns",
+  "mode": "grouped",
+  "format": "money",
+  "unit": "Alphabet, Amazon, Meta, Microsoft, Oracle · SEC filings",
+  "title": "Capital spending nearly tripled in two years; 2026 guidance is hatched",
+  "subtitle": "Four years of actuals summed from quarterly SEC filings, and a 2026 range from company guidance. The flat 2023 is real.",
+  "categories": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "series": [
+    {
+      "name": "Five-hyperscaler capex",
+      "values": [
+        162300000000.0,
+        161300000000.0,
+        260399999999.99997,
+        448200000000.0,
+        [
+          660000000000.0,
+          690000000000.0
+        ]
+      ],
+      "estimate": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    }
+  ],
+  "caption": "Every dollar of this eventually needs technicians in an aisle. The 2025 figure is the five-company total; most published 'hyperscaler capex' numbers cover four companies and come in near $390B, which is why the memo's number can look high. Watney's funding is deliberately not on this axis.",
+  "source": "Epoch AI, hyperscaler capex trend, updated February 27, 2026, from XBRL filings. 2026 guidance per Introl, February 20, 2026."
+}
