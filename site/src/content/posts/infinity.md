@@ -1,6 +1,6 @@
 ---
 title: "Infinity"
-description: "Infinity's agent writes the kernels, compilers and debuggers a new AI chip needs to run models, attacking the software barrier that has protected NVIDIA for two decades. One live partner, company-reported numbers, and a pricing model nobody has tested."
+description: "Infinity's agent writes the kernels, compiler and debugging tools a new AI chip needs to run models, attacking NVIDIA's software moat on the evidence of one live partner and company-reported numbers."
 slug: infinity
 company: "Infinity"
 stage: "Seed"
@@ -17,15 +17,17 @@ category: ventures
 
 Infinity builds an agent, called Ignition, that writes the software layer a new AI chip needs before anyone can run a model on it. That layer is not a driver. It is thousands of hand-tuned math routines called kernels, plus the compiler that lays a model across the chip's memory, plus the profiler, debugger and SDK that make the whole thing usable by an engineer who does not work at the chip company. Producing it has historically taken specialist teams years per chip, which is the single largest reason that better silicon keeps losing to NVIDIA. Infinity's claim is that an agent can do it in days, and it prices itself on a share of the performance it unlocks rather than a license fee.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | August 2025 |
 | Headquarters | San Francisco |
 | Founder | Jeremy Nixon (CEO) |
-| Stage | Seed. \$15M at a \$100M post-money valuation, July 2026 |
-| Disclosed investors | Touring Capital, Principal VC, angels from chip companies, OpenAI and Anthropic. The founder also invested |
+| Stage | Seed |
+| Total funding | \$15M at \$100M post-money, July 2026 |
+| Disclosed investors | Touring Capital, Principal VC, angels from chip companies, OpenAI and Anthropic, and the founder |
 | Employees | 26 |
-| Status | Recurring revenue in the millions, company-reported. One live chip partner |
+| Revenue | Millions recurring, company-reported |
+| Chip partners | 1 live |
 
 ## Thesis
 
@@ -41,7 +43,7 @@ The contrarian part is the claim itself. A twenty-year moat built by the best sy
 
 Jeremy Nixon founded Infinity in San Francisco in August 2025. He was previously a researcher at Google Brain, studied mathematics at Harvard, and created AGI House, the San Francisco residency and event series that functions as a hub for the technical AI community. He put his own money into the seed round alongside Touring Capital and Principal VC.
 
-He is a solo founder, and the company has 26 employees. Who runs engineering under him is not public, which is a real gap: the product is a systems and compilers product, the hardest hiring market in software, and the company's entire claim rests on the quality of that team's output. The angel list of investors from chip companies, OpenAI and Anthropic suggests that the people closest to the problem think the approach is credible, which is the best available third-party signal at this stage.
+He is a solo founder, and who runs engineering under him is not public, which is a real gap: the product is a systems and compilers product, the hardest hiring market in software, and the company's entire claim rests on the quality of that team's output. The angel list of investors from chip companies, OpenAI and Anthropic suggests that the people closest to the problem think the approach is credible, which is the best available third-party signal at this stage.
 
 ## Product
 
@@ -61,10 +63,10 @@ Infinity sells to anyone shipping silicon that is not NVIDIA's, and the segments
 
 | Segment | Examples | Status |
 | --- | --- | --- |
-| Challenger chip startups | d-Matrix, Etched, MatX, Positron, SambaNova, Fractile, Euclyd | d-Matrix live. Company says others are in talks |
-| Hyperscaler silicon teams | Google, Amazon, Microsoft, Meta | No relationship disclosed. The largest prize |
-| Incumbents' non-CUDA lines | AMD, Qualcomm, Intel | No relationship disclosed |
-| Inference clouds on non-NVIDIA chips | General Compute on SambaNova, for example | Indirect demand |
+| Challenger chip startups | d-Matrix, Etched, MatX, Positron, SambaNova, Fractile, Euclyd | d-Matrix live, others in talks |
+| Hyperscaler silicon teams | Google, Amazon, Microsoft, Meta | None disclosed; the largest prize |
+| Incumbents' non-CUDA lines | AMD, Qualcomm, Intel | None disclosed |
+| Inference clouds on non-NVIDIA chips | General Compute on SambaNova | Indirect demand |
 
 The hyperscaler row is where the money is and also where the risk of being insourced is highest: those teams have compiler engineers already and may regard this software as core rather than procurable. The challenger startups are the reachable market today, and their willingness to outsource is partly a function of not having the engineers to do otherwise.
 
@@ -78,20 +80,20 @@ The more useful framing is derivative exposure. Infinity's revenue is a function
 
 | Competitor | Type | Threat |
 | --- | --- | --- |
-| Modular | Hardware-agnostic AI software, valued near \$1.6B in 2025 (approximate) | High. The closest comparable |
-| Chip vendors' own compiler teams | In-house | High. They may treat this software as core |
-| Triton, vLLM, SGLang | Open source | Medium. They occupy the layer above and are likelier partners than rivals |
-| Frontier coding agents | General models | Medium, rising. Would erase the edge if they master unfamiliar hardware |
+| Modular | Hardware-agnostic AI software, \$1.6B (2025) | High; closest comparable |
+| Chip vendors' own compiler teams | In-house | High; may treat this as core |
+| Triton, vLLM, SGLang | Open source | Medium; layer above, likelier partners |
+| Frontier coding agents | General models | Medium, rising; could erase the edge |
 
 The last row is the one that matters most and is the hardest to handicap. Infinity's defense is that proprietary instruction sets are absent from the training data of general models. That is true today. It is an argument about a gap in a distribution, and distributions are exactly what keeps getting filled.
 
-The in-house threat has a particular shape worth noting: the fastest way for a chip vendor to learn that this work can be automated is to hire Infinity and watch. A contract that does not address ownership of the generated kernels hands the customer a blueprint.
+The in-house threat has a particular shape: the fastest way for a chip vendor to learn that this work can be automated is to hire Infinity and watch. A contract that does not address ownership of the generated kernels hands the customer a blueprint.
 
 ## Business Model
 
 Infinity charges no upfront license. It takes a share of the inference revenue earned on chips it enables, measured in tokens per second, which prices the outcome rather than the work. The terms are undisclosed; the table below assumes a 1% to 3% share, which is an assumption rather than a disclosed term.
 
-| Partner's annual inference revenue on enabled chips | Infinity's revenue at 1% to 3% |
+| Partner annual inference revenue | Infinity at 1% to 3% |
 | --- | --- |
 | \$100M | \$1M to \$3M |
 | \$500M | \$5M to \$15M |
@@ -105,12 +107,10 @@ All figures are company-reported and unverified.
 
 | Result | Figure |
 | --- | --- |
-| Time to reach 92% of theoretical peak on d-Matrix's Corsair chip | 10 hours after first touching the silicon |
+| 92% of theoretical peak, d-Matrix Corsair | 10 hours from first silicon |
 | Frontier models running end to end | 3, within 10 days |
-| Qwen 3 throughput on one Corsair card | [20 times the tokens per second](https://lasvegassun.com/news/2026/aug/13/infinitys-agentic-tools-get-ai-chips-inference-rea/), with 16 times the context |
-| Qwen3-8B against the vLLM framework | 34% more throughput after one day of automated work |
-| Recurring revenue | "Millions of dollars" |
-| Live chip partners | 1, with others in talks |
+| Qwen 3, one Corsair card | [20x tokens per second](https://lasvegassun.com/news/2026/aug/13/infinitys-agentic-tools-get-ai-chips-inference-rea/), 16x context |
+| Qwen3-8B vs. vLLM | 34% more throughput after one day |
 
 The d-Matrix results are genuinely striking if they hold, and they are a single data point produced by the vendor of the thing being measured, on hardware whose maker also benefits from the number. What is missing is a second architecture. Everything the company claims about generality, that the ten-day build is a baseline and that the approach transfers, rests on a result from one SRAM-based chip. The human share of the work is also unclear, and the difference between an agent that did this and a strong team with excellent tooling that did this is the difference between the two largest outcome scenarios and the two smallest.
 

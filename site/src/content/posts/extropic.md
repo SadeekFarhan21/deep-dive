@@ -1,7 +1,7 @@
 ---
 title: "Extropic"
 pubDatetime: 2026-09-11T17:42:10.000Z
-description: "Extropic builds thermodynamic sampling units, chips that use the thermal noise of ordinary transistors to draw samples from programmable probability distributions, targeting the energy cost of generative AI rather than its arithmetic."
+description: "Extropic builds thermodynamic sampling units, chips that use the thermal noise of transistors to sample from programmable probability distributions, targeting the energy cost of generative AI; its efficiency claims are unmeasured on shipping hardware."
 slug: extropic
 company: "Extropic"
 stage: "Seed"
@@ -18,14 +18,14 @@ category: ventures
 
 Extropic designs thermodynamic sampling units, a new class of semiconductor that uses the natural thermal noise of standard transistors to draw samples directly from programmable probability distributions. Because sampling is the core operation of generative AI, the company aims to run probabilistic workloads at a fraction of the energy a GPU requires. It pairs the chips with an open-source software stack for writing, training, and compiling probabilistic programs, and targets generative AI, scientific simulation, and low-power reasoning under uncertainty.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | 2022 |
 | Headquarters | San Francisco, CA, and Waltham, MA |
 | Founders | Guillaume Verdon (CEO), Trevor McCourt (CTO), Christopher Chamberland (Principal Architect) |
 | Stage | Seed |
-| Total funding | \$14.1M in equity, plus up to \$75M in planned US government funding |
-| Employees | About 25 ([PitchBook](https://pitchbook.com/profiles/company/512728-84)) |
+| Total funding | \$14.1M equity; up to \$75M US government, planned |
+| Employees | 25 ([PitchBook](https://pitchbook.com/profiles/company/512728-84)) |
 | Status | Prototype silicon shipped, pre-revenue, no announced customers |
 
 ## Thesis
@@ -48,19 +48,18 @@ Verdon is also known by the pseudonym Beff Jezos, under which he co-founded effe
 
 | Date | Milestone |
 | --- | --- |
-| 2022 | Company founded |
-| December 2023 | \$14.1M seed round led by Kindred Ventures |
-| March 2024 | Emerged from stealth with a short technical paper |
-| October 2025 | Announced X0, its first silicon, and XTR-0, a desktop development system. Released THRML, an open-source simulation library, and a generative model designed for the hardware |
-| 2025 to 2026 | Manufactured dozens of XTR-0 systems and shipped them to early users |
-| July 2026 | Letter of intent with the US Department of Commerce for up to \$75M |
-| August 2026 | Announced the Z1 chip, the Torx training framework, and the Thermalizers compiler |
-| September 2026 | Released Z1T, transformer-like models designed for Z1, with open weights |
-| 2027 | Planned early access to Z1 hardware |
+| December 2023 | \$14.1M seed, led by Kindred Ventures |
+| March 2024 | Emerged from stealth, with a technical paper |
+| October 2025 | X0 silicon, XTR-0 desktop system, THRML library |
+| 2025 to 2026 | Dozens of XTR-0 systems shipped to early users |
+| July 2026 | US Commerce letter of intent, up to \$75M |
+| August 2026 | Z1 chip, Torx framework, Thermalizers compiler |
+| September 2026 | Z1T, open-weight models for Z1 |
+| 2027 | Planned early access to Z1 |
 
 ## Product
 
-Extropic's product is a family of probabilistic chips and an open-source stack for programming them. As of September 2026 the company has demonstrated prototype silicon, shipped desktop development systems to early users, and announced its first production-scale chip, with outside access to that chip planned for 2027.
+Extropic's product is a family of probabilistic chips and an open-source stack for programming them.
 
 **Thermodynamic sampling units.** The basic component is the probabilistic bit, or pbit: a small circuit of ordinary transistors operated near the noise floor so that its output fluctuates between zero and one, with a control voltage setting the probability of each state. [Extropic describes](https://extropic.ai/writing/thermodynamic-computing-from-zero-to-one) a family of such primitives and states that they generate a random sample using orders of magnitude less energy than conventional methods.
 
@@ -72,12 +71,12 @@ When pbits are connected so that each one's probability depends on its neighbors
 | --- | --- |
 | Probabilistic bits | 269,568 |
 | Cores | 8 |
-| Connections per pbit | 16, or about 2.1 million tunable couplings |
-| Sampling rate | Above 50 MHz |
+| Connections per pbit | 16 (2.1M tunable couplings) |
+| Sampling rate | 50 MHz+ |
 | Power | Under 1 watt |
 | Die size | Under 12 mm on a side |
 | Manufacturing | Standard CMOS on mature nodes |
-| Availability | Early access planned for 2027, in two form factors |
+| Availability | 2027 early access, two form factors |
 
 Two characteristics shape what Z1 can run. Each pbit connects to sixteen neighbors, whereas a transformer layer connects every element to every other, so models must be redesigned for sparse connectivity. And the chip is manufactured on mature process nodes, which lowers cost and allows production in US fabs.
 
@@ -91,10 +90,10 @@ Extropic has not announced commercial customers. Descriptions of its early acces
 
 | Market | Fit with the hardware | Size | Likelihood |
 | --- | --- | --- | --- |
-| Scientific and financial sampling | Natural. These problems are already expressed as sampling | Small | Highest |
-| Edge devices and defense | Good. Low power and reasoning under uncertainty both matter | Medium | Moderate |
+| Scientific and financial sampling | Natural; already sampling problems | Small | Highest |
+| Edge devices and defense | Good; low power and uncertainty both matter | Medium | Moderate |
 | Co-processor beside GPUs in data centers | Plausible, if hybrid models prove out | Large | Lower |
-| Replacement for GPUs in mainstream generative AI | Requires the industry to change how it builds models | Very large | Lowest |
+| Replacement for GPUs in mainstream generative AI | Requires industry-wide model redesign | Very large | Lowest |
 
 The US government is positioned as both an early customer and a funder. In July 2026 Extropic signed a [letter of intent with the Department of Commerce](https://extropic.ai/writing/thermodynamic-computing-chips-in-america) for up to \$75 million through the CHIPS Research and Development Office, to bring the first Z1 clusters online, demonstrate performance on generative AI benchmarks, develop rack-scale systems, and qualify a domestic manufacturing path for a successor chip, the Z1.5.
 
@@ -130,11 +129,11 @@ Alongside the hardware, the company has released three open-source software proj
 
 | Claim | Basis | Caveat |
 | --- | --- | --- |
-| Up to 10,000x more energy efficient than GPUs on suitable workloads | Simulation of a generative model invented for the hardware, first shown on small image datasets | Small tasks, simulated hardware, purpose-built model |
-| Up to 140x more energy efficient on transformer-like language models | The Z1T release of September 2026 | Self-reported; the models cannot yet run on physical chips |
-| A new scaling law for sparse transformers | Quality improves predictably with size, as for ordinary transformers | At a worse rate. About ten times more computation for the same quality |
-| Working silicon | X0 demonstrated the circuits, and dozens of XTR-0 systems shipped | X0 proves the primitive. It is not a useful accelerator |
-| Peer-reviewed architecture | Publication in a Nature-family journal | Validates the design as science, not as a competitive product |
+| Up to 10,000x vs GPUs on suitable workloads | Simulation, small image datasets | Small tasks, simulated, purpose-built model |
+| Up to 140x on transformer-like language models | Z1T release, September 2026 | Self-reported; cannot yet run on silicon |
+| A new scaling law for sparse transformers | Quality improves predictably with size | Worse rate: 10x computation for equal quality |
+| Working silicon | X0 circuits; dozens of XTR-0 shipped | Proves the primitive, not an accelerator |
+| Peer-reviewed architecture | Nature-family journal | Science, not a competitive product |
 
 Independent analysts have raised three qualifications. Extropic's own benchmark shows its sparse models need [about ten times more computation](https://www.explainx.ai/blog/extropic-z1t-thermodynamic-sparse-transformer-hardware-2026) than a standard transformer to reach GPT-2 level quality, so the entire advantage must come from lower energy per operation. In the current system a [conventional helper chip](https://www.mindstudio.ai/blog/extropic-z1-probabilistic-chip) performs most of the processing and consumes most of the energy. And because outside access to Z1 is not expected until 2027, the efficiency figures are projections from simulation.
 

@@ -22,12 +22,38 @@ const t = useTranslations(locale);
       <h1 class="text-accent text-9xl font-bold">404</h1>
       <span aria-hidden="true"> ¯\_(ツ)_/¯ </span>
       <p class="mt-4 text-2xl sm:text-3xl">{t.notFound.message}</p>
-      <LinkButton
-        href={getRelativeLocaleUrl(locale, "")}
-        class="my-6 text-lg underline decoration-dashed underline-offset-8"
+      <p class="mt-3 max-w-md text-center">
+        That URL doesn&rsquo;t exist here. Posts sometimes move between the
+        projects and ventures sections &mdash; search usually finds them.
+      </p>
+      <div
+        class="my-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-lg"
       >
-        {t.notFound.goHome}
-      </LinkButton>
+        <LinkButton
+          href={getRelativeLocaleUrl(locale, "")}
+          class="underline decoration-dashed underline-offset-8"
+        >
+          {t.notFound.goHome}
+        </LinkButton>
+        <LinkButton
+          href={getRelativeLocaleUrl(locale, "projects")}
+          class="underline decoration-dashed underline-offset-8"
+        >
+          {t.nav.projects}
+        </LinkButton>
+        <LinkButton
+          href={getRelativeLocaleUrl(locale, "ventures")}
+          class="underline decoration-dashed underline-offset-8"
+        >
+          {t.nav.ventures}
+        </LinkButton>
+        <LinkButton
+          href={getRelativeLocaleUrl(locale, "search")}
+          class="underline decoration-dashed underline-offset-8"
+        >
+          {t.nav.search}
+        </LinkButton>
+      </div>
     </div>
   </main>
 

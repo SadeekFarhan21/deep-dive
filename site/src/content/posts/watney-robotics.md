@@ -1,6 +1,6 @@
 ---
 title: "Watney Robotics"
-description: "Watney's dual-arm robots have been swapping network cables inside a Meta data center since June 2025. They are slower than technicians and still supervised, and the entire economics of the company turn on how many of them one operator can run."
+description: "Watney's dual-arm robots have been swapping network cables inside a Meta data center since June 2025, still supervised, and the economics turn on how many robots one operator can run."
 slug: watney-robotics
 company: "Watney Robotics"
 stage: "Series A"
@@ -17,15 +17,15 @@ category: ventures
 
 Watney Robotics builds two-armed robots that replace network cables and perform server maintenance inside data centers, and operates them as a service in the customer's facility. The robots are task-specific rather than humanoid, which is the company's stated design philosophy: take only problems where a machine has an order-of-magnitude advantage in precision, reliability or scale. Two of them have been working on cabling at Meta's Altoona, Iowa campus since June 2025. The company closed an \$80 million Series A on September 17, 2026, bringing total funding above \$100 million.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | 2023 |
 | Headquarters | San Francisco |
 | Founders | Ryan Gannon (CEO), Sean Cheong |
-| Stage | Series A. \$80M, September 17, 2026 |
-| Disclosed investors | Valor Atreides AI Fund and Hummingbird co-led. Conviction, Abstract and A\* returned from the seed |
-| Employees | 11 to 50, per supplier profile |
-| Status | Deployed at Meta since June 2025. Revenue undisclosed |
+| Stage | Series A |
+| Total funding | \$80M, September 2026 |
+| Disclosed investors | Valor Atreides AI Fund, Hummingbird (co-leads); Conviction, Abstract, A\* (returning from seed) |
+| Status | Deployed at Meta since June 2025 |
 
 ## Thesis
 
@@ -45,10 +45,10 @@ That is a real gap in any assessment of this company, and the best available sub
 
 | Aspect | Detail |
 | --- | --- |
-| Form | Two arms, built for the task. Not a humanoid |
+| Form | Two arms, task-built; not a humanoid |
 | Tasks | Cable replacement and server maintenance |
-| Delivery | End to end. Watney installs and operates the robots in the customer's facility |
-| Design rule | Only problems where a robot has an order-of-magnitude edge in precision, reliability or scale |
+| Delivery | Watney installs and operates robots on the customer's site |
+| Design rule | Order-of-magnitude edge in precision, reliability or scale |
 | Longer ambition | Beyond compute, into energy and materials work |
 
 Underneath is a stack a supplier profile describes as Rust-based precision teleoperation plus cloud-hosted robot foundation models ([RobotToday](https://robottoday.com/suppliers-discovery/watney-robotics-inc)). That points to a familiar flywheel: an operator drives the robot remotely, every task becomes training data, models learn the task, the robot does more on its own, and one operator eventually covers many robots.
@@ -63,8 +63,8 @@ Meta's own behavior is the most useful evidence about the category, because it i
 
 | Vendor | Task | Site |
 | --- | --- | --- |
-| Watney Robotics | Unplugging and replacing network cables, with two dual-arm robots | Altoona, Iowa, since June 2025 |
-| ABB | Reseating hardware inside racks, on a wheeled base with a lift and a six-axis arm | Prometheus campus, New Albany, Ohio |
+| Watney Robotics | Replacing network cables; two dual-arm robots | Altoona, Iowa, since June 2025 |
+| ABB | Reseating hardware in racks; wheeled base, lift, six-axis arm | Prometheus campus, New Albany, Ohio |
 | Kinova | Power-cycling unresponsive servers | Under evaluation |
 
 The same reporting is candid about the limits. The robots are slower than human technicians, need time to recharge, struggle with cables on the floor, and require people to open doors or guide them between buildings. The widely-quoted figure that some technician roles could see up to 80% of their workload removed comes from one worker's estimate, not a Meta forecast. Meta's robotics lead has described faster incident response, environmental monitoring and preventative maintenance as the longer-term goals, which is a different and larger scope than cable swapping.
@@ -81,10 +81,10 @@ The number that matters more than market size at this stage is the operator rati
 
 | Competitor | Approach | Threat |
 | --- | --- | --- |
-| ABB | Industrial robotics giant, already in Meta's trials for reseating hardware | High. Deep pockets and an existing sales channel |
+| ABB | Industrial robotics giant, in Meta's trials for reseating hardware | High. Deep pockets, existing sales channel |
 | Kinova | Robotic arm maker, in Meta's trials for power-cycling | Medium |
 | Hyperscalers' own automation teams | They control the facilities and run the trials | High |
-| General-purpose humanoids | A general robot that masters dexterous work would erase the task-specific edge | Medium, rising |
+| General-purpose humanoids | Mastering dexterous work would erase the task-specific edge | Medium, rising |
 | Exclaim Robotics, Shepherd Robotics | Small startups on the same problem | Low for now |
 | Rack vendors | Could redesign racks to need far less manual cabling | Medium |
 
@@ -100,16 +100,15 @@ The economics reduce to the operator ratio and to field service cost. Hardware o
 
 ## Traction
 
-| Metric | Figure | Basis |
-| --- | --- | --- |
-| Serving hyperscalers | Since 2025 | Company |
-| Operating hours in customer facilities | Hundreds of thousands | Company |
-| Reliability | Better than 99.99% | Company |
-| Fleet | Says it is the largest fleet of dexterous robots running around the clock in the US | Company |
-| Named customer | Meta: two dual-arm robots on cabling at Altoona, Iowa since June 2025 | Press |
-| Performance today | Slower than human technicians, and supervised | Press |
-| Employees | 11 to 50 | Supplier profile |
-| Revenue | Not disclosed | |
+| Metric | Figure |
+| --- | --- |
+| Operating hours in customer facilities | Hundreds of thousands |
+| Reliability | Better than 99.99% |
+| Fleet | Largest dexterous fleet running around the clock in the US |
+| Named customer | Meta: two dual-arm robots on cabling, Altoona, Iowa (press) |
+| Performance today | Slower than technicians, and supervised (press) |
+
+*All figures are company-reported except where marked (press).*
 
 This is a stronger evidence base than almost any robotics company at this stage. Hundreds of thousands of operating hours inside the facility of one of the most demanding customers on earth is not a pilot in a warehouse; it is production, and it has run for over a year. The caveats are that every favorable figure is company-reported, every unfavorable one comes from press reporting, and two robots at one site is a deployment, not a business.
 

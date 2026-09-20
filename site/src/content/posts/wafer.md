@@ -1,7 +1,7 @@
 ---
 title: "Wafer"
 pubDatetime: 2026-09-14T14:56:28.000Z
-description: "Wafer builds AI agents that optimize how models run in production, searching across the model, the serving engine, GPU kernels, and the hardware itself, then sells the result as hosted open-source inference on both NVIDIA and AMD chips."
+description: "Wafer builds AI agents that tune model inference across kernels, serving engines, and hardware, then sells the result as hosted open-source inference on both NVIDIA and AMD chips."
 slug: wafer
 company: "Wafer"
 stage: "Series A"
@@ -18,16 +18,17 @@ category: ventures
 
 Wafer builds AI agents that optimize how models run in production, searching across the model, the serving engine, low-level GPU kernels, and the underlying hardware to find the fastest and cheapest deployment for a given workload. It sells the results as hosted open-source models served through a standard API, on both NVIDIA and AMD chips. The company addresses the shortage of performance engineers and the software gap that keeps buyers dependent on a single chip vendor.
 
-| | |
+| Fact | Detail |
 | --- | --- |
-| Founded | 2025. Legal name Herdora. Y Combinator Summer 2025 |
+| Founded | 2025 (Y Combinator Summer 2025) |
 | Headquarters | San Francisco, CA |
 | Founders | Emilio Andere (CEO), Steven Arellano |
-| Stage | Series A. About \$44M raised in total |
+| Stage | Series A |
+| Total funding | \$44M |
 | Disclosed investors | Marathon, Chemistry, Wing, AMD Ventures, Outset Capital, Fifty Years, Y Combinator |
-| Employees | 1 to 10 (Crunchbase) |
-| Reported ARR | About \$8M as of September 2026, per a third-party tracker. Not company-confirmed |
-| Status | Private. Serving inference in production |
+| Reported ARR | \$8M (unconfirmed) |
+
+*ARR is from a third-party tracker, September 2026, and is not company-confirmed.*
 
 ## Thesis
 
@@ -55,11 +56,11 @@ Over its first year, Wafer shifted from selling an optimization tool to selling 
 
 | Offering | Description | Public evidence |
 | --- | --- | --- |
-| Serverless inference | Hosted open-source models behind a standard API | Live, and integrated with the TrueFoundry gateway for routing and monitoring |
-| Tuned deployments on AMD | Leading open models optimized for AMD's MI355X accelerator | Published results for GLM-5.2, Kimi K3, Qwen 3.5, and Qwen 3.6 |
-| Tuned deployments on NVIDIA | Optimized weights and kernels for the Blackwell generation | Low-precision weights for Kimi K2.6 released jointly with the inference provider Parasail |
-| Work inside other clouds | Wafer's engineering applied to another provider's infrastructure | A joint write-up with DigitalOcean describes large speedups on AMD GPUs for Kimi, DeepSeek, and GLM models |
-| The original developer tool | PyTorch in, custom kernels out, with production monitoring | The launch product. Its current status is not clear from public material |
+| Serverless inference | Hosted open-source models behind a standard API | Live; integrated with the TrueFoundry gateway |
+| Tuned deployments on AMD | Open models tuned for AMD's MI355X | Published results for GLM-5.2, Kimi K3, Qwen 3.5, Qwen 3.6 |
+| Tuned deployments on NVIDIA | Optimized weights and kernels for Blackwell | Low-precision Kimi K2.6 weights, with Parasail |
+| Work inside other clouds | Wafer's engineering applied to another provider's infrastructure | Joint DigitalOcean write-up: large AMD speedups for Kimi, DeepSeek, GLM |
+| The original developer tool | PyTorch in, custom kernels out, with production monitoring | The launch product; current status unclear publicly |
 
 **Serverless inference.** Wafer serves open-source models through an API that is compatible with OpenAI's, with zero retention of customer data. The company describes this as the fastest open-source models for enterprises at the lowest cost per token.
 
@@ -67,7 +68,7 @@ Over its first year, Wafer shifted from selling an optimization tool to selling 
 
 The problem suits AI agents because feedback is fast and objective. A language model proposes a change, the system compiles and runs it, and a measurement is available within minutes. A second check confirms that model output quality has not degraded. The company contrasts this with current practice, which it characterizes as manual, service-heavy, and performed once before deployment. Its [Series A announcement](https://www.wafer.ai/blog/series-a) states that new funding will support further automation of the optimization loop, with the goal of giving every deployment the equivalent of a dedicated performance engineering team. This implies that some current results still involve engineers working alongside the agents.
 
-**Multi-hardware support.** On NVIDIA hardware, Wafer released low-precision weights for the Kimi K2.6 model for the Blackwell generation in partnership with Parasail. On AMD hardware, it has published results for several frontier open models on the MI355X accelerator, and a joint write-up with DigitalOcean describes large inference speedups on AMD GPUs for Kimi, DeepSeek, and GLM models.
+**Multi-hardware support.** On NVIDIA hardware, Wafer released low-precision weights for the Kimi K2.6 model for the Blackwell generation in partnership with Parasail. On AMD hardware, it has published results for several frontier open models on the MI355X accelerator.
 
 ## Customer
 
@@ -147,11 +148,11 @@ The two components of the advantage differ in durability. The hardware discount 
 
 | Result | Figure |
 | --- | --- |
-| GLM-5.2 on AMD MI355X | 2,626 tokens per second per node, 213 tokens per second for a single stream |
-| Against NVIDIA's B200 | About 80% of the throughput at less than half the cost |
-| Kimi K3 on AMD | About 952 tokens per second per node |
-| Qwen 3.6 35B on eight MI355X chips | About 15,000 tokens per second per node at production latency, leading a public benchmark for generation speed |
-| Typical improvement over an untuned baseline | 2 to 2.8 times across open-source models, according to the company |
+| GLM-5.2 on AMD MI355X | 2,626 tokens/sec per node; 213 single stream |
+| Against NVIDIA's B200 | 80% throughput at under half the cost |
+| Kimi K3 on AMD | 952 tokens/sec per node |
+| Qwen 3.6 35B on eight MI355X chips | 15,000 tokens/sec per node; leads a public generation-speed benchmark |
+| Typical improvement over an untuned baseline | 2 to 2.8 times across open-source models |
 
 These figures come from [Wafer's blog](https://www.wafer.ai/blog) and are self-reported. The models differ greatly in size, so the throughput numbers are not comparable with one another, and none had been independently reproduced as of September 2026.
 

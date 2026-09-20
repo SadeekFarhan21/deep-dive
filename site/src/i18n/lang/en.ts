@@ -7,7 +7,6 @@ export default {
     projects: "Projects",
     ventures: "Ventures",
     tags: "Tags",
-    about: "About",
     archives: "Archives",
     search: "Search",
   },
@@ -30,8 +29,7 @@ export default {
     page: "Page",
   },
   home: {
-    socialLinks: "Social Links",
-    featured: "Featured",
+    socialLinks: "Elsewhere",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
   },
@@ -41,25 +39,27 @@ export default {
   },
   pages: {
     tagTitle: "Tag",
-    tagDesc: "All the articles with the tag",
+    tagDesc: "Everything tagged",
 
     tagsTitle: "Tags",
-    tagsDesc: "All the tags used in posts.",
+    tagsDesc: "Every topic covered here, from interpretability to photonics.",
 
     postsTitle: "Posts",
-    postsDesc: "All the articles I've posted.",
+    postsDesc: "Everything here, newest first \u2014 project write-ups and venture memos together.",
 
     projectsTitle: "Projects",
-    projectsDesc: "Notes from building things: models, training runs, and code.",
+    projectsDesc:
+      "Models I trained, circuits I probed, pipelines I broke and fixed \u2014 written up with the setup, the measurements, and the claims they do not support.",
 
     venturesTitle: "Ventures",
-    venturesDesc: "Company deep dives and notes on what I'm watching.",
+    venturesDesc:
+      "Deep dives on companies building AI hardware, infrastructure, and tooling: what they actually do, what is verified, and what is still a company-reported number.",
 
     archivesTitle: "Archives",
-    archivesDesc: "All the articles I've archived.",
+    archivesDesc: "Everything published, grouped by year and month.",
 
     searchTitle: "Search",
-    searchDesc: "Search any article ...",
+    searchDesc: "Search across every project write-up and venture memo.",
   },
   a11y: {
     skipToContent: "Skip to content",

@@ -1,7 +1,7 @@
 ---
 title: "GPT-2's induction heads: located, not yet proven"
 pubDatetime: 2026-09-18T18:33:41.000Z
-description: "All 144 attention heads of GPT-2 small (124M) scored on the induction diagonal, recovering the five canonical heads — L5H5, L6H9, L5H1, L7H10, L7H2 — in one cached forward pass on a laptop. An induction score is a correlation, not a cause: none of the causal experiments have been run yet."
+description: "All 144 attention heads of GPT-2 small scored on the induction diagonal in one cached forward pass on a laptop, recovering the five canonical heads. An induction score is a correlation, not a cause."
 slug: reverse-engineering-gpt-2s-induction-circuit
 tags:
   - interpretability
@@ -71,7 +71,7 @@ tokens = torch.cat([bos, rand, rand], dim=1)
 
 `[BOS][50 random tokens][the same 50 tokens]`. There is no grammar, no semantics, and no n-gram statistics worth exploiting. The only structure available is that the second half repeats the first, so a head scoring highly here cannot be scoring highly for a reason we failed to think of.
 
-This is the load-bearing design decision in the experiment, and it is worth being explicit about what it buys and what it costs. It buys a clean reading: the score means one thing. It costs external validity: every conclusion below is about behavior on inputs GPT-2 never saw in training, and a head specialized for this diagonal on random tokens is not yet shown to do anything on English.
+This is the load-bearing design decision in the experiment. It buys a clean reading: the score means one thing. It costs external validity: every conclusion below is about behavior on inputs GPT-2 never saw in training, and a head specialized for this diagonal on random tokens is not yet shown to do anything on English.
 
 ## the induction score
 
@@ -153,7 +153,7 @@ Only 02 is a refinement of what is already measured. Experiments 03 through 06 a
 <details class="collapsible-section">
 <summary><strong>What TransformerLens changes about the model before you measure it</strong></summary>
 
-TransformerLens loads GPT-2 with LayerNorm folding, centered writing weights, and centered unembedding on by default. These change the parameterization without changing the function the model computes, and they are what make residual-stream and logit-lens analysis clean. It is worth stating that they are on, because a score computed on an unprocessed model is not being compared against the same object the published results describe.
+TransformerLens loads GPT-2 with LayerNorm folding, centered writing weights, and centered unembedding on by default. These change the parameterization without changing the function the model computes, and they are what make residual-stream and logit-lens analysis clean. A score computed on an unprocessed model is not being compared against the same object the published results describe.
 
 </details>
 

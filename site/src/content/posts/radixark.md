@@ -18,14 +18,14 @@ category: ventures
 
 RadixArk builds infrastructure for running and continuously improving open AI models in production. It was founded by the creators and core maintainers of SGLang, an open-source inference engine that serves trillions of tokens per day for organizations including Google, Microsoft, NVIDIA and xAI, and it also maintains Miles, an open-source framework for reinforcement learning. On top of these projects the company sells managed infrastructure and tooling, aimed at teams that want to own and operate their AI systems instead of renting tokens through another company's API.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | 2025 |
 | Headquarters | Palo Alto, California |
 | Founders | Ying Sheng (CEO), Banghua Zhu |
-| Stage | Seed. \$100 million at a \$400 million post-money valuation |
+| Stage | Seed |
+| Total funding | \$100M at \$400M post-money |
 | Disclosed investors | Accel (lead), Spark Capital (co-lead), NVentures, AMD, MediaTek, HOF Capital |
-| Employees | Not disclosed |
 | Status | Open-source adoption at scale, commercial traction undisclosed |
 
 ## Thesis
@@ -61,9 +61,9 @@ SGLang's signature technique is RadixAttention. When many requests begin with th
 | Technique | What it does | Why it matters now |
 | --- | --- | --- |
 | RadixAttention | Reuses computed memory across requests that share a prefix | Agents and multi-turn conversations resend the same context constantly |
-| Prefill and decode separation | Runs the phase that reads the prompt and the phase that writes the answer on different workers | The two phases stress hardware differently, so separating them raises utilization |
-| Speculative decoding | A small model drafts several tokens and the large model verifies them in a single pass | Reduces waiting time for models that write long answers |
-| Structured output | Constrains the model to valid JSON or another grammar without slowing it down | Agents that call tools fail when output is malformed |
+| Prefill and decode separation | Splits prompt reading and answer generation across separate workers | The two phases stress hardware differently, so separating them raises utilization |
+| Speculative decoding | A small model drafts tokens, the large model verifies them | Reduces waiting time for models that write long answers |
+| Structured output | Constrains output to valid JSON or another grammar | Agents that call tools fail when output is malformed |
 | Large-scale expert parallelism | Spreads a mixture-of-experts model efficiently across many GPUs | The strongest open models are built this way |
 | Broad hardware support | Runs on many kinds of accelerator | Buyers want leverage against any single chip vendor |
 
@@ -103,18 +103,17 @@ RadixArk competes at two levels. At the engine level its rival is vLLM and the c
 | Together AI | \$1.3B | Not disclosed |
 | Inferact (vLLM) | \$150M | \$800M |
 | RadixArk (SGLang) | \$100M | \$400M |
-| Wafer | \$44M | Above \$200M (reported) |
+| Wafer | \$44M | \$200M+ (reported) |
 
 **Inferact** was founded by the creators and core maintainers of vLLM, which, like SGLang, originated in Ion Stoica's lab at Berkeley in 2023. vLLM's founding contribution was PagedAttention, which manages the KV cache in pages in the manner of an operating system, and the project reportedly runs on more than 400,000 GPUs. In January 2026, Inferact [raised \$150 million](https://techcrunch.com/2026/01/22/inference-startup-inferact-lands-150m-to-commercialize-vllm/) in seed funding at an \$800 million valuation, co-led by Andreessen Horowitz and Lightspeed with participation from Sequoia, Altimeter, Redpoint and ZhenFund. It plans a commercial product described as a universal inference layer that works with existing providers.
 
-| | RadixArk | Inferact |
+| Dimension | RadixArk | Inferact |
 | --- | --- | --- |
 | Open-source engine | SGLang | vLLM |
-| Origin | Ion Stoica's lab at Berkeley, 2023 | Ion Stoica's lab at Berkeley, 2023 |
 | Founding idea | Sharing the cache across requests | Paging the cache like an operating system |
 | Seed round | \$100M at a \$400M valuation | \$150M at an \$800M valuation |
 | Lead investors | Accel and Spark Capital | Andreessen Horowitz and Lightspeed |
-| Reported scale | Hundreds of thousands of GPUs, trillions of tokens a day | More than 400,000 GPUs |
+| Reported scale | Hundreds of thousands of GPUs, trillions of tokens a day | 400,000+ GPUs |
 | Commercial direction | Managed infrastructure for inference and reinforcement learning | A universal inference layer alongside existing providers |
 | Chief executive | Ying Sheng, formerly of xAI | Simon Mo, formerly a Berkeley doctoral student |
 
@@ -136,12 +135,12 @@ The revenue mix will determine how the business is valued. Managed hosting invol
 
 | Company | Open project | What happened |
 | --- | --- | --- |
-| Databricks | Apache Spark, from the same professor | Became one of the most valuable private software companies; the managed platform grew far larger than the engine |
-| Confluent | Apache Kafka | A public company of substantial size, but cloud providers offered the open project themselves and took a large share |
-| MongoDB and Elastic | Their own database and search engine | Large public companies; both changed their licenses to stop clouds from reselling their work |
-| HashiCorp | Terraform and related tools | Also changed its license. Acquired by IBM for roughly \$6.4 billion, a good result rather than a spectacular one |
-| Anyscale | Ray, from the same lab | Reached roughly a \$1 billion valuation and has grown slowly |
-| Docker | Docker | Ubiquity without a product; the original company failed to monetize and was restructured |
+| Databricks | Apache Spark, from the same professor | One of the most valuable private software companies; platform outgrew the engine |
+| Confluent | Apache Kafka | Public and substantial, but clouds resold Kafka and took a large share |
+| MongoDB and Elastic | Their own database and search engine | Large public companies; both relicensed to block cloud resale |
+| HashiCorp | Terraform and related tools | Relicensed; acquired by IBM for \$6.4 billion |
+| Anyscale | Ray, from the same lab | \$1 billion valuation, slow growth |
+| Docker | Docker | Ubiquitous but never monetized; company restructured |
 
 Among companies built on open infrastructure, those that became large did so by building a product clearly broader than the open project, and several later restricted their licenses to prevent cloud providers from reselling their work. RadixArk's governance choices foreclose the second option entirely.
 
@@ -159,10 +158,10 @@ In May 2026, RadixArk [announced](https://www.businesswire.com/news/home/2026050
 
 | Category | Investors |
 | --- | --- |
-| Leads | Accel led, Spark Capital co-led |
+| Leads | Accel (lead), Spark Capital (co-lead) |
 | Chip makers | NVentures (NVIDIA's venture arm), AMD, MediaTek |
 | Chip executives, personally | Lip-Bu Tan of Intel, Hock Tan of Broadcom |
-| Other funds | Salience Capital, A&E Investments, HOF Capital, Walden Catalyst, LDV Partners, WTT Investment. One report adds Databricks |
+| Other funds | Salience Capital, A&E Investments, HOF Capital, Walden Catalyst, LDV Partners, WTT Investment, Databricks (per one report) |
 | Researchers and founders | Igor Babuschkin, John Schulman, Soumith Chintala, Thomas Wolf, Olivier Pomel, Robert Nishihara, William Fedus, Eric Zelikman, Logan Kilpatrick |
 
 The participation of NVIDIA, AMD and MediaTek, alongside the personal investments of the chief executives of Intel and Broadcom, is the most unusual feature of the cap table, because these companies compete with one another. It suggests a shared interest in an inference engine that is open, well funded and not controlled by any single chip vendor.

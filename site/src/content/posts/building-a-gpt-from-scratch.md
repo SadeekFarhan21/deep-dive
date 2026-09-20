@@ -1,7 +1,7 @@
 ---
 title: "Writing a 5.26M-parameter transformer by hand"
 pubDatetime: 2026-09-18T15:04:52.000Z
-description: "A decoder-only GPT built from scratch in PyTorch — no nn.Transformer, no fused attention, no HuggingFace — trained on TinyStories to a cross-entropy of 2.14 on a laptop. The loss is a receipt that the pipeline works, not a result: two load-bearing constants and two silent bugs."
+description: "A 5.26M-parameter GPT built from scratch in PyTorch and trained on TinyStories to a cross-entropy of 2.14 on a laptop, where the loss is a receipt that the pipeline works rather than a result."
 slug: building-a-gpt-from-scratch
 tags:
   - transformers
@@ -12,7 +12,7 @@ category: projects
 
 We trained a decoder-only GPT written from scratch, with no `nn.Transformer`, no `F.scaled_dot_product_attention` and no HuggingFace model code, to a final cross-entropy of **2.14** on TinyStories, in 20,000 steps on a single Apple Silicon laptop. The shipped checkpoint is **5,263,848 parameters**: 6 pre-LN blocks, 8 heads, a 256-dimensional residual stream, a 64-token context, and a 1,000-token byte-level BPE vocabulary trained on the corpus itself.
 
-The loss is not a result. It is a receipt: evidence that every stage of the pipeline, from tokenizer and cache through loader, model, loss and sampler, is wired correctly end to end, which was the entire goal. It is worth being precise about how weak a claim that is. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
+The loss is not a result. It is a receipt: evidence that every stage of the pipeline, from tokenizer and cache through loader, model, loss and sampler, is wired correctly end to end, which was the entire goal. The run consumed 20,000 × 8 × 64 = 10.2M tokens against a cached corpus of roughly 632M tokens, so the model saw about 1.6% of the available data in a single pass. It is undertrained by construction, and no comparison to any published loss is meaningful.
 
 What the project did produce is a clear view of which lines are load-bearing. Two constants decide silently whether the model trains at all, and two bugs cost more time than the model code did.
 
@@ -38,8 +38,6 @@ Code is in `projects/gpt-from-scratch`: tokenizer, streaming data pipeline, mode
 ## why write it out at all
 
 Reading the transformer paper and reading a reference implementation both leave the same gap: you can follow every line and still not know which lines are *load-bearing*. Typing it out closes that gap by force. Every constant omitted and every shape gotten wrong produces either a crash or, worse, a model that trains to nothing while looking fine.
-
-Three things in this project turned out to be load-bearing in ways we did not anticipate, and all three were found the hard way.
 
 ## the model
 
@@ -197,8 +195,8 @@ Six hours of GPU time is worth nothing if the container dies at hour five with t
 
 | Problem | Symptom | Cause |
 | --- | --- | --- |
-| Stale token cache | Model trains, output is gibberish, loss looks plausible | Retrained the tokenizer without invalidating the cached token file |
-| Dataset target alignment | Off-by-one, loss plateaus higher than expected | Targets are pre-shifted in the dataset; shifting again in the loss double-shifts |
+| Stale token cache | Model trains, output is gibberish, loss looks plausible | Tokenizer retrained without invalidating the cached token file |
+| Dataset target alignment | Off-by-one, loss plateaus higher than expected | Dataset pre-shifts targets; the loss shifts them again |
 
 Both are silent. Neither raises. Both are the same category: a pipeline that is internally consistent and describing the wrong thing. That category is, we now believe, the dominant failure mode in small-scale ML work, and it is why the receipt matters more than the number on it.
 

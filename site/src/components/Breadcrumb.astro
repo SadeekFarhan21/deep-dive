@@ -29,13 +29,12 @@ const navLabels: Record<string, string> = {
   projects: t.nav.projects,
   ventures: t.nav.ventures,
   tags: t.nav.tags,
-  about: t.nav.about,
   archives: t.nav.archives,
   search: t.nav.search,
 };
 
 // Sections whose routes are paginated: Home > Section > [page] <etc>
-// becomes Home > "Section (page number)"
+// becomes Home > "Section (page number)", with the suffix dropped on page 1.
 const paginatedSections: Record<string, string> = {
   posts: t.nav.posts,
   projects: t.nav.projects,
@@ -43,10 +42,13 @@ const paginatedSections: Record<string, string> = {
 };
 
 if (paginatedSections[breadcrumbList[0]]) {
+  const pageNumber = Number(breadcrumbList[1]) || 1;
   breadcrumbList.splice(
     0,
     2,
-    `${paginatedSections[breadcrumbList[0]]} (${t.pagination.page.toLowerCase()} ${breadcrumbList[1] || 1})`
+    pageNumber === 1
+      ? paginatedSections[breadcrumbList[0]]
+      : `${paginatedSections[breadcrumbList[0]]} (${t.pagination.page.toLowerCase()} ${pageNumber})`
   );
 }
 

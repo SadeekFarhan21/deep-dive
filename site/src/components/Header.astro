@@ -6,7 +6,6 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconCode from "@/assets/icons/IconCode.svg";
 import IconTrendingUp from "@/assets/icons/IconTrendingUp.svg";
 import IconHash from "@/assets/icons/IconHash.svg";
-import IconUser from "@/assets/icons/IconUser.svg";
 import LinkButton from "./LinkButton.astro";
 import { stripBase, stripLocale } from "@/utils/withBase";
 import { useTranslations } from "@/i18n";
@@ -105,24 +104,6 @@ const isActive = (path: string) => {
             <span class="max-sm:sr-only">{t.nav.tags}</span>
             {
               isActive("/tags") && (
-                <IconUnderline
-                  aria-hidden="true"
-                  class="absolute bottom-0 w-6 scale-125 sm:hidden"
-                />
-              )
-            }
-          </a>
-        </li>
-        <li>
-          <a
-            href={getRelativeLocaleUrl(locale, "about")}
-            class:list={{ "active-nav": isActive("/about") }}
-            title={t.nav.about}
-          >
-            <IconUser aria-hidden="true" class="size-6 sm:hidden" />
-            <span class="max-sm:sr-only">{t.nav.about}</span>
-            {
-              isActive("/about") && (
                 <IconUnderline
                   aria-hidden="true"
                   class="absolute bottom-0 w-6 scale-125 sm:hidden"

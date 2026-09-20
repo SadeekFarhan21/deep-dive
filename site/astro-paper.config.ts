@@ -3,10 +3,11 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://sadeekfarhan21.github.io/blog/",
-    title: "Farhan's Blog",
-    description: "Deep dives into machine learning, AI, software, and research.",
-    author: "Farhan",
-    profile: "https://github.com/SadeekFarhan21",
+    title: "Farhan Sadeek",
+    description:
+      "Deep dives by Farhan Sadeek: mechanistic interpretability, reinforcement learning, efficient training and inference, and memos on the companies building the hardware and infrastructure underneath.",
+    author: "Farhan Sadeek",
+    profile: "https://farhansadeek.com",
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "America/New_York",
@@ -27,6 +28,9 @@ export default defineAstroPaperConfig({
   },
   socials: [
     { name: "github", url: "https://github.com/SadeekFarhan21" },
+    { name: "x", url: "https://x.com/farhansadeek.com" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/farhansadeek/" },
+    { name: "mail", url: "mailto:farhan@farhansadeek.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

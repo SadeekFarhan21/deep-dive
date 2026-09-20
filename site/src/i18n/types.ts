@@ -5,7 +5,6 @@ export interface UIStrings {
     projects: string;
     ventures: string;
     tags: string;
-    about: string;
     archives: string;
     search: string;
   };
@@ -29,7 +28,6 @@ export interface UIStrings {
   };
   home: {
     socialLinks: string;
-    featured: string;
     recentPosts: string;
     allPosts: string;
   };

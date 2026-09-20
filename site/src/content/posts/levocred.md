@@ -1,6 +1,6 @@
 ---
 title: "Levocred"
-description: "Levocred puts AI agents inside credit funds and lenders to do the borrowing base reports, covenant checks and loan marks that analysts rebuild by hand. About $1B in receivables runs through it, and no disclosed revenue."
+description: "Levocred puts AI agents inside credit funds and lenders to do the borrowing base reports, covenant checks and loan marks analysts rebuild by hand, with about $1B in receivables monitored and no disclosed revenue."
 slug: levocred
 company: "Levocred"
 stage: "Pre-seed"
@@ -17,14 +17,14 @@ category: ventures
 
 Levocred builds AI agents for the operational work inside private credit: borrowing base reports, covenant monitoring, credit memos, collections reconciliation, and the loan marks a fund publishes to its own investors. The work exists because a credit facility behaves like a credit card whose limit depends on the quality of the loans pledged against it, and both the lender and the borrower have to rebuild that calculation from raw loan data every week or month. Today an analyst does it in a spreadsheet. Levocred generates it in minutes with an audit trail. About \$1 billion in receivables across roughly 30 facilities runs through the platform, and the company does not disclose revenue.
 
-| | |
+| Fact | Detail |
 | --- | --- |
-| Founded | 2026 per Y Combinator, 2025 per an earlier profile |
+| Founded | 2026 per YC, 2025 per earlier profile |
 | Headquarters | San Francisco |
 | Founders | Mohit Gupta (CEO), Saksham Gupta (CTO) |
-| Stage | Pre-seed. Y Combinator Summer 2026 |
-| Employees | 2, as of late July 2026 |
-| Status | About \$1B in receivables monitored. Revenue undisclosed |
+| Stage | Pre-seed (Y Combinator Summer 2026) |
+| Employees | 2 |
+| Status | \$1B receivables monitored (revenue undisclosed) |
 
 ## Thesis
 
@@ -36,8 +36,8 @@ The company's larger claim is about sequence. Levocred now describes itself as t
 
 | Stage | Product | How it earns | Evidence |
 | --- | --- | --- | --- |
-| 1. Workflow | Agents for draws, covenants, memos and reporting | Software fees | Live. About \$1B in receivables on the platform |
-| 2. Pricing | Marks and valuations for a lender's book | Software and data fees | One fund cut the time to mark its book from a week to two hours |
+| 1. Workflow | Agents for draws, covenants, memos and reporting | Software fees | Live, \$1B receivables |
+| 2. Pricing | Marks and valuations for a lender's book | Software and data fees | One fund: a week to two hours |
 | 3. Trading | A venue where priced loans can change hands | Transaction fees | Vision only |
 
 ## Founding Story
@@ -91,11 +91,11 @@ The last row is not a joke. The competitor that wins most deals in this category
 
 ## Business Model
 
-Pricing is undisclosed. The table assumes 3 basis points a year on capital monitored, which is an assumption rather than a disclosed rate, and exists mainly to show why platform volume should not be read as revenue.
+Pricing is undisclosed. The table assumes 3 basis points a year on capital monitored, and exists mainly to show why platform volume should not be read as revenue.
 
-| Capital monitored | Implied annual revenue at 3 basis points |
+| Capital monitored | Implied annual revenue |
 | --- | --- |
-| \$1B, about today's level | \$0.3M |
+| \$1B (today) | \$0.3M |
 | \$10B | \$3M |
 | \$50B | \$15M |
 | \$500B | \$150M |
@@ -106,15 +106,15 @@ One detail suggests genuine willingness to pay. Drawing on a credit line takes h
 
 | Metric | Figure |
 | --- | --- |
-| Capital monitored, late July 2026 | Over \$500M across 10 facilities |
-| Receivables on platform, August launch | About \$1B |
-| Capital monitored, later profile | Over \$1B across 30 facilities |
-| Time to mark a book, one fund | From a week to two hours |
-| Contractual role at that fund | Named data agent and system of record in its loan purchase agreements |
-| Time to prepare a draw | From a day of spreadsheet work to minutes |
+| Capital monitored, late July 2026 | \$500M across 10 facilities |
+| Capital monitored, later profile | \$1B across 30 facilities |
+| Time to mark a book, one fund | A week to two hours |
+| Contractual role at that fund | Named data agent and system of record |
+| Time to prepare a draw | A day to minutes |
 | Asset classes live | Consumer, fintech, litigation finance, merchant cash advance |
 | Named customer | Pier Asset Management |
-| Revenue, pricing, customer count | Not disclosed |
+
+*Figures are company-reported. Pricing and customer count are not disclosed.*
 
 Usage roughly doubled in weeks, and four asset classes running through one engine is early evidence that the product generalizes without per-client rule-writing. As [one newsletter covering the batch](https://enterpriseaiweeklybyvp.substack.com/p/what-ycombinators-september-2026) put it, receivables are not revenue. That is the first thing anyone should establish.
 

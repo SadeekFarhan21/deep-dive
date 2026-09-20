@@ -1,6 +1,6 @@
 ---
 title: "Traversal"
-description: "Traversal builds an AI site-reliability engineer that finds the root cause of production incidents by running causal searches over a customer's telemetry. American Express is both a customer and an investor; a rival with three times the capital raised at $1B."
+description: "Traversal builds an AI site-reliability engineer that finds the root cause of production incidents by running causal searches over a customer's existing telemetry. American Express is both a customer and an investor."
 slug: traversal
 company: "Traversal"
 stage: "Series A"
@@ -17,15 +17,16 @@ category: ventures
 
 Traversal builds an agent that does the work of a site-reliability engineer during a production incident: figuring out what actually broke. It maintains a live map of the customer's systems, re-indexes their telemetry so it can run thousands of targeted queries in parallel, and searches causally through that data to identify the root cause, then proposes or applies the fix. It does not collect the telemetry itself, since Datadog and its peers still do that, and it does not replace the observability stack. It sits on top of whatever the customer already runs and does the detective work a war room would otherwise do by hand.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | 2023 |
 | Headquarters | New York |
 | Founders | Anish Agarwal (CEO), Raaz Dwivedi, Raj Agrawal, Ahmed Lone |
-| Stage | \$48M across seed and Series A, June 2025. Strategic investment from Amex Ventures, March 2026 |
-| Disclosed investors | Sequoia, Kleiner Perkins, NFDG, Hanabi, Amex Ventures. Angels Nat Friedman and Mike Volpi |
-| Employees | About 100, per PitchBook |
-| Status | Named customers including American Express, PepsiCo, DigitalOcean. Revenue undisclosed |
+| Stage | Series A |
+| Total funding | \$48M plus undisclosed Amex Ventures round |
+| Disclosed investors | Sequoia, Kleiner Perkins, NFDG, Hanabi, Amex Ventures; angels Nat Friedman, Mike Volpi |
+| Employees | 100 (PitchBook) |
+| Named customers | American Express, PepsiCo, DigitalOcean |
 
 ## Thesis
 
@@ -61,8 +62,8 @@ The product is widening beyond incidents:
 | --- | --- | --- |
 | Incident response | Finds root cause and proposes or applies the fix | The core product |
 | Alert triage | Filters noise before it pages anyone | The core product |
-| Pre-deploy review | Flags a code change that conflicts with how production actually behaves | DigitalOcean, per the [company site](https://www.traversal.com/) |
-| Production support | Gives any engineer plain-language access to the live state of systems | A top global crypto exchange projects over 2,000 senior engineering hours saved a month |
+| Pre-deploy review | Flags code changes that conflict with production behavior | DigitalOcean ([company site](https://www.traversal.com/)) |
+| Production support | Plain-language access to live system state | Top crypto exchange: 2,000+ engineer-hours saved a month (projected) |
 
 Pre-deploy review is the most interesting of these. It moves the product from reacting to incidents toward preventing them, and it uses the same world model, which means it costs the company relatively little to offer and gives the customer a second reason to keep paying.
 
@@ -84,21 +85,21 @@ The better evidence is what a direct comparable cleared. Resolve AI [raised \$12
 
 The direct rival is the clearest way to see the position.
 
-|  | Traversal | Resolve AI |
+| Dimension | Traversal | Resolve AI |
 | --- | --- | --- |
 | Base | New York | San Francisco |
-| Founders | Three PhDs in causal ML and RL, plus a former Citadel Securities quant | Former Splunk executives whose earlier startup Splunk acquired |
-| Capital raised | \$48M, plus an undisclosed Amex Ventures investment | Over \$150M |
+| Founders | Three causal ML/RL PhDs, ex-Citadel Securities quant | Ex-Splunk executives (prior startup acquired by Splunk) |
+| Capital raised | \$48M plus undisclosed Amex Ventures round | \$150M+ |
 | Last valuation | Not disclosed | \$1B, February 2026 |
 | Named customers | American Express, PepsiCo, DigitalOcean, Eventbrite, Cloudways | Coinbase, DoorDash, MongoDB, MSCI, Salesforce, Zscaler |
 | Stated focus | Global financial institutions | Technology-led enterprises |
-| Product emphasis | Causal root-cause analysis | A broader agent interface to production actions such as rollbacks |
+| Product emphasis | Causal root-cause analysis | Broader agent interface to production actions, e.g. rollbacks |
 
 The segmentation is real rather than rhetorical: regulated finance buys differently, requires self-hosting, and rewards accuracy over breadth. If Traversal holds that segment it has a defensible position. If the segmentation collapses, it is the less-capitalized company with fewer public logos.
 
 | Competitor | Type | Threat |
 | --- | --- | --- |
-| Datadog, PagerDuty, incident.io | Incumbents adding their own agents | High. They own the buyer relationship and the data |
+| Datadog, PagerDuty, incident.io | Incumbents adding their own agents | High; they own the buyer and the data |
 | Cleric, Ciroos | Smaller startups | Low to medium |
 | In-house builds on general coding agents | The most technical customers | Medium |
 
@@ -122,11 +123,9 @@ These are assumptions rather than disclosed figures. The middle row is roughly w
 | --- | --- | --- |
 | Named customers | American Express, PepsiCo, DigitalOcean, Eventbrite, Cloudways | Company and Sequoia |
 | Root-cause accuracy at American Express | 82% | [Third-party review](https://tooldirectory.ai/tools/traversal) citing the company |
-| Engineering hours saved at a top crypto exchange | Over 2,000 a month, projected | Company site |
-| Employees | About 100 | PitchBook |
-| Revenue and customer count | Not disclosed | |
+| Engineering hours saved at a top crypto exchange | 2,000+ a month (projected) | Company site |
 
-One caution worth stating plainly: multiple different recovery-time improvement figures are in circulation from the company's own materials, measuring different things. A careful buyer will notice the spread, and the right response is to ask which single number the company stands behind and how it was measured. Inconsistent performance claims are a small problem now and a large one when a procurement team builds a comparison sheet.
+Multiple different recovery-time improvement figures are in circulation from the company's own materials, measuring different things. A careful buyer will notice the spread, and the right response is to ask which single number the company stands behind and how it was measured. Inconsistent performance claims are a small problem now and a large one when a procurement team builds a comparison sheet.
 
 ## Valuation
 

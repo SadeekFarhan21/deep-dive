@@ -13,15 +13,27 @@ import { getSortedPosts } from "@/utils/getSortedPosts";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-const { socials, posts: postsConfig } = config;
+const { socials } = config;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 
 const posts = await getCollection("posts");
 const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+
+// The home page shows the three most recent posts from each track, newest first.
+const PER_CATEGORY = 3;
+const recentPosts = (["projects", "ventures"] as const)
+  .flatMap(category =>
+    sortedPosts
+      .filter(({ data }) => data.category === category)
+      .slice(0, PER_CATEGORY)
+  )
+  .sort(
+    (a, b) =>
+      (b.data.pubDatetime?.getTime() ?? 0) - (a.data.pubDatetime?.getTime() ?? 0)
+  );
+
 const homePath = getRelativeLocaleUrl(locale, "");
 ---
 
@@ -34,9 +46,6 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout my-1"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Blog
-      </h1>
       <a
         target="_blank"
         href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
@@ -53,18 +62,24 @@ const homePath = getRelativeLocaleUrl(locale, "");
       </a>
 
       <p>
-        Thoughtful explorations of machine learning, artificial intelligence,
-        software engineering, and the research behind them.
+        I&rsquo;m <LinkButton
+          class="font-bold underline decoration-dashed underline-offset-4"
+          href="https://farhansadeek.com"
+          target="_blank"
+          rel="noopener noreferrer">Farhan Sadeek</LinkButton
+        >, a computer science undergraduate at Columbia. I spend most of my time tinkering with large language models, robots and computer chips. I try to write a blog about such endeavors which are documented in this blog. I occasionally write about startups that I find interesting, which are on the ventures section of the page. Feel free to contact me on the the links below!  
       </p>
       <p class="mt-2">
-        Browse the latest writing or explore the{" "}
-        <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/SadeekFarhan21/blog"
-        >
-          source code
-        </LinkButton>{" "}
-        behind this site.
+        Two kinds of writing live on this site.
+        <strong>Projects</strong> are experiments I ran myself: the setup, the numbers,
+        and an explicit note on what the numbers do <em>not</em> prove.
+        <strong>Ventures</strong> are memos on the companies building the hardware,
+        inference stacks, and agent tooling underneath all of it &mdash; separating
+        the verified from the company-reported.
+      </p>
+      <p class="mt-2">
+        Nothing here is a press release. Every run is reproducible from the
+        scripts, and every claim I can&rsquo;t back up is labelled as such.
       </p>
       {
         socials.length > 0 && (
@@ -79,34 +94,13 @@ const homePath = getRelativeLocaleUrl(locale, "");
     </section>
 
     {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-border border-b": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
-          </h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
-
-    {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
           <h2 class="text-2xl font-semibold tracking-wide">
             {t.home.recentPosts}
           </h2>
           <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
+            {recentPosts.map(data => (
               <Card variant="h3" {...data} />
             ))}
           </ul>

@@ -1,7 +1,7 @@
 ---
 title: "GRPO on a 500M model: reward variance, not reward level"
 pubDatetime: 2026-09-18T20:15:07.000Z
-description: "An RLVR pipeline on Qwen2.5-0.5B-Instruct, published before the training run: why GRPO learns from the spread of rewards rather than their level, four bugs that never raised an exception, and a rented L4 that beat a laptop by 5%."
+description: "An RLVR pipeline on Qwen2.5-0.5B-Instruct, published before the training run: why GRPO learns from the spread of rewards rather than their level, and four bugs that never raised an exception."
 slug: rlvr-grpo-reward-variance
 tags:
   - reinforcement-learning
@@ -35,7 +35,7 @@ Code is in `projects/math-rlvr`. Setup: GRPO via TRL 0.16 on **Qwen2.5-0.5B-Inst
 
 ## why RLVR
 
-Reinforcement learning from verifiable rewards is the cleanest setup in post-training. There is no reward model to train, no human preference data, and no judge model to be gamed. A math problem has a right answer, a program checks it, and the check *is* the reward. It is the recipe behind the reasoning-model results of the last two years, and at 0.5B it fits on one GPU.
+Reinforcement learning from verifiable rewards is the cleanest setup in post-training. There is no reward model to train, no human preference data, and no judge model to be gamed. A math problem has a right answer, a program checks it, and the check *is* the reward. It is the recipe behind the reasoning-model results of the last two years, and at 500M it fits on one GPU.
 
 That cleanliness is also what makes the failure modes legible. When the only moving parts are sample, score, and update, anything that goes wrong is in one of three places, which is why this project is worth writing up even without a training curve.
 
@@ -51,7 +51,7 @@ $$
 
 The policy is then pushed toward the above-average members of its own group. There is no value network and no critic to train: the group average *is* the baseline. That is the entire simplification, and at this scale it is the reason to use GRPO rather than PPO.
 
-Read the numerator once more, because the dominant failure mode falls directly out of it. If every completion in a group receives the same reward, then $r_i = \mu$ for all $i$, every advantage is zero, and the gradient contribution of that prompt is exactly zero. You spend a GPU-minute generating 8 completions and learn nothing from them. The run does not fail; it costs the same and teaches nothing.
+Read the numerator once more, because the dominant failure mode falls directly out of it. If every completion in a group receives the same reward, then $r_i = \mu$ for all $i$, every advantage is zero, and the gradient contribution of that prompt is exactly zero. You spend a GPU-minute generating 8 completions and learn nothing from them.
 
 The condition for learning is therefore $\sigma > 0$ within the group, and that is a property of the *difficulty distribution of the prompts*, not of the model's competence in any absolute sense.
 
@@ -77,7 +77,7 @@ print(f"[reward] n={n} mean={mean:.3f} std={var ** 0.5:.3f} "
       f"(std~0 => no learning signal)")
 ```
 
-Ten lines of arithmetic that convert a silent failure into a visible one. It is the single highest-leverage thing in the repository, and it is worth stating the general form: **the learning signal in policy-gradient RL comes from the spread of outcomes, not their level.** Curriculum design is not a nice-to-have here, it is a precondition.
+Ten lines of arithmetic that convert a silent failure into a visible one. It is the single highest-leverage thing in the repository. The general form: **the learning signal in policy-gradient RL comes from the spread of outcomes, not their level.** Curriculum design is not a nice-to-have here, it is a precondition.
 
 <details class="collapsible-section">
 <summary><strong>Training configuration</strong></summary>
@@ -155,7 +155,7 @@ One line, several hours of diagnosis.
 
 We started on the Qwen2.5-Math-1.5B **base** model. Its chat tokens are untrained, so it never emits `<|im_end|>` at all, so every rollout ran to `max_completion_length`. At 8 generations per prompt and 640 tokens each, nearly all of the compute was spent generating text after the answer had already been given.
 
-Two fixes: switching to the 0.5B Instruct model, which also roughly halved per-step time, and a stopping criterion that halts a rollout as soon as it contains a closed `\boxed{}`:
+Two fixes: switching to the 500M Instruct model, which also roughly halved per-step time, and a stopping criterion that halts a rollout as soon as it contains a closed `\boxed{}`:
 
 ```python
 class _StopAfterBoxed(StoppingCriteria):
@@ -241,4 +241,4 @@ Had we reported only that the pipeline was built, this post would have described
 - **Measure before renting.** For this workload the GPU bought about 5%, on one paired observation, because the bottleneck is serial decode rather than arithmetic.
 - **The difficulty band is unmeasured.** Levels 3–5 produce nonzero variance; we have not swept difficulty against $\text{pass@}8$, so the curriculum is a working choice rather than a tuned one.
 
-The open question is whether 300 steps on a 0.5B model moves `pass@1` measurably at all. The frame we will judge it against is the $\text{pass@}k \gg \text{pass@}1$ gap: a model that solves a problem 1 time in 8 already contains the capability, and RL's job is to shift probability mass onto reasoning it can already occasionally produce rather than to teach it something new. If the gap does not narrow, the report will say that it did not.
+The open question is whether 300 steps on a 500M model moves `pass@1` measurably at all. The frame we will judge it against is the $\text{pass@}k \gg \text{pass@}1$ gap: a model that solves a problem 1 time in 8 already contains the capability, and RL's job is to shift probability mass onto reasoning it can already occasionally produce rather than to teach it something new. If the gap does not narrow, the report will say that it did not.

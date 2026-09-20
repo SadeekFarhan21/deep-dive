@@ -17,15 +17,16 @@ category: ventures
 
 Dipole Labs builds optical circuit switches for AI data centers. Data between GPU racks already travels as light, but routing it means converting the signal to electricity and back at every switching point, which costs power, generates heat, and adds latency. Dipole's switch keeps the signal in the optical domain and steers it with software-programmable mirrors, targeting sub-microsecond reconfiguration at large port counts. At that speed the network can reshape itself around a single training or inference job rather than holding a fixed topology. The company estimates this yields up to 25% more useful compute from hardware already purchased.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | 2026 |
 | Headquarters | Boston, with a European base in Zurich |
 | Founders | Deepankur Thureja (CEO), Gabriele Pasquale (CTO) |
-| Stage | Pre-seed. Y Combinator Summer 2026 |
-| Disclosed investors | Y Combinator, [Cisco Investments](https://runtimewire.com/article/startup-spotlight-dipole-labs-optical-switches-ai-clusters). Amounts unpublished |
+| Stage | Pre-seed (Y Combinator Summer 2026) |
+| Disclosed investors | Y Combinator, [Cisco Investments](https://runtimewire.com/article/startup-spotlight-dipole-labs-optical-switches-ai-clusters) |
 | Employees | 2 |
-| Status | Pre-product, pre-revenue |
+
+*Investment amounts are unpublished.*
 
 ## Thesis
 
@@ -63,7 +64,7 @@ These are projections rather than measurements. As of September 2026 the company
 
 Dipole has two distinct buyers, and only one of them is the reason the company exists.
 
-The intended customer is the operator of a large GPU cluster: hyperscalers and neocloud providers running training and inference at a scale where network inefficiency is measured in millions of dollars of idle silicon. These buyers qualify hardware slowly, demand results across many collective communication patterns and failure scenarios, and expect years of field reliability. As of September 2026 Dipole has no deployed customer in this segment and is [opening design partnerships](https://runtimewire.com/article/startup-spotlight-dipole-labs-optical-switches-ai-clusters) with hyperscalers and neocloud operators.
+The intended customer is the operator of a large GPU cluster: hyperscalers and neocloud providers running training and inference at a scale where network inefficiency is measured in millions of dollars of idle silicon. These buyers qualify hardware slowly, demand results across many collective communication patterns and failure scenarios, and expect years of field reliability. Dipole has no deployed customer in this segment and is [opening design partnerships](https://runtimewire.com/article/startup-spotlight-dipole-labs-optical-switches-ai-clusters) with hyperscalers and neocloud operators.
 
 The near-term customer is a different industry entirely. Neutral-atom quantum computers need the same component Dipole is building, because holding atoms in place requires steering large numbers of laser beams with precision. That market is far smaller and far less demanding about long-run reliability, but it pays now. Dipole reports over \$1 million in letters of intent from neutral-atom quantum computing companies.
 
@@ -103,7 +104,7 @@ As of September 2026, Dipole has no revenue, no data center pilot, and no publis
 
 What exists is commercial interest from the secondary market and institutional interest from investors. The company reports over \$1 million in letters of intent from neutral-atom quantum computing companies, which is meaningful at pre-seed chiefly because it is a commitment from a technical buyer who has evaluated the device. Cisco Investments has taken a position, though amounts and structure are unpublished; for a networking incumbent, an early stake functions as a window onto the category as much as a financial bet. The company launched publicly on August 13, 2026, and was among the most-cited names from a Demo Day that venture investors described to TechCrunch as feeling like science fiction.
 
-Headcount is two. There are no employees beyond the founders.
+Headcount is two.
 
 ## Valuation
 

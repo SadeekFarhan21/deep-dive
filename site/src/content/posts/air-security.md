@@ -1,6 +1,6 @@
 ---
 title: "AIR Security"
-description: "AIR Security vets the skills, plug-ins and MCP servers that enterprise AI agents install, a supply chain its own research found carries 6.7 million installs of add-ons that pull instructions from untrusted sources."
+description: "AIR Security vets the skills, plug-ins and MCP servers that enterprise AI agents install. It left stealth in September 2026 with more than 20 customers and $50 million raised across two seed rounds."
 slug: air-security
 company: "AIR Security"
 stage: "Seed"
@@ -17,14 +17,15 @@ category: ventures
 
 AIR Security sells a control layer for the software that AI agents install in order to do their jobs. An enterprise agent is rarely useful on its own; it becomes useful when it picks up a skill, a plug-in, or an MCP server that teaches it to query a database, file a ticket, or move money. Each of those add-ons is code and instructions written by someone outside the company, installed by a system that already holds valid credentials. AIR discovers every agent running inside an organization, inspects each add-on before it is approved, re-inspects it after deployment, and traces and revokes anything that turns out to be malicious. The company left stealth on September 1, 2026 with more than 20 customers and \$50 million raised across two seed rounds.
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Founded | February 2026 |
 | Founders | Yair Saban (CEO), Niv Hoffman (CTO) |
-| Stage | Seed. \$50M across two rounds |
+| Stage | Seed |
+| Total funding | \$50M across two rounds |
 | Disclosed investors | Sequoia (led \$10M), Greenoaks (led \$40M), Swish, Netz |
-| Employees | About 40 |
-| Status | More than 20 customers. Revenue undisclosed |
+| Employees | 40 |
+| Customers | 20+ |
 
 ## Thesis
 
@@ -70,11 +71,11 @@ The honest version of this market is that it is small now and everyone is pricin
 
 | Signal | Figure |
 | --- | --- |
-| Combined revenue of the AI security category today | Under \$100M |
-| AIR's projection for the category at the end of 2027 | Over \$1B |
-| Capital into agent security in two weeks around RSA, March 2026 | Over \$392M |
-| Peer valuations | Glow \$1.2B, 7AI about \$700M, Onyx about \$640M |
-| Incumbent entry | Microsoft Agent 365, at \$15 per user per month |
+| Category revenue today | Under \$100M |
+| AIR's projection, end of 2027 | \$1B+ |
+| Agent security funding, two weeks at RSA (March 2026) | \$392M+ |
+| Peer valuations | Glow \$1.2B, 7AI \$700M, Onyx \$640M |
+| Incumbent entry | Microsoft Agent 365, \$15 per user per month |
 
 Sources: [Enera](https://www.eneralabs.com/blog/air-security-50m-ai-agent-firewall-enterprise-2026/) and [Software Strategies](https://softwarestrategiesblog.com/2026/03/28/agentic-ai-security-startups-funding-mna-rsac-2026/).
 
@@ -101,7 +102,7 @@ The largest threat is not a startup. If Anthropic, OpenAI, or Microsoft sign and
 
 Pricing and revenue are undisclosed. The table below assumes \$100,000 to \$400,000 per enterprise customer per year, which is a working assumption for a security control sold to this buyer and not a figure the company has published.
 
-| Customers | Implied recurring revenue | Multiple of revenue at a \$600M valuation |
+| Customers | Implied recurring revenue | Multiple at a \$600M valuation |
 | --- | --- | --- |
 | 20, today | \$2M to \$8M | 75 to 300 times |
 | 100 | \$10M to \$40M | 15 to 60 times |
@@ -113,11 +114,8 @@ The first row is the price risk stated in one line. Anyone entering at the valua
 
 | Metric | Figure |
 | --- | --- |
-| Customers | More than 20 |
-| Large enterprises among them | About a quarter |
-| Employees | About 40 |
+| Large enterprises among customers | 25% |
 | Company age | Six months |
-| Revenue | Not disclosed |
 
 The research output deserves separate mention, because it is doing commercial work as well as technical work. Publishing that 6.7 million installs trace to add-ons which fetch instructions from untrusted sources, and that skills impersonating Anthropic and OpenAI are circulating, defines the problem in public in terms that make AIR the obvious first call. That is the standard playbook for a new security category and it is being run well.
 

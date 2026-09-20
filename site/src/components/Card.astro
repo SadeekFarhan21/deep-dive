@@ -12,6 +12,9 @@ type Props = {
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
 const { title, description, ...props } = data;
+
+// Venture memos carry deal-sheet metadata; show it so listings read at a glance.
+const meta = [props.stage, props.sector].filter(Boolean) as string[];
 ---
 
 <li class="my-6">
@@ -28,5 +31,12 @@ const { title, description, ...props } = data;
     </Heading>
   </a>
   <Datetime {...props} />
+  {
+    meta.length > 0 && (
+      <p class="text-sm opacity-80">
+        {meta.join(" · ")}
+      </p>
+    )
+  }
   <p>{description}</p>
 </li>
