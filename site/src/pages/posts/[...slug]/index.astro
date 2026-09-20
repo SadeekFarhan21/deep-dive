@@ -14,6 +14,7 @@ import ShareLinks from "./_components/ShareLinks.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
+import SectionNav from "./_components/SectionNav.astro";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -73,7 +74,7 @@ const {
   hideEditPost,
 } = post.data;
 
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
 let ogImageUrl: string | undefined;
 
@@ -107,6 +108,8 @@ const ogImage = ogImageUrl
   <Header />
 
   <BackButton />
+
+  {post.data.company && <SectionNav {headings} />}
 
   <main
     id="main-content"

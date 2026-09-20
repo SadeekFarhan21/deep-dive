@@ -4,6 +4,8 @@ export default {
   nav: {
     home: "Home",
     posts: "Posts",
+    projects: "Projects",
+    ventures: "Ventures",
     tags: "Tags",
     about: "About",
     archives: "Archives",
@@ -46,6 +48,12 @@ export default {
 
     postsTitle: "Posts",
     postsDesc: "All the articles I've posted.",
+
+    projectsTitle: "Projects",
+    projectsDesc: "Notes from building things: models, training runs, and code.",
+
+    venturesTitle: "Ventures",
+    venturesDesc: "Company deep dives and notes on what I'm watching.",
 
     archivesTitle: "Archives",
     archivesDesc: "All the articles I've archived.",

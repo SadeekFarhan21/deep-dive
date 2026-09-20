@@ -3,7 +3,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import IconUnderline from "@/assets/icons/IconUnderline.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
-import IconFileText from "@/assets/icons/IconFileText.svg";
+import IconCode from "@/assets/icons/IconCode.svg";
+import IconTrendingUp from "@/assets/icons/IconTrendingUp.svg";
 import IconHash from "@/assets/icons/IconHash.svg";
 import IconUser from "@/assets/icons/IconUser.svg";
 import LinkButton from "./LinkButton.astro";
@@ -60,14 +61,32 @@ const isActive = (path: string) => {
       >
         <li>
           <a
-            href={getRelativeLocaleUrl(locale, "posts")}
-            class:list={{ "active-nav": isActive("/posts") }}
-            title={t.nav.posts}
+            href={getRelativeLocaleUrl(locale, "projects")}
+            class:list={{ "active-nav": isActive("/projects") }}
+            title={t.nav.projects}
           >
-            <IconFileText aria-hidden="true" class="size-6 sm:hidden" />
-            <span class="max-sm:sr-only">{t.nav.posts}</span>
+            <IconCode aria-hidden="true" class="size-6 sm:hidden" />
+            <span class="max-sm:sr-only">{t.nav.projects}</span>
             {
-              isActive("/posts") && (
+              isActive("/projects") && (
+                <IconUnderline
+                  aria-hidden="true"
+                  class="absolute bottom-0 w-6 scale-125 sm:hidden"
+                />
+              )
+            }
+          </a>
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(locale, "ventures")}
+            class:list={{ "active-nav": isActive("/ventures") }}
+            title={t.nav.ventures}
+          >
+            <IconTrendingUp aria-hidden="true" class="size-6 sm:hidden" />
+            <span class="max-sm:sr-only">{t.nav.ventures}</span>
+            {
+              isActive("/ventures") && (
                 <IconUnderline
                   aria-hidden="true"
                   class="absolute bottom-0 w-6 scale-125 sm:hidden"

@@ -1,0 +1,127 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+const { headings } = Astro.props;
+
+// Only top-level sections, matching the report structure.
+const sections = headings.filter(h => h.depth === 2);
+---
+
+{
+  sections.length > 2 && (
+    <nav
+      id="section-nav"
+      aria-label="Sections"
+      class="pointer-events-none fixed top-1/2 z-20 hidden max-h-[80dvh] -translate-y-1/2 overflow-y-auto xl:block"
+      style="inset-inline-start: calc(50% + 30rem);"
+    >
+      <ul class="pointer-events-auto m-0 list-none space-y-1 p-0 ps-4">
+        {sections.map(s => (
+          <li class="relative m-0 p-0">
+            <span
+              data-marker={s.slug}
+              aria-hidden="true"
+              class="bg-accent absolute start-0 top-1/2 size-1.5 -translate-y-1/2 opacity-0 transition-opacity duration-200"
+            />
+            <a
+              href={`#${s.slug}`}
+              data-nav-link={s.slug}
+              class="text-muted-foreground hover:text-foreground block py-2 ps-4 text-sm leading-snug no-underline transition-colors duration-200"
+            >
+              {s.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<script is:inline data-astro-rerun>
+  // This component renders above <main>, so #article does not exist yet while
+  // the script is parsed. Wait for the document before wiring anything up.
+  (() => {
+    function init() {
+    const nav = document.getElementById("section-nav");
+    if (!nav) return;
+
+    const links = new Map();
+    const markers = new Map();
+    for (const el of nav.querySelectorAll("[data-nav-link]")) {
+      links.set(el.dataset.navLink, el);
+    }
+    for (const el of nav.querySelectorAll("[data-marker]")) {
+      markers.set(el.dataset.marker, el);
+    }
+
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const headings = Array.from(article.querySelectorAll("h2")).filter(h =>
+      links.has(h.id)
+    );
+    if (headings.length === 0) return;
+
+    let current = null;
+
+    function setActive(id) {
+      if (id === current) return;
+      if (current) {
+        links.get(current)?.classList.remove("text-foreground", "font-medium");
+        links.get(current)?.classList.add("text-muted-foreground");
+        markers.get(current)?.classList.remove("opacity-100");
+      }
+      current = id;
+      if (current) {
+        links.get(current)?.classList.add("text-foreground", "font-medium");
+        links.get(current)?.classList.remove("text-muted-foreground");
+        markers.get(current)?.classList.add("opacity-100");
+      }
+    }
+
+    // The active section is the last heading whose top has scrolled past
+    // one third of the viewport. Recomputed on scroll, which stays correct
+    // for short trailing sections that an IntersectionObserver would skip.
+    function update() {
+      const line = window.innerHeight / 3;
+      let active = headings[0].id;
+      for (const h of headings) {
+        if (h.getBoundingClientRect().top <= line) active = h.id;
+        else break;
+      }
+      // At the very bottom, always highlight the final section.
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        active = headings[headings.length - 1].id;
+      }
+      setActive(active);
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+    }
+
+    document.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>

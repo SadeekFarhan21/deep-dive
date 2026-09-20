@@ -97,12 +97,35 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
-    details:not(.callout) {
+    details:not(.callout):not(.collapsible-section) {
       @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+    }
+
+    details.collapsible-section {
+      @apply bg-muted/25 border-border block cursor-auto rounded-md border select-auto;
+      border-inline-start: 4px solid var(--color-accent);
+      margin-block: 0.75rem 1rem;
+      padding: 0.75rem 1rem;
+
+      & > summary {
+        @apply cursor-pointer font-semibold;
+      }
+
+      &[open] > summary {
+        @apply border-border mb-4 border-b pb-3;
+      }
+
+      & > :last-child {
+        @apply mb-0;
+      }
     }
 
     summary {
       @apply focus-visible:outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed;
+    }
+
+    .katex-display {
+      @apply overflow-x-auto overflow-y-hidden py-1;
     }
 
     pre {

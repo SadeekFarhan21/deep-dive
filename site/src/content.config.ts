@@ -5,6 +5,10 @@ import config from "@/config";
 
 export const BLOG_PATH = "src/content/posts";
 
+/** Top-level sections posts are split into; each gets its own listing page. */
+export const POST_CATEGORIES = ["projects", "ventures"] as const;
+export type PostCategory = (typeof POST_CATEGORIES)[number];
+
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
   schema: ({ image }) =>
@@ -16,8 +20,12 @@ const posts = defineCollection({
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
+      category: z.enum(POST_CATEGORIES).default("projects"),
       ogImage: image().or(z.string()).optional(),
       description: z.string(),
+      company: z.string().optional(),
+      stage: z.string().optional(),
+      sector: z.string().optional(),
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),
