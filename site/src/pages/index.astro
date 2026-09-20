@@ -67,7 +67,19 @@ const homePath = getRelativeLocaleUrl(locale, "");
           href="https://farhansadeek.com"
           target="_blank"
           rel="noopener noreferrer">Farhan Sadeek</LinkButton
-        >, a computer science undergraduate at Columbia. I spend most of my time tinkering with large language models, robots and computer chips. I try to write a blog about such endeavors which are documented in this blog. I occasionally write about startups that I find interesting, which are on the ventures section of the page. Feel free to contact me on the the links below!  
+        >, a computer science undergraduate at <LinkButton
+          class="underline decoration-dashed underline-offset-4"
+          href="https://www.cs.columbia.edu"
+          target="_blank"
+          rel="noopener noreferrer">Columbia</LinkButton
+        >. I spend most of my time tinkering with large language models, robots
+        and computer chips, and I write up those experiments in <LinkButton
+          class="underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "projects")}>Projects</LinkButton
+        >. I also write about startups I find interesting, which live in <LinkButton
+          class="underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "ventures")}>Ventures</LinkButton
+        >. Feel free to reach me through the links below.
       </p>
       <p class="mt-2">
         Two kinds of writing live on this site.
